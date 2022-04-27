@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Page d'accueil du site Fisheye">
+    <meta name="description" content="Site pour photographes indépendants.">
+		<title>Fisheye</title>
 
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -12,15 +15,18 @@
   </head>
   <body>
     <header>
-        <img src="assets/images/logo.png" class="logo" />
+
+      <!-- LOGO -->
+        <a href="./index.html"><img src="assets/images/logo.png" class="logo" /></a>
         <h1>Nos photographes</h1>
     </header>
     <main id="main">
         <div class="photographer_section"></div>
     </main>
-    <script src="scripts/factories/Photographer.js"></script>
+    <script src="scripts/api/app.js"></script>
+    <script src="scripts/factories/photographer.js"></script>
     <script src="scripts/pages/index.js"></script>
-    <script src="scripts/pages/photographer.js"></script>
-    <script src="scripts/utils/app.js"></script>
+
+   
   </body>
 </html>
