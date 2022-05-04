@@ -1,23 +1,27 @@
-
+// elemnts home page - 1440x 1024
 
 function photographerFactory(data) {
-    const { name, id, city, country, tagline, price, portrait} = data;
-
-    const picture = `assets/photographers/${portrait}`;
-
-    const url = ` photographers.html?${id}`
-   
-
-
+    const { name, portrait, city, country, price, tagline, id } = data;
+  
+    const image = `assets/photographers/${portrait}`;
+  
     function getUserCardDOM() {
-        const article = document.createElement( 'article' );
-        const img = document.createElement( 'img' );
-        img.setAttribute("src", picture)
-        const h2 = document.createElement( 'h2' );
-        h2.textContent = name;
-        article.appendChild(img);
-        article.appendChild(h2);
-        return (article);
+      const article = document.createElement("article");
+      const linkURL = "photographer.html";
+      const url = `${linkURL}?photographer=${id}`;
+      article.innerHTML = `
+        <a href=${url}>
+          <img src=${image} alt="">
+          <h1 class="photographer_detail">${name}</h1>
+        </a>
+        <div>
+          <p class="where">${country} ${city}</p>
+          <p class="tagline">${tagline}</p>
+          <p class="price">${price}€/jour</p>
+        </div>
+  `;
+      return article;
     }
-    return { name, picture, getUserCardDOM }
-}
+  
+    return { name, image, getUserCardDOM };
+  }
