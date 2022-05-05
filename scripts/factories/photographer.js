@@ -1,6 +1,6 @@
-// elemnts home page - 1440x 1024
+// elements home page html - 
 
-function photographerFactory(data) {
+ function photographerFactory(data) {
     const { name, portrait, city, country, price, tagline, id } = data;
   
     const image = `assets/photographers/${portrait}`;
@@ -12,7 +12,7 @@ function photographerFactory(data) {
       article.innerHTML = `
         <a href=${url}>
           <img src=${image} alt="">
-          <h1 class="photographer_detail">${name}</h1>
+          <h1 class="photographer-detail">${name}</h1>
         </a>
         <div>
           <p class="where">${country} ${city}</p>
@@ -25,3 +25,5 @@ function photographerFactory(data) {
   
     return { name, image, getUserCardDOM };
   }
+
+  
