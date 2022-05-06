@@ -1,6 +1,9 @@
-# Base de code du projet P6 - Parcours Front-end
+# Project 6 - Code - Base - Front-end Path
 
-## Démarrer le projet
+## Clone the repository
 
-Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.
+git clone <https://github.com/pascalinecte91/Fisheye_P6.git>
 
+## Start Project
+
+Nothing to install here, just open the file `index.html`.
