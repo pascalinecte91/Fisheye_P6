@@ -1,87 +1,65 @@
-    
- async function getPhotographers() {
-    // on recupere dans un 1er temps le contenu de la reponse HTTP
-    return fetch("./data/photographers.json")
-    
-        .then(function (response) {
-           // console.log(response);
-            return response.json();
-        })
-        // on recupere les data  du fichier que des photographers
-        .then((data) => {
-              //console.log(data);
-            return data.photographers;
-        })
-        // catch  = si erreur
-        .catch(err => console.log('an error', err));
+//trouve l ID  du photographer
+const request = new URLSearchParams(location.search)
+const photographerId = request.get('photographer');
 
+fetch('./data/photographers.json')
+    .then(function (response) {
+        return response.json();
+    })
+
+//renvoi les photographes et les medias
+    .then(function (response) {
+        const { photographers, medias } = response;
+        //console.log(response);
+        successPage(photographers, medias, photographerId);
+        return;
+    })
+    .catch(function (response) {
+        errorPage(photographerId);
+        return;
+    });
+
+
+function successPage(photographers, media, photographerId) {
+    const photographer = photographers.find((photographer) => {
+        return photographer.id == photographerId;
+    });
+    // const medias = media.filter((media) => {
+    //     console.log(media);
+    //     return medias.photographer.id == photographerId;
+    // });
+
+    displayDataHeader(photographer);
+    // displayMedias(media);
 }
 
-// affichage MEDIAS  gallerie
-async function getMedias() {
-    // on recupere dans un 1er temps le contenu de la reponse HTTP
-    return fetch("./data/photographers.json")
-        .then(function (response) {
-            // console.log(response);
-            return response.json();
-        })
-        .then((data) => {
-            // on recupere toutes les donnees
-           // console.log(data);
-            return data;
-        })
-        // catch  = si erreur
-        .catch(err => console.log('an error', err));
+function errorPage(photographerId) {
+    (document.querySelector(".photograph-header").innerHTML = "le photographe " + photographerId + " est incorrect"
+    )
+    //  (document.querySelector(".gallery-section").innerHTML ="pas de media récupéré")
 }
 
 
-
- //affichage HEADER  photographe 
- async function displayDataHeader() {
-
-    const profilHeader = await getPhotographers();
-    
-    //console.log(profilHeader);
-      const profilHeaderSection = document.querySelector(".photograph-header");
-  
-      profilHeader.forEach((photographer) => {
-          const profilHeaderModel = headerFactory(photographer);
-          const headerCardDOM = profilHeaderModel.getHeaderCardDOM();
-          profilHeaderSection.appendChild(headerCardDOM);
-      });
-  };
-displayDataHeader();
- 
-
-
-// //affichage MEDIA GALLERY
-// async function displayMedias() {
-//     const myUrl = new URL(window.location.href);
-//     const photographerId = myUrl.searchParams.get("photographer");
-//     // on recupere l 'ID du photographer
-//    // console.log(photographerId)
-
-//     // dataJson  = resultat de fetch avec tout la base de donnes inclus media et photographers
-//     const dataJson = await getMedias();
-
-//     // chercher les datas media d'un photographer click = searchParams( le ID  du photogrpahe) 
-//     let medias = dataJson.media.filter(media => media.photographerId == photographerId);
+/****************************************************************************/ 
+function displayDataHeader(photographerId) {
    
-
-//     //console.log(medias); // les medias correspondant à l ID
-
-//     const gallerySection = document.querySelector(".gallery-section");
-
-//     medias.forEach((media) => {
-//         //console.log(media);
-//         const mediaModel = new mediaFactory(media);
-//         const mediaCardDOM = mediaModel.getMediaCardDOM();
-//         gallerySection.appendChild(mediaCardDOM);
-//     });
-// }
-// displayMedias();
+    const profilHeaderSection = document.querySelector(".photograph-header");
+    const profilHeaderModel = headerFactory(photographerId);
+   //console.log(profilHeaderModel);
+    const headerCardDOM = profilHeaderModel.getHeaderCardDOM();
+   // console.log(headerCardDOM);
+    profilHeaderSection.appendChild(headerCardDOM);
+}
 
 
 
+/************************************************************************** */
+function displayMedias(medias) {
+    medias.foreach((media) => {
 
+        const mediaModel = new mediaFactory(media);
+        const mediaCardDom = mediaModel.getMediaCardDom();
+        document.querySelector(".gallery-section").appendChild(mediaCardDom);
+    });
+}
 

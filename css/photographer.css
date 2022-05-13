@@ -5,7 +5,19 @@
 .photograph-header  {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  background-color: #FAFAFA;
+  height: 300px;
+  margin: 0 100px;
+}
+
+.photograph-header a {
+  text-decoration: none;
+
+}
+
+.photograph-header div .profil {
+display: flex;
+flex-direction: column;
 }
 
 .photograph-header img {
@@ -19,14 +31,16 @@
   object-fit: cover;
 }
 
-
-.photograph-header {
-  background-color: #FAFAFA;
-  height: 300px;
-  margin: 0 100px;
+.photograph-header article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 90%;
+  margin: auto;
 }
-
-/* .photograph-header div p {
+.photograph-header div p {
   font-weight: 400;
   font-size: 30px;
   line-height: 0px;
@@ -34,27 +48,31 @@
   margin-top: 15%;
 }
 
-.photograph-header div h2 {
-  font-size: 24px;
+.photograph-header h1 {
+  font-size: 3rem;
   color: #901C1C;
-} */
+}
 
+.photograph-header p.tagline {
+  font-size: 1.2rem;
+  color: black;
+
+}
 
 
 /*************           */
-.contact_button {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    padding: 11px;
-    width: 170px;
-    height: 70px;
-    border: none;
-    background-color: #901C1C;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
+.photograph-contact-button {
+  background-color: #901c1c;
+  border: none;
+  padding: 10px 25px 10px 20px;
+  color: white;
+  width: 10vw;
+  height: 5vh;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
 
 #contact_modal {
   display: none;
