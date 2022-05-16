@@ -1,10 +1,12 @@
-// elements home page html - 
+// elements home page html -
 
 function photographerFactory(data) {
   const { name, portrait, city, country, price, tagline, id } = data;
+
   const image = `assets/photographers/${portrait}`;
- 
-  //elements du DOM Accueil
+
+  /*************    elements du DOM Accueil     *****/
+
   function getUserCardDOM() {
     const article = document.createElement("article");
     const linkURL = "photographer.html";
@@ -14,7 +16,7 @@ function photographerFactory(data) {
           <h1 class="photographer-detail">${name}</h1>
         </a>
         <div>
-          <p class="where">${country} ${city} </p>
+          <p class="where">${country}/${city} </p>
           <p class="tagline">${tagline}</p>
           <p class="price">${price}€/jour</p>
         </div>`;
@@ -22,53 +24,68 @@ function photographerFactory(data) {
     return article;
   }
 
-  return { name, image, getUserCardDOM };
+  return { name,image ,getUserCardDOM };
 }
 
+/*******          elements partie Header profil du photographe   ******/
 
-
-//elements partie Header profil du photographe -
 function headerFactory(data) {
   const { name, portrait, city, tagline, id } = data;
-   const image = `assets/photographers/${portrait}`;
-   //console.log(data);
+
+  const image = `assets/photographers/${portrait}`;
 
   function getHeaderCardDOM() {
-    console.log(getHeaderCardDOM);
     const article = document.createElement("article");
+
     const linkURL = "photographer.html";
     const url = `${linkURL}?photographer=${id}`;
+
     article.innerHTML = ` 
     <div class"profil">
     <h1>${name}</h1>
-    <p class="where"> ${city} </p>
+    <p class="where">${city}</p>
     <p class="tagline">${tagline}</p>
     </div>  
     <button class="photograph-contact-button">Contactez-moi</button> 
-    <div><a href=${url}><img src=${image} alt="photo"></a>
+    <div>
+    <a href=${url}><img src=${image} alt="photo"></ a>
     </div>`;
     return article;
   }
-  return { name, image, getHeaderCardDOM };
+  return {name,image ,getHeaderCardDOM };
 }
 
+/****     elements DOM partie GALERIES    en cours**********/
 
-// elements DOM partie GALERIES
 function galleryFactory(data) {
-  const { portrait, id, likes, } = data;
-  console.log(data);
-  const image = `assets/thumbnails${portrait}`;
+  const { id, image, title, videos, date, likes } = data;
+  //console.log(data);
+  const imagesMedias = `assets/thumbnails/ImagesMedias/${image}`;
+  //console.log(data);
+  const videosMedias = `assets/thumbnails/${videos}`;
 
-  function getGalleryCardDOM() {
+  function getMediaCardDOM() {
     // on cree la gallery dans la page
-      const articleGallery = document.createElement("articleGallery");
-      const heart = document.createElement("");
-      const title = document.createElement("h3");
-     
-      return articleGallery;
-      
+
+    const articleMedia = document.createElement("articleMedia");
+
+    const linkURL = "photographer.html";
+    const url = `${linkURL}?imagesMedias=${id}`;
+    // console.log(url);
+    articleMedia.innerHTML = `   
+    
+      <div class="galleriesMedia">
+      <h2 class="title">${title}</h2>
+      <div class="infoMedia"> 
+          <!--<span>${likes}</span>-->
+          <div><a href=${url}><img src=${imagesMedias} alt=""></a>
+          </div>
+          </div>`;
+
+    return articleMedia;
   }
-
-  return { portrait, getGalleryCardDOM };
+  //console.log(imagesMedias);
+  console.log(image);
+  return {imagesMedias,videosMedias,getMediaCardDOM,
+  };
 }
-
