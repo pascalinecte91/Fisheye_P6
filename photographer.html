@@ -10,11 +10,11 @@
 
   <link href="css/style.css" rel="stylesheet" type="text/css" />
   <link rel="icon" type="image/png" href="assets/favicon.png">
-  <script src="https://kit.fontawesome.com/0bfe0e9acc.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
- 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/1365cabd78.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -23,34 +23,37 @@
       <img src="assets/images/logo.png" alt="Fisheye Home page" class="logo" /></a>
   </header>
   <main id="main">
-                         <!-- SECTION HEADER PHOTOGRAPHE -->
+    <!-- SECTION HEADER PHOTOGRAPHE -->
     <section class="photograph-header"></section>
 
-                      <!-- SECTION BOUTON CONTACT -->
-      <div class="photograph-form"></div>
+    <!-- SECTION BOUTON CONTACT -->
+    <div class="photograph-form"></div>
 
-                       <!-- SECTION FILTERS -->
-    <!-- <section class="sort"> -->
-      <!-- <p> Trier par</p>
-      <div class="sort-dropdown-content hidden">
-        <button class="sort-btn" data-sort="popularité">Popularité</button>
-        <button class="sort-btn" data-sort="date">Date</button>
-        <button class="sort-btn" data-sort="title">Titre</button>
-      </div> -->
+    <!-- SECTION FILTRES   /  SORT -->
+    <section class="sorter">
+      <form class="sort-form" action="#" method="POST">
+        <label tabindex="0" for="sort">Trier par</label>
+        <select name="sorter" id="sort-choice">
+          <option value="popularité">Popularité</option>
+          <option value="date">Date</option>
+          <option value="Titre">Titre</option>
+        </select>
+      </form>
     </section>
-    
-                       <!-- SECTION GALLERY -->
+
+
+    <!-- SECTION GALLERY -->
     <section class="gallery-section">
     </section>
   </main>
-                        <!-- SECTION MODAL -->
+  <!-- SECTION MODAL -->
   <section id="modal">
     <!-- <div class="modal-contact">
         <h2>Contactez-moi</h2>
         <img src="assets/icons/close.svg" onclick="closeModal()" /> -->
 
-        <!-- SECTION FORMULAIRE -->
-          <!-- <form class="modal-formulaire">
+    <!-- SECTION FORMULAIRE -->
+    <!-- <form class="modal-formulaire">
             <div class="modal-formData">
               <label for="firstName">Prénom</label>
               <input type="text" class="text-control"  id="firstName" name="first">
@@ -62,18 +65,18 @@
           <button class="modal-contact-button">Envoyer</button>
           </form> -->
     </div>
-  </div>
-</section>
+    </div>
+  </section>
 
 
   <script src="scripts/utils/contactForm.js"></script>
   <script src="scripts/factories/photographer.js"></script>
   <script src="scripts/pages/photographer.js"></script>
- 
 
 
 
- 
+
+
 
 </body>
 

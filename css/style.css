@@ -7,16 +7,13 @@
   --lobusc: #901c1c; /* logo buttons scrawll */
   --nafi: #D3573C;   /* name  first  */
   --cico: red;       /* city country  */
-  --font2: "roboto";
-
---fw: "font-weight" 900
+  --fw: "font-weight" 900
 }
 
 
 
 body {
   font-family: "DM Sans", sans-serif;
-  font-family: 'Roboto', sans-serif;
   margin: 0;
 
 
@@ -44,67 +41,9 @@ h1 {
   margin-left: 100px;
   padding-bottom: 5px;
   border-bottom: 3px solid white;
-  font-family: var(--font2);
-
 }
-
-
-/***********  SECTION ***********/
-
-.photographer_section {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-
-  gap: 170px;
-  margin-top: 100px;
-}
-
-.photographer-section {
-  width: 90%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-grow: 2;
-  justify-content: space-around;
-  gap: 80px;
-  margin: auto;
-  margin-top: 100px;
-}
-
-.photographer-section article {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  line-height: 10px;
-}
-
-.photographer-section article h1 {
-  color: var(--nafi);
-  font-size: 2.2rem;
-  margin-right: inherit;
-}
-
-.photographer-section article img {
-  height: 220px;
-  width: 220px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.photographer-section article 
-.tagline {
-  font-size: 1.3rem;
+.logo:hover, .logo:active {
+  border-bottom:3px solid var(--lobusc);
   
 }
-.photographer-section article 
-.price {
-  font-size: 1rem;
-}
 
-.where {
-  color: var(--cico);
-  font-size: 1.3rem;
-}
-.photographer-section a {
-  text-decoration: none;
-}

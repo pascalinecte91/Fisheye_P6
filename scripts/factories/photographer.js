@@ -1,31 +1,4 @@
-// elements home page html -
 
-function photographerFactory(data) {
-  const { name, portrait, city, country, price, tagline, id } = data;
-
-  const image = `assets/photographers/${portrait}`;
-
-  /*************    elements du DOM Accueil     *****/
-
-  function getUserCardDOM() {
-    const article = document.createElement("article");
-    const linkURL = "photographer.html";
-    const url = `${linkURL}?photographer=${id}`;
-    article.innerHTML = `
-        <a href=${url}><img src=${image} alt="photo">
-          <h1 class="photographer-detail">${name}</h1>
-        </a>
-        <div>
-          <p class="where">${country}/${city} </p>
-          <p class="tagline">${tagline}</p>
-          <p class="price">${price}€/jour</p>
-        </div>`;
-
-    return article;
-  }
-
-  return { name,image ,getUserCardDOM };
-}
 
 /*******          elements partie Header profil du photographe   ******/
 
@@ -62,25 +35,25 @@ function galleryFactory(data) {
   //console.log(data);
   const imagesMedias = `assets/thumbnails/ImagesMedias/${image}`;
   //console.log(data);
-  const videosMedias = `assets/thumbnails/${videos}`;
+   const videosMedias = `assets/thumbnails/VideosMedias${videos}`;
 
   function getMediaCardDOM() {
     // on cree la gallery dans la page
-
     const articleMedia = document.createElement("articleMedia");
 
     const linkURL = "photographer.html";
     const url = `${linkURL}?imagesMedias=${id}`;
     // console.log(url);
     articleMedia.innerHTML = `   
-    
-      <div class="galleriesMedia">
-      <h2 class="title">${title}</h2>
-      <div class="infoMedia"> 
-          <!--<span>${likes}</span>-->
-          <div><a href=${url}><img src=${imagesMedias} alt=""></a>
-          </div>
-          </div>`;
+      <class="gallery-section">
+        <div class="infoMedia"> 
+            <a href=${url}><img src=${imagesMedias} alt="images"></a>
+            <div="heart">
+            <p class="title">${title}</p> 
+            <p> ${likes}<i class="fas-solid fa-heart"></i></p>
+            </div>
+        </div=>
+      </div>`;
 
     return articleMedia;
   }
