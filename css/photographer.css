@@ -112,9 +112,10 @@
   height: 23px;
 }
 
-/*************           */
+/*************   CONTACTEZ  MOI       *******/
+/*bouton dans header */
 
-.photograph-contact-button {
+.modal-trigger {
   background-color: var(--lobusc);
   border: none;
   padding: 10px 25px 10px 20px;
@@ -125,6 +126,7 @@
   cursor: pointer;
   font-size: 1rem;
   font-weight: 700;
+
 }
 
 
@@ -166,21 +168,24 @@ gallery  section
   font-style: normal;
 }
 
-.gallery-section .title p {
-  display: flex;
-  align-items: left;
-  color: var(--lobusc);
-  gap: 2px;
-}
 
-.gallery-section .heart {
+
+.gallery-section .infoMedia {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
+  font-size: 24px;
 }
 
+.gallery-section .date  {
+  font-size: 12px;
+}
 
-/******************************/
+/*************** SORTER  ***************/
+
+.sorter {
+  position: relative;
+}
 
 #sort-choice {
   border-radius: 5px;
@@ -188,6 +193,7 @@ gallery  section
   margin-left: -40px;
   border: none;
 }
+
 
 .sort-form {
   display: flex;
@@ -199,13 +205,15 @@ gallery  section
 }
 
 .sort-form label {
-display: flex;
+/* display: flex;
 align-items: center;
   font-weight: 700;
   font-size: 18px;
   width: 100px;
   height: 23px;
-  padding-left: 30px;
+  padding-left: 30px; */
+  font-weight: 700;
+    font-size: 1.3em;
 }
 
 .sort-form select {
@@ -222,13 +230,13 @@ align-items: center;
 }
 
 
-/************************      *********/
+/************************  MODAL FORM    *********/
 
-#contact_modal {
+  .modal-container {
   display: none;
-}
+} 
 
-.modal {
+/* .modal {
   border-radius: 5px;
   background-color: #DB8876;
   width: 50%;
@@ -243,9 +251,9 @@ align-items: center;
 .modal header {
   justify-content: space-between;
   width: 100%;
-}
+} */ 
 
-.modal header img {
+/* .modal header img {
   cursor: pointer;
 }
 
@@ -280,31 +288,10 @@ form input {
   height: 68px;
   border: none;
   border-radius: 5px;
-}
+} */
 
-.sort-cards {
-  display: flex;
-}
 
-.sort-cards p {
-  margin-right: 30px;
-}
-
-.sort {
-  background-color: #901c1c;
-  border: none;
-  padding: 10px 0 10px 20px;
-  color: white;
-  width: 10vw;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.sort-button-group {
-  position: relative;
-}
-
-.dropdown-content {
+/* .dropdown-content {
   position: absolute;
   top: 0;
   display: flex;
@@ -326,7 +313,7 @@ form input {
   background-color: transparent;
   color: white;
   /* pading-right: auto; */
-  text-align: left;
+  /* text-align: left;
   cursor: pointer;
 }
 
@@ -336,4 +323,8 @@ form input {
 
 .dropdown-content .btn:last-child {
   border-bottom: none;
-}
+} */ 
+
+
+/*************************************************************/
+

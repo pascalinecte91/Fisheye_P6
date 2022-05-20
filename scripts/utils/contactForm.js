@@ -1,9 +1,17 @@
-function displayModal() {
-    const modal = document.getElementById("contact_modal");
-	modal.style.display = "block";
-}
+ function displayModal() {
+     const modalContainer = document.querySelector(".modal-container");
+ 	modalContainer.style.display = "block";
+ }
 
 function closeModal() {
-    const modal = document.getElementById("contact_modal");
-    modal.style.display = "none";
+    const modalTriggers  = document.querySelectorAll("modal-trigger");
+    modalTriggers.style.display = "none";
 }
+
+
+
+// modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal))
+
+// function toggleModal(){
+//   modalContainer.classList.toggle("active")
+// }

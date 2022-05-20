@@ -1,7 +1,4 @@
-
-
 /*******          elements partie Header profil du photographe   ******/
-
 function headerFactory(data) {
   const { name, portrait, city, tagline, id } = data;
 
@@ -19,23 +16,26 @@ function headerFactory(data) {
     <p class="where">${city}</p>
     <p class="tagline">${tagline}</p>
     </div>  
-    <button class="photograph-contact-button">Contactez-moi</button> 
+    <button 
+    aria-label="close modal"
+    class="close-modal modal-trigger">contactez moi</button>
     <div>
     <a href=${url}><img src=${image} alt="photo"></ a>
     </div>`;
     return article;
   }
-  return {name,image ,getHeaderCardDOM };
+  return {name, image, getHeaderCardDOM,
+  };
 }
 
-/****     elements DOM partie GALERIES    en cours**********/
+/****     elements DOM partie GALERIES    **********/
 
 function galleryFactory(data) {
-  const { id, image, title, videos, date, likes } = data;
+  const { id, image, title, videos, likes, date } = data;
   //console.log(data);
   const imagesMedias = `assets/thumbnails/ImagesMedias/${image}`;
   //console.log(data);
-   const videosMedias = `assets/thumbnails/VideosMedias${videos}`;
+  const videosMedias = `assets/thumbnails/VideosMedias${videos}`;
 
   function getMediaCardDOM() {
     // on cree la gallery dans la page
@@ -46,19 +46,16 @@ function galleryFactory(data) {
     // console.log(url);
     articleMedia.innerHTML = `   
       <class="gallery-section">
-        <div class="infoMedia"> 
+        <div>
             <a href=${url}><img src=${imagesMedias} alt="images"></a>
-            <div="heart">
-            <p class="title">${title}</p> 
-            <p> ${likes}<i class="fas-solid fa-heart"></i></p>
-            </div>
-        </div=>
+          </div>
+          <p class="infoMedia"> ${title} ${likes}<i class="fa-solid fa-heart"></i>
+          </p>
+            <p class="date"> ${date}</p>  
       </div>`;
-
     return articleMedia;
   }
   //console.log(imagesMedias);
-  console.log(image);
-  return {imagesMedias,videosMedias,getMediaCardDOM,
-  };
+  //console.log(image);
+  return { imagesMedias, videosMedias, getMediaCardDOM };
 }

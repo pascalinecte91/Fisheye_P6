@@ -23,20 +23,39 @@
       <img src="assets/images/logo.png" alt="Fisheye Home page" class="logo" /></a>
   </header>
   <main id="main">
-    <!-- SECTION HEADER PHOTOGRAPHE -->
-    <section class="photograph-header"></section>
+   
 
+    
+
+
+
+
+    <!-- SECTION HEADER PHOTOGRAPHE -->
+    <section class="photograph-header">  
+      <div class="modal-container">
+      <div class="overlay modal-trigger"></div>
+     
+      <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="dialogDesc">
+      
+        <label for="firstName">Prénom</label>
+              <input type="text" class="text-control"  id="firstName" name="first">
+              <label for="lastName">Nom</label>
+              <input type="text" class="text-control"  id="lastName" name="last">
+              <label for="text-control">Message</label>
+              <textarea  id="message" name="message"></textarea>
+      </div>
+  </section>
     <!-- SECTION BOUTON CONTACT -->
-    <div class="photograph-form"></div>
+  
 
     <!-- SECTION FILTRES   /  SORT -->
     <section class="sorter">
       <form class="sort-form" action="#" method="POST">
-        <label tabindex="0" for="sort">Trier par</label>
+        <label for="sort">Trier par</label>
         <select name="sorter" id="sort-choice">
           <option value="popularité">Popularité</option>
           <option value="date">Date</option>
-          <option value="Titre">Titre</option>
+          <option value="titre">Titre</option>
         </select>
       </form>
     </section>
@@ -47,7 +66,10 @@
     </section>
   </main>
   <!-- SECTION MODAL -->
-  <section id="modal">
+  <!-- <section id="modal"> -->
+    
+  </div>
+
     <!-- <div class="modal-contact">
         <h2>Contactez-moi</h2>
         <img src="assets/icons/close.svg" onclick="closeModal()" /> -->
@@ -63,11 +85,17 @@
               <textarea  id="message" name="message"></textarea>
             </div>
           <button class="modal-contact-button">Envoyer</button>
-          </form> -->
-    </div>
-    </div>
-  </section>
+           </form> -->
+    <!-- </div>
+    </div>  -->
+  <!-- </section> -->
 
+
+
+   
+
+
+  </div>
 
   <script src="scripts/utils/contactForm.js"></script>
   <script src="scripts/factories/photographer.js"></script>
