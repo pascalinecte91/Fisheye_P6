@@ -16,7 +16,7 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-  line-height: 10px;
+  line-height: 30px;
 }
 
 .photographer-section article h1 {
@@ -168,8 +168,6 @@ gallery  section
   font-style: normal;
 }
 
-
-
 .gallery-section .infoMedia {
   display: flex;
   flex-wrap: nowrap;
@@ -181,7 +179,7 @@ gallery  section
   font-size: 12px;
 }
 
-/*************** SORTER  ***************/
+/*************** SORTER   filter  ***************/
 
 .sorter {
   position: relative;
@@ -205,13 +203,13 @@ gallery  section
 }
 
 .sort-form label {
-/* display: flex;
+ display: flex;
 align-items: center;
   font-weight: 700;
   font-size: 18px;
   width: 100px;
   height: 23px;
-  padding-left: 30px; */
+  padding-left: 30px; 
   font-weight: 700;
     font-size: 1.3em;
 }
@@ -236,95 +234,106 @@ align-items: center;
   display: none;
 } 
 
-/* .modal {
+/*           */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* bouton contactez moi */
+.bodal-btn {
+  padding: 10px 14px;
+  font-size: 28px;
+  margin: 100px auto;
+  display: block;
+  min-width: 150px;
+  cursor: pointer;
+}
+
+.bodal-container {
+  /* display: none; */
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: visibility 0.4s;
+}
+.bodal-container.active {
+  /* display: block; */
+  visibility: visible;
+}
+
+.overlay {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #333333d3;
+  transition: opacity 0.4s 0.2s ease-out;
+}
+.bodal-container.active .overlay {
+  opacity: 1;
+  transition: opacity 0.4s ease-out;
+}
+
+.bodal {
+  opacity: 0;
+  width: 95%;
+  max-width: 650px;
+  height:900px;
+  padding: 250px  25px 30px 25px;
   border-radius: 5px;
   background-color: #DB8876;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 35px;
-  margin: auto;
-}
-
-.modal header {
-  justify-content: space-between;
-  width: 100%;
-} */ 
-
-/* .modal header img {
-  cursor: pointer;
-}
-
-.modal header h2 {
-  font-size: 64px;
-  font-weight: normal;
-  text-align: center;
-}
-
-form {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-form label {
-  color: #312E2E;
-  font-size: 36px;
-}
-
-form div {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: self-start;
-  margin-bottom: 26px;
-}
-
-form input {
-  width: 100%;
-  height: 68px;
-  border: none;
   border-radius: 5px;
-} */
-
-
-/* .dropdown-content {
   position: absolute;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  background-color: #901c1c;
-  width: 10vw;
-  padding: 10px;
-  margin: 0;
-  border-radius: 5px;
-  color: white;
-  z-index: 10;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 50px));
+  transition: opacity 0.4s ease-out,
+  transform 0.4s ease-out;
+  
 }
 
-.dropdown-content .btn {
-  padding: 10px;
-  width: 100%;
+.bodal-container.active .bodal {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.4s 0.2s ease-out,
+  transform 0.4s 0.2s ease-out;
+}
+
+/* croix de fermeture de la modal formuaire*/
+
+.close-bodal {
+  padding: 8px 10px;
   border: none;
-  border-bottom: white 2px solid;
-  background-color: transparent;
-  color: white;
-  /* pading-right: auto; */
-  /* text-align: left;
+  font-size: 2.5rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   cursor: pointer;
+  background-color: #DB8876;
+  color: #fff;
+}
+.bodal label {
+  display: flex;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 28px;
+ 
 }
 
-.hidden {
-  display: none;
+/* entre input */
+
+.bodal input {
+  line-height: 1.4;
+  margin-bottom: 30px;
+  width:599px;
+  height: 68px;
+  border-radius: 5px;
+  left:35px;
 }
-
-.dropdown-content .btn:last-child {
-  border-bottom: none;
-} */ 
-
-
-/*************************************************************/
-

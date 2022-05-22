@@ -11,14 +11,12 @@ function headerFactory(data) {
     const url = `${linkURL}?photographer=${id}`;
 
     article.innerHTML = ` 
-    <div class"profil">
+    <div class="profil">
     <h1>${name}</h1>
     <p class="where">${city}</p>
     <p class="tagline">${tagline}</p>
     </div>  
-    <button 
-    aria-label="close modal"
-    class="close-modal modal-trigger">contactez moi</button>
+   
     <div>
     <a href=${url}><img src=${image} alt="photo"></ a>
     </div>`;
