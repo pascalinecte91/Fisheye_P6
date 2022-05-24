@@ -1,22 +1,17 @@
 @import url("photographer.css");
 
 
-
 /**    variables  ***/
 :root {
   --lobusc: #901c1c; /* logo buttons scrawll */
   --nafi: #D3573C;   /* name  first  */
   --cico: red;       /* city country  */
-  --fw: "font-weight" 900
+
 }
-
-
 
 body {
   font-family: "DM Sans", sans-serif;
   margin: 0;
-
-
 }
 
 /* entete */
@@ -28,7 +23,6 @@ header {
   align-items: center;
   height: 90px;
 }
-
 
 h1 {
   color: var(--lobusc);
@@ -44,13 +38,11 @@ h1 {
 }
 .logo:hover, .logo:active {
   border-bottom:3px solid var(--lobusc);
-  
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
   .photograph-header article {
     flex-direction: column;
-  
   }
 
   .photograph-header {
@@ -59,6 +51,4 @@ h1 {
 
 }
 
-
-/*  */
 

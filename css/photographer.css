@@ -1,4 +1,4 @@
-/***********  SECTION ***********/
+/***********  SECTION  ACCUEIL ***********/
 
 .photographer-section {
   width: 90%;
@@ -34,7 +34,6 @@
 
 .photographer-section article .tagline {
   font-size: 1.3rem;
-
 }
 
 .photographer-section article .price {
@@ -95,11 +94,11 @@
   font-size: 24px;
   line-height: 0px;
   color: var(--cico);
-  margin-top: 15%;
+  margin-top: 7%;
 }
 
 .photograph-header h1 {
-  font-size: 40px;
+  font-size: 64px;
   color: var(--nafi);
   font-weight: 400;
 }
@@ -111,25 +110,6 @@
   width: 348px;
   height: 23px;
 }
-
-/*************   CONTACTEZ  MOI       *******/
-/*bouton dans header */
-
-.modal-trigger {
-  background-color: var(--lobusc);
-  border: none;
-  padding: 10px 25px 10px 20px;
-  color: white;
-  width: 170px;
-  height: 69px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 700;
-
-}
-
-
 
 /**********************
 gallery  section
@@ -175,7 +155,7 @@ gallery  section
   font-size: 24px;
 }
 
-.gallery-section .date  {
+.gallery-section .date {
   font-size: 12px;
 }
 
@@ -192,26 +172,24 @@ gallery  section
   border: none;
 }
 
-
+/* trier par + liste deroulante */
 .sort-form {
   display: flex;
   flex-direction: row;
-  width: 90%;
+  align-items: center;
+  width: 89%;
   margin: auto;
-  padding-top: 5%;
-  gap: 5%;
+  padding-top: 4%;
+  gap: 3%;
 }
 
 .sort-form label {
- display: flex;
-align-items: center;
   font-weight: 700;
   font-size: 18px;
   width: 100px;
   height: 23px;
-  padding-left: 30px; 
-  font-weight: 700;
-    font-size: 1.3em;
+  padding-left: 5px;
+  font-size: 18px;
 }
 
 .sort-form select {
@@ -221,20 +199,18 @@ align-items: center;
   padding: 2px;
   padding-left: 20px;
   padding-right: 20px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 23.44px;
-  font-size: 18px;
+  font-size: 1.3rem;
   cursor: pointer;
 }
 
 
 /************************  MODAL FORM    *********/
 
-  .modal-container {
+.modal-container {
   display: none;
-} 
-
-/*           */
+}
 
 *,
 ::before,
@@ -245,13 +221,22 @@ align-items: center;
 }
 
 /* bouton contactez moi */
-.bodal-btn {
+.modal-btn {
   padding: 10px 14px;
-  font-size: 28px;
+  font-size: 18px;
   margin: 100px auto;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-width: 150px;
   cursor: pointer;
+  width: 170px;
+  height: 69px;
+  background-color: var(--lobusc);
+  color: white;
+  border-radius: 5px;
+  border: none;
+  display: flex;
 }
 
 .bodal-container {
@@ -263,10 +248,12 @@ align-items: center;
   height: 100vh;
   transition: visibility 0.4s;
 }
+
 .bodal-container.active {
-  /* display: block; */
   visibility: visible;
 }
+
+/* fond de la page pour ouverture modal */
 
 .overlay {
   opacity: 0;
@@ -276,42 +263,43 @@ align-items: center;
   background: #333333d3;
   transition: opacity 0.4s 0.2s ease-out;
 }
+
 .bodal-container.active .overlay {
   opacity: 1;
-  transition: opacity 0.4s ease-out;
+  transition: opacity 0.3s ease-out;
 }
 
 .bodal {
   opacity: 0;
   width: 95%;
-  max-width: 650px;
-  height:900px;
-  padding: 250px  25px 30px 25px;
+  max-width: 669px;
+  height: 900px;
+  padding: 0px 25px 30px 25px;
   border-radius: 5px;
   background-color: #DB8876;
   border-radius: 5px;
   position: absolute;
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, calc(-50% - 50px));
-  transition: opacity 0.4s ease-out,
-  transform 0.4s ease-out;
-  
+  transition: opacity 0.3s ease-out,
+    transform 0.4s ease-out;
+
 }
 
+/* transition */
 .bodal-container.active .bodal {
   opacity: 1;
   transform: translate(-50%, -50%);
   transition: opacity 0.4s 0.2s ease-out,
-  transform 0.4s 0.2s ease-out;
+    transform 0.4s 0.2s ease-out;
 }
 
 /* croix de fermeture de la modal formuaire*/
-
 .close-bodal {
   padding: 8px 10px;
   border: none;
-  font-size: 2.5rem;
+  font-size: 3rem;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -319,21 +307,54 @@ align-items: center;
   background-color: #DB8876;
   color: #fff;
 }
+
 .bodal label {
   display: flex;
-  margin-bottom: 10px;
-  font-weight: 500;
-  font-size: 28px;
- 
+  margin-bottom: 5px;
+  font-weight: 400;
+  font-size: 36px;
+  border-radius: 5px;
 }
 
 /* entre input */
 
 .bodal input {
   line-height: 1.4;
-  margin-bottom: 30px;
-  width:599px;
-  height: 68px;
+  margin-bottom: 10px;
+  width: 599px;
+  height: 45px;
   border-radius: 5px;
-  left:35px;
+  left: 35px;
+  border:none;
+}
+
+.bodal textarea {
+  width: 597px;
+  height: 170px;
+  border-radius: 5px;
+}
+
+#nameModal{
+font-size: 64px;
+font-weight: 400;
+padding-top: 15px;
+}
+
+.bodal h2 {
+  font-size: 64px;
+  font-weight: 400;
+}
+
+.contact_button {
+  background-color: var(--lobusc);
+  width: 170px;
+  height: 69px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  font-weight: 700;
+  align-items: center;
+  margin-top: 23px;
+
 }

@@ -9,10 +9,12 @@
 // }
 
 const bodalContainer = document.querySelector(".bodal-container");
-const bodalTriggers = document.querySelectorAll(".bodal-trigger");
+const modalTriggers = document.querySelectorAll(".modal-trigger");
 
-bodalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal))
+
+ modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal))
 
 function toggleModal(){
   bodalContainer.classList.toggle("active")
+  
 }

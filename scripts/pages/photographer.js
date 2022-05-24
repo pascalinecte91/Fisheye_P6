@@ -100,7 +100,9 @@ function successPage(photographers, media, photographerId) {
       //console.log(profilHeaderModel);
       const headerCardDOM = profilHeaderModel.getHeaderCardDOM();
       // console.log(headerCardDOM);
-      profilHeaderSection.appendChild(headerCardDOM);
+      profilHeaderSection.innerHTML += headerCardDOM;
+      document.getElementById("nameModal").innerHTML= photographer.name;
+      document.getElementById("modal").addEventListener("click", toggleModal)
     }
 
       /************************************************************************** */
@@ -112,10 +114,16 @@ function successPage(photographers, media, photographerId) {
       const gallerySection = document.querySelector(".gallery-section"); 
       medias.forEach((medias) => {
         const mediaModel = galleryFactory(medias);
-        //console.dir(medias);
+        //console.log(medias);
         const mediaCardDOM = mediaModel.getMediaCardDOM();
         //console.log(mediaCardDOM)
-        gallerySection.appendChild(mediaCardDOM);
+        gallerySection.innerHTML += mediaCardDOM;
+
+        // const mediaVideoCardDOM = mediaModel.getMediaVideoCardDOM();
+        // //console.log(mediaCardDOM)
+        // gallerySection.appendChild(mediaVideoCardDOM);
+        
+        
       });
     }
     }
