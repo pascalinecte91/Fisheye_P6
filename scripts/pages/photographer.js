@@ -16,9 +16,9 @@ fetch("./data/photographers.json")
   })
 
   .catch(function (response) {
-     console.dir(response);
-    errorPage(photographerId);
-    return;
+     //console.dir(response);
+   //errorPage(photographerId);
+   return;
   });
 
 function successPage(photographers, media, photographerId) {
@@ -45,9 +45,7 @@ function successPage(photographers, media, photographerId) {
       getByDataSort(medias)
     }
     else if (type.target.value === "titre") {
-      console.log("titre") 
       getTitleSort(medias)
-
     }
   }
 
@@ -59,20 +57,18 @@ function successPage(photographers, media, photographerId) {
        if (a.title > b.title) { return 1; }
           return 0; 
      });
-
      displayMedias(medias);
     }
 
   /********************  filter by popularity  ***********/
 
     function getLikesSort(medias) {
-      //console.log(medias)
+      console.log(medias)
       medias =   medias.sort(function (a, b) {
         if (a.likes < b.likes) { return -1; }
         if (a.likes > b.likes) { return 1; }
         return 0; 
         });
-
         displayMedias(medias);
       }
 
@@ -83,7 +79,7 @@ function successPage(photographers, media, photographerId) {
     medias = medias.sort(function (a, b) {
         return new Date(a.date) - new Date(b.date);
     });
-   //  console.log(medias)
+    // console.log(medias)
       displayMedias(medias);
     }
 
@@ -105,25 +101,24 @@ function successPage(photographers, media, photographerId) {
       document.getElementById("modal").addEventListener("click", toggleModal)
     }
 
-      /************************************************************************** */
       /***********    Affichage  des medias de l ID *******************************/
-    function displayMedias(medias) {     
-    document.querySelector(".gallery-section").innerHTML=""
-      //console.log(medias)
-
+    function displayMedias(medias) {    
+      //console.log(medias); 
       const gallerySection = document.querySelector(".gallery-section"); 
       medias.forEach((medias) => {
         const mediaModel = galleryFactory(medias);
         //console.log(medias);
         const mediaCardDOM = mediaModel.getMediaCardDOM();
         //console.log(mediaCardDOM)
-        gallerySection.innerHTML += mediaCardDOM;
-
-        // const mediaVideoCardDOM = mediaModel.getMediaVideoCardDOM();
-        // //console.log(mediaCardDOM)
-        // gallerySection.appendChild(mediaVideoCardDOM);
-        
-        
+        gallerySection.innerHTML += mediaCardDOM; 
       });
+    }
+    
+  
+    function displayLightbox(medias) {
+      const lightboxSection = document.querySelector("lightbox-section");
+      const lightboxModel = lightboxFactory(medias);
+      const lightboxCardDOM = lightboxModel.getLikeboxCardDOM();
+      lightboxSection.innerHTML += lightboxCardDOM;
     }
     }

@@ -122,7 +122,7 @@ gallery  section
 }
 
 .gallery-section {
-  margin: 0px 25px 0px 25px;
+  margin: 0px 45px 0px 45px;
 }
 
 
@@ -140,7 +140,6 @@ gallery  section
 }
 
 .gallery-section p {
-  color: var(--lobusc);
   font-size: 24px;
   font-weight: 400;
   margin-bottom: 30px;
@@ -153,11 +152,15 @@ gallery  section
   flex-wrap: nowrap;
   justify-content: space-between;
   font-size: 24px;
+  font-weight: 400;
+  color: var(--lobusc);
 }
 
-.gallery-section .date {
-  font-size: 12px;
+.gallery-section .fa-heart {
+  padding-top: 5px;
+  cursor: pointer;
 }
+
 
 /*************** SORTER   filter  ***************/
 
@@ -176,7 +179,6 @@ gallery  section
 .sort-form {
   display: flex;
   flex-direction: row;
-  align-items: center;
   width: 89%;
   margin: auto;
   padding-top: 4%;
@@ -195,7 +197,6 @@ gallery  section
 .sort-form select {
   background-color: var(--lobusc);
   color: white;
-  font-family: "DM Sans", sans-serif;
   padding: 2px;
   padding-left: 20px;
   padding-right: 20px;
@@ -260,7 +261,7 @@ gallery  section
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #333333d3;
+  background: #f5eeeed3;
   transition: opacity 0.4s 0.2s ease-out;
 }
 
@@ -284,7 +285,6 @@ gallery  section
   transform: translate(-50%, calc(-50% - 50px));
   transition: opacity 0.3s ease-out,
     transform 0.4s ease-out;
-
 }
 
 /* transition */
@@ -295,7 +295,7 @@ gallery  section
     transform 0.4s 0.2s ease-out;
 }
 
-/* croix de fermeture de la modal formuaire*/
+/* croix de fermeture de la modal formulaire*/
 .close-bodal {
   padding: 8px 10px;
   border: none;
@@ -317,7 +317,6 @@ gallery  section
 }
 
 /* entre input */
-
 .bodal input {
   line-height: 1.4;
   margin-bottom: 10px;
@@ -325,7 +324,7 @@ gallery  section
   height: 45px;
   border-radius: 5px;
   left: 35px;
-  border:none;
+  border: none;
 }
 
 .bodal textarea {
@@ -334,10 +333,10 @@ gallery  section
   border-radius: 5px;
 }
 
-#nameModal{
-font-size: 64px;
-font-weight: 400;
-padding-top: 15px;
+#nameModal {
+  font-size: 64px;
+  font-weight: 400;
+  padding-top: 15px;
 }
 
 .bodal h2 {
@@ -357,4 +356,50 @@ padding-top: 15px;
   align-items: center;
   margin-top: 23px;
 
+}
+
+
+
+
+
+
+.lightbox {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+
+
+}
+
+.light-content img {
+  width: 100%;
+}
+
+.light-content {
+  width: 90%;
+  margin: auto;
+  max-width: 1000px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.lightbox.show {
+  display: initial;
+  width: 900px;
+  height: 900px;
+}
+
+.close {
+  color: white;
+  font-size: 3rem;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
 }

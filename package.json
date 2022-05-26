@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "## Démarrer le projet",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/pascalinecte91/Fisheye_P6/issues"
   },
-  "homepage": "https://github.com/pascalinecte91/Fisheye_P6#readme"
+  "homepage": "https://github.com/pascalinecte91/Fisheye_P6#readme",
+  "devDependencies": {
+    "eslint": "^8.16.0"
+  }
 }

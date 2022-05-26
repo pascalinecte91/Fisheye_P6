@@ -2,7 +2,7 @@
 
 function photographerFactory(data) {
     const { name, portrait, city, country, price, tagline, id } = data;
-  
+ 
     const image = `assets/photographers/${portrait}`;
   
     /*************    elements du DOM Accueil     *****/
