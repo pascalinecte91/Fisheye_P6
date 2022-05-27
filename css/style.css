@@ -4,7 +4,6 @@
 /**    variables  ***/
 :root {
   --lobusc: #901c1c; /* logo buttons scrawll */
-  --nafi: #D3573C;   /* name  first  */
   --cico: red;       /* city country  */
 
 }
@@ -47,8 +46,15 @@ h1 {
 
   .photograph-header {
     margin: 0;
+  }
 }
 
-}
+ .hide {
+  display: none;
+} 
 
+
+
+
+/********************************************
 

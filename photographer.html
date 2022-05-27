@@ -30,7 +30,7 @@
     <!-- SECTION FILTRES   /  SORT -->
 
     <section class="sorter">
-      <form class="sort-form"action="#" method="POST">
+      <form class="sort-form" action="#" method="POST">
         <label for="sort" tabindex="0">Trier par</label>
         <select name="sorter" id="sort-choice">
           <option value="popularité">Popularité</option>
@@ -68,15 +68,26 @@
     </div>
   </div>
 
-  <!--   CAROUSSEL  LIGHTBOX   -->
+    <!-- CAROUSEL  LIGHTBOX    -->
+   <div id="carousel" class="lightbox hide">
+    <button class="lightbox__close">&times;</button>
+    <button class="lightbox__left"><i class="fas fa-chevron-left"></i></button>
+    <button class="lightbox__right"><i class="fas fa-chevron-right"></i></button>
+    <p class="lightbox__title"></p>
+    <div class="lightbox__content">  </div>
+     
+  
+  </div>
 
-<section class="lightbox-section"></section>
  
 
+
   <!--    SCRIPT    -->
-  <script src="scripts/utils/contactForm.js"></script>
-  <script src="scripts/utils/lightbox.js"></script>
   <script src="scripts/factories/photographer.js"></script>
+  <script src="scripts/utils/modal.js"></script>
+  <script src="scripts/utils/sort.js"></script>
+  <script src="scripts/utils/lightbox.js"></script>
+  <script src="scripts/utils/event.js"></script>
   <script src="scripts/pages/photographer.js"></script>
 </body>
 

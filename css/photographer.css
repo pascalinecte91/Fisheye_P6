@@ -20,7 +20,7 @@
 }
 
 .photographer-section article h1 {
-  color: var(--nafi);
+  color: #D3573C;
   font-size: 2.2rem;
   margin-right: inherit;
 }
@@ -49,6 +49,13 @@
   text-decoration: none;
 }
 
+figcaption {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  color:var(--lobusc);
+}
 /****SECTION HEADER *****/
 
 .photograph-header {
@@ -63,7 +70,7 @@
   text-decoration: none;
 }
 
-.photograph-header div .profil {
+.photograph-header figure {
   display: flex;
   flex-direction: column;
 }
@@ -99,7 +106,7 @@
 
 .photograph-header h1 {
   font-size: 64px;
-  color: var(--nafi);
+  color: #d3573c;
   font-weight: 400;
 }
 
@@ -109,6 +116,15 @@
   font-weight: 400;
   width: 348px;
   height: 23px;
+}
+
+.photograph-header .modal-btn {
+  align-self: center;
+}
+
+.modal-btn:hover{
+  color: #312e2e;
+  background: #d3573c;
 }
 
 /**********************
@@ -154,11 +170,21 @@ gallery  section
   font-size: 24px;
   font-weight: 400;
   color: var(--lobusc);
+  
+  
 }
 
-.gallery-section .fa-heart {
+.gallery-section .fa-heart  {
   padding-top: 5px;
   cursor: pointer;
+  margin-left:5px;
+}
+.infoMedia{
+  white-space: nowrap; 
+  width: 250px; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  
 }
 
 
@@ -206,15 +232,13 @@ gallery  section
   cursor: pointer;
 }
 
-
-/************************  MODAL FORM    *********/
+/************************  MODAL FORMULAIRE    *********/
 
 .modal-container {
   display: none;
 }
 
-*,
-::before,
+*::before,
 ::after {
   box-sizing: border-box;
   margin: 0;
@@ -254,14 +278,12 @@ gallery  section
   visibility: visible;
 }
 
-/* fond de la page pour ouverture modal */
-
 .overlay {
   opacity: 0;
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #f5eeeed3;
+  background: #f5eeeed3;   /*background fond modal*/
   transition: opacity 0.4s 0.2s ease-out;
 }
 
@@ -275,8 +297,7 @@ gallery  section
   width: 95%;
   max-width: 669px;
   height: 900px;
-  padding: 0px 25px 30px 25px;
-  border-radius: 5px;
+  padding: 0px 35px 30px 35px;
   background-color: #DB8876;
   border-radius: 5px;
   position: absolute;
@@ -301,8 +322,8 @@ gallery  section
   border: none;
   font-size: 3rem;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 40px;
+  right: 25px;
   cursor: pointer;
   background-color: #DB8876;
   color: #fff;
@@ -316,32 +337,48 @@ gallery  section
   border-radius: 5px;
 }
 
+
 /* entre input */
 .bodal input {
   line-height: 1.4;
-  margin-bottom: 10px;
-  width: 599px;
-  height: 45px;
+  width: 669px;
+  height: 68px;
   border-radius: 5px;
-  left: 35px;
   border: none;
 }
 
+.bodal input:focus{
+  outline-style: solid;
+ border: 1px solid rgb(231, 100, 177);
+
+}
+
 .bodal textarea {
-  width: 597px;
+  width: 669px;
   height: 170px;
   border-radius: 5px;
+}
+.bodal textarea:focus{
+  outline-style: solid;
+  border: 1px solid rgb(231, 100, 177);
 }
 
 #nameModal {
   font-size: 64px;
   font-weight: 400;
-  padding-top: 15px;
+  margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 .bodal h2 {
   font-size: 64px;
   font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.modal h2 {
+  margin: 0px;
 }
 
 .contact_button {
@@ -355,51 +392,97 @@ gallery  section
   font-weight: 700;
   align-items: center;
   margin-top: 23px;
-
 }
 
+/******************   lightbox *******/
 
 
-
-
-
-.lightbox {
-  display: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.8);
-
-
-}
-
-.light-content img {
-  width: 100%;
-}
-
-.light-content {
-  width: 90%;
-  margin: auto;
-  max-width: 1000px;
+/*dimension de l image à l interieur de la lightbox*/
+.lightbox__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  height: 80%;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  align-items: center;
+  background-color: #FFFFFF;
+  margin-right: 50px;
+
+
 }
 
-.lightbox.show {
-  display: initial;
-  width: 900px;
-  height: 900px;
+.lightbox__content img {
+  width: 1050px;
+  height: 800px;
+  object-fit: cover;
+  margin-top:80px;
 }
 
-.close {
-  color: white;
-  font-size: 3rem;
+/*croix  dimension et emplacement*/
+
+.lightbox__close {
   position: fixed;
-  top: 10px;
-  right: 20px;
+  font-size: 6rem;
+  top: 25%;
+  right: 20%;
   cursor: pointer;
+  z-index: 12;
+  border: none;
+  background-color: white;
 }
+
+.lightbox i {
+
+  font-size: 3.5rem;
+  align-items: center;
+  border: none;
+
+}
+
+
+/* CHEVRON  GAUCHE DROIT  */
+
+.lightbox__right {
+  border: none;
+  position: fixed;
+  top: 50%;
+  right: 20%;
+  font-weight: 400;
+}
+
+.lightbox__left {
+  justify-content: right;
+  position: fixed;
+  top: 50%;
+  left: 20%;
+  border: none;
+  font-weight: 400;
+}
+
+.lightbox button {
+  position: fixed;
+  cursor: pointer;
+  color: var(--lobusc);
+  z-index: 11;
+
+  transform: scale(1.3);
+  background: transparent;
+  color: var(--lobusc);
+}
+
+.lightbox button:hover {
+  opacity: 1;
+}
+
+.lightbox__title  {
+color: var(--lobusc);
+display: flex;
+justify-content: left;
+font-weight: 400;
+font-size: 24px;
+}
+

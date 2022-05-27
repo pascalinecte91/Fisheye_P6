@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 /*******          elements partie Header profil du photographe   ******/
-function headerFactory(data) {
-  const { name, portrait, city, tagline, id } = data;
+function headerFactory(photograph) {
+  const { name, portrait, city, tagline, id } = photograph;
 
   const image = `assets/photographers/${portrait}`;
 
@@ -17,56 +18,52 @@ function headerFactory(data) {
         <button class="modal-btn modal-trigger" id="modal">Contactez moi</button>
       <div>
         <a href=${url}><img src=${image} alt="photo"></ a>
-      </div>
+    
     </article>`;
   }
-  return { name, image, getHeaderCardDOM,
-  };
+  
+  return { name, image, getHeaderCardDOM };
 }
 
 /****     elements DOM partie GALERIES    **********/
 
 function galleryFactory(data) {
   const { id, image, title, video, likes, date } = data;
-  //console.log(videos);
-  const imagesMedias = `assets/thumbnails/imagesMedias/${image}`;
-  //console.log(data);
- 
+  const imagesMedias = typeof image !== "undefined" 
+    ? `assets/thumbnails/imagesMedias/${image}`
+    : `https://picsum.photos/200/300`; // a remplacer par le chemin de l'image associé a la vidéo
 
-  function getMediaCardDOM() {
-    const linkURL = "photographer.html";
-    const url = `${linkURL}?imagesMedias=${id}`;
-    return ` 
+  const linkURL = "photographer.html";
+  const url = `${linkURL}?imagesMedias=${id}`;
+
+  return ` 
     <article>  
       <div class ="gallery-section">
-        <div>
-          <a href=${url}><img src=${imagesMedias} alt="pictures" tabindex="0"></a>
-          <p class="infoMedia"> ${title} ${likes}<i class="fa fa-solid fa-heart"></i></p>
-          <p class="date"> ${date}</p>  
-        </div>
+        <figure>
+          <img src=${imagesMedias} alt="pictures" tabindex="0" class="media" data-media="${id}">
+          <figcaption>
+          <p class="infoMedia"> ${title}</p><p>${likes}<i class="fa fa-solid fa-heart"></i></p>
+         </figcaption>
+        </figure>
       </div>
     </article>`;
-  }
-  return { getMediaCardDOM, title, image, } 
+}
 
-/***********   affichage de la lightbox   ******************/ 
+/****************************************************************************/
 
-  function lightboxFactory(data) {
-    const { id, image, title, likes, video } = data;
-    const imageLightbox = `./assets/thumbnails/${id}/${image}`;
-    const videolLightbox = `./assets/thumbnais/${id}/${video}`;
+function displayDataHeader(photographer) {
+  const profilHeaderModel = headerFactory(photographer);
+  document.querySelector(".photograph-header").innerHTML = profilHeaderModel.getHeaderCardDOM();
+  document.getElementById("nameModal").innerHTML = photographer.name;
+}
 
+/*********** Affichage  des medias de l ID *******************************/
+function displayMedias(medias) {
+  // On recreer chaque card Html stocker dans cardsDom
+  const cardsDom = medias.map((media) => {
+    return galleryFactory(media);
+  });
 
-  function getLightboxCardDOM() {
-    return ` 
-    <article>
-    <div id="modale" class="lightbox show">
-    <div class="light-content">
-      <img src="" alt="lightbox">
-    </div>
-  </div>
-  </article>`;
-  }
-  return { getLightboxCardDOM } 
-
-}}
+  // On ecrase la section des cards par la nouvelle
+  document.querySelector(".gallery-section").innerHTML = cardsDom;
+}
