@@ -1,4 +1,4 @@
-/***********  SECTION  ACCUEIL ***********/
+/***********  SECTION  ACCUEIL     ***********/
 
 .photographer-section {
   width: 90%;
@@ -6,9 +6,8 @@
   flex-wrap: wrap;
   flex-grow: 2;
   justify-content: space-around;
-  gap: 80px;
-  margin: auto;
-  margin-top: 100px;
+  gap: 95px;
+  margin: 100px 100px;
 }
 
 .photographer-section article {
@@ -21,8 +20,9 @@
 
 .photographer-section article h1 {
   color: #D3573C;
-  font-size: 2.2rem;
+  font-size: 36px;
   margin-right: inherit;
+  font-weight: 400;
 }
 
 .photographer-section article img {
@@ -33,16 +33,21 @@
 }
 
 .photographer-section article .tagline {
-  font-size: 1.3rem;
+  font-size: 10px;
+  font-weight: 400;
 }
 
 .photographer-section article .price {
-  font-size: 1rem;
+  font-size: 9px;
+  color: #757575;
+  font-weight: 400;
 }
 
 .where {
-  color: var(--cico);
-  font-size: 1.3rem;
+  color: #901C1C;
+  font-size: 13px;
+  margin-top: -20px;
+  font-weight: 400;
 }
 
 .photographer-section a {
@@ -54,9 +59,10 @@ figcaption {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
-  color:var(--lobusc);
+  color: var(--lobusc);
 }
-/****SECTION HEADER *****/
+
+/**************     SECTION HEADER    *****/
 
 .photograph-header {
   display: flex;
@@ -122,14 +128,12 @@ figcaption {
   align-self: center;
 }
 
-.modal-btn:hover{
+.modal-btn:hover {
   color: #312e2e;
   background: #d3573c;
 }
 
-/**********************
-gallery  section
-*******************/
+/**********************  SECTION  gallery     **********/
 .gallery-section {
   display: flex;
   flex-wrap: wrap;
@@ -141,9 +145,7 @@ gallery  section
   margin: 0px 45px 0px 45px;
 }
 
-
 /***  reprise maquette */
-
 .gallery-section img {
   height: 300px;
   width: 350px;
@@ -170,25 +172,24 @@ gallery  section
   font-size: 24px;
   font-weight: 400;
   color: var(--lobusc);
-  
-  
 }
 
-.gallery-section .fa-heart  {
+.gallery-section .fa-heart {
   padding-top: 5px;
   cursor: pointer;
-  margin-left:5px;
+  margin-left: 5px;
 }
-.infoMedia{
-  white-space: nowrap; 
-  width: 250px; 
+
+.infoMedia {
+  white-space: nowrap;
+  width: 250px;
   overflow: hidden;
-  text-overflow: ellipsis; 
-  
+  text-overflow: ellipsis;
 }
 
 
-/*************** SORTER   filter  ***************/
+/*************** SORTER   FILTER  
+******************************************/
 
 .sorter {
   position: relative;
@@ -232,11 +233,8 @@ gallery  section
   cursor: pointer;
 }
 
-/************************  MODAL FORMULAIRE    *********/
-
-.modal-container {
-  display: none;
-}
+/************************  MODAL FORMULAIRE    
+***************************************************/
 
 *::before,
 ::after {
@@ -264,8 +262,7 @@ gallery  section
   display: flex;
 }
 
-.bodal-container {
-  /* display: none; */
+.md-container {
   visibility: hidden;
   position: fixed;
   top: 0;
@@ -274,7 +271,7 @@ gallery  section
   transition: visibility 0.4s;
 }
 
-.bodal-container.active {
+.md-container.active {
   visibility: visible;
 }
 
@@ -283,16 +280,17 @@ gallery  section
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #f5eeeed3;   /*background fond modal*/
+  background: #f5eeeed3;
+  /*background fond modal*/
   transition: opacity 0.4s 0.2s ease-out;
 }
 
-.bodal-container.active .overlay {
+.md-container.active .overlay {
   opacity: 1;
   transition: opacity 0.3s ease-out;
 }
 
-.bodal {
+.modal {
   opacity: 0;
   width: 95%;
   max-width: 669px;
@@ -305,19 +303,19 @@ gallery  section
   left: 50%;
   transform: translate(-50%, calc(-50% - 50px));
   transition: opacity 0.3s ease-out,
-    transform 0.4s ease-out;
+  transform 0.4s ease-out;
 }
 
-/* transition */
-.bodal-container.active .bodal {
+/****** transition ********/
+.md-container.active .modal {
   opacity: 1;
   transform: translate(-50%, -50%);
   transition: opacity 0.4s 0.2s ease-out,
-    transform 0.4s 0.2s ease-out;
+  transform 0.4s 0.2s ease-out;
 }
 
-/* croix de fermeture de la modal formulaire*/
-.close-bodal {
+/******* croix de fermeture de la modal formulaire   ********/
+.close-modal {
   padding: 8px 10px;
   border: none;
   font-size: 3rem;
@@ -329,7 +327,7 @@ gallery  section
   color: #fff;
 }
 
-.bodal label {
+.modal label {
   display: flex;
   margin-bottom: 5px;
   font-weight: 400;
@@ -337,9 +335,15 @@ gallery  section
   border-radius: 5px;
 }
 
+.modal h2 {
+  font-size: 64px;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
 
-/* entre input */
-.bodal input {
+/****** entre input ******/
+.modal input {
   line-height: 1.4;
   width: 669px;
   height: 68px;
@@ -347,18 +351,18 @@ gallery  section
   border: none;
 }
 
-.bodal input:focus{
+.modal input:focus {
   outline-style: solid;
- border: 1px solid rgb(231, 100, 177);
-
+  border: 1px solid rgb(231, 100, 177);
 }
 
-.bodal textarea {
+.modal textarea {
   width: 669px;
   height: 170px;
   border-radius: 5px;
 }
-.bodal textarea:focus{
+
+.modal textarea:focus {
   outline-style: solid;
   border: 1px solid rgb(231, 100, 177);
 }
@@ -370,15 +374,11 @@ gallery  section
   margin-top: 20px;
 }
 
-.bodal h2 {
+.modal.h2 {
   font-size: 64px;
   font-weight: 400;
   margin-top: 20px;
   margin-bottom: 0px;
-}
-
-.modal h2 {
-  margin: 0px;
 }
 
 .contact_button {
@@ -394,7 +394,8 @@ gallery  section
   margin-top: 23px;
 }
 
-/******************   lightbox *******/
+/******************   lightbox
+******************************************/
 
 
 /*dimension de l image à l interieur de la lightbox*/
@@ -411,78 +412,73 @@ gallery  section
   align-items: center;
   background-color: #FFFFFF;
   margin-right: 50px;
-
-
 }
+
+/* dimension de l'image à l interieur de lightbox*/
 
 .lightbox__content img {
   width: 1050px;
   height: 800px;
   object-fit: cover;
-  margin-top:80px;
+  margin-top: 80px;
 }
 
-/*croix  dimension et emplacement*/
+.lightbox__title {
+  color: var(--lobusc);
+  display: flex;
+  justify-content: left;
+  font-weight: 400;
+  font-size: 24px;
+}
 
+
+/****************   Elements  Mouvements ************/
+
+/*  Utilities */
+.lightbox button {
+  position: fixed;
+  cursor: pointer;
+  color: var(--lobusc);
+  z-index: 11;
+  transform: scale(1.3);
+  background: transparent;
+  color: var(--lobusc);
+}
+
+/****      taille  font awesome  ******/
+.lightbox i {
+  font-size: 3.5rem;
+  align-items: center;
+  border: none;
+}
+
+/****   croix   fermer  ****/
 .lightbox__close {
   position: fixed;
   font-size: 6rem;
-  top: 25%;
-  right: 20%;
+  top: 10%;
+  right: 15%;
   cursor: pointer;
   z-index: 12;
   border: none;
   background-color: white;
 }
 
-.lightbox i {
-
-  font-size: 3.5rem;
-  align-items: center;
-  border: none;
-
-}
-
-
-/* CHEVRON  GAUCHE DROIT  */
-
-.lightbox__right {
-  border: none;
-  position: fixed;
-  top: 50%;
-  right: 20%;
-  font-weight: 400;
-}
-
+/**** chevron  gauche Previous  ****/
 .lightbox__left {
   justify-content: right;
   position: fixed;
   top: 50%;
-  left: 20%;
+  left: 15%;
   border: none;
   font-weight: 400;
 }
 
-.lightbox button {
+/***** chevron right next   *****/
+.lightbox__right {
+  border: none;
   position: fixed;
-  cursor: pointer;
-  color: var(--lobusc);
-  z-index: 11;
-
-  transform: scale(1.3);
-  background: transparent;
-  color: var(--lobusc);
+  top: 50%;
+  right: 15%;
+  font-weight: 400;
 }
-
-.lightbox button:hover {
-  opacity: 1;
-}
-
-.lightbox__title  {
-color: var(--lobusc);
-display: flex;
-justify-content: left;
-font-weight: 400;
-font-size: 24px;
-}
-

@@ -8,6 +8,7 @@ function dispatchEvent(medias) {
     function eventMediaSort(medias) {
         // Au click du trie, on refait un trie et on ecrase la section par les données triées
         document.getElementById("sort-choice").addEventListener("change", function(event) {
+           
             let type = document.querySelector("#sort-choice").value;
         
             // On trie les medias par la valeur selectionnée
@@ -30,7 +31,7 @@ function dispatchEvent(medias) {
                 // On affiche le carrousel
                 openLightBox(target);
             }
-            if (target.classList.contains('close')){
+            if (target.classList.contains('hide')){
                 closeLightBox(target);
             }
 
@@ -43,15 +44,14 @@ function dispatchEvent(medias) {
     }
 
     // evenement de la modal de contact
-    const bodalContainer = document.querySelector(".bodal-container");
+    const mdContainer = document.querySelector(".md-container");
     const modalTriggers = document.querySelectorAll(".modal-trigger");
    
     
      modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal))
     
     function toggleModal(){
-      bodalContainer.classList.toggle("active")
-      
+      mdContainer.classList.toggle("active")   
     
 }
 

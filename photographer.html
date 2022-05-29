@@ -31,7 +31,7 @@
 
     <section class="sorter">
       <form class="sort-form" action="#" method="POST">
-        <label for="sort" tabindex="0">Trier par</label>
+        <label for="sort" tabindex="1">Trier par</label>
         <select name="sorter" id="sort-choice">
           <option value="popularité">Popularité</option>
           <option value="date">Date</option>
@@ -46,12 +46,12 @@
   </main>
 
   <!-- SECTION FORMULAIRE MODAL -->
-  <div class="bodal-container">
+  <div class="md-container">
     <div class="overlay modal-trigger"></div>
-    <div class="bodal" role="dialog" aria-labelledby="bodalTitle" aria-describedby="dialogDesc">
-      <h2 class="modal">Contactez-moi</h2>
-      <h2 id="nameModal"></h2>
-      <button aria-label="close bodal" class="close-bodal modal-trigger">
+    <div class="modal" role="dialog">
+      <h2>Contactez-moi</h2>
+      <div id="nameModal"></div>
+      <button aria-label="close bodal" class="close-modal modal-trigger">
         <img src="assets/icons/close.svg" alt="croix" />
       </button>
       <form>
@@ -61,7 +61,7 @@
         <input type="text" class="text-control" id="lastName" name="last" />
         <label for="email">Email</label>
         <input type="email" class="text-control" id="email" pattern=".+@globex\.com" size="30" required />
-        <label for="text-control">Message</label>
+        <label for="text">Message</label>
         <textarea id="message" name="message"></textarea>
       </form>
       <button type="submit" class="contact_button">Envoyer</button>
@@ -70,6 +70,7 @@
 
     <!-- CAROUSEL  LIGHTBOX    -->
    <div id="carousel" class="lightbox hide">
+    <div class="lightbox-wrapper"></div>
     <button class="lightbox__close">&times;</button>
     <button class="lightbox__left"><i class="fas fa-chevron-left"></i></button>
     <button class="lightbox__right"><i class="fas fa-chevron-right"></i></button>
@@ -84,7 +85,6 @@
 
   <!--    SCRIPT    -->
   <script src="scripts/factories/photographer.js"></script>
-  <script src="scripts/utils/modal.js"></script>
   <script src="scripts/utils/sort.js"></script>
   <script src="scripts/utils/lightbox.js"></script>
   <script src="scripts/utils/event.js"></script>

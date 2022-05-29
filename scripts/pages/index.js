@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 async function getPhotographers() {
     // on recupere dans un 1er temps le contenu de la reponse HTTP
     return (

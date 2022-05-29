@@ -4,7 +4,7 @@ function displayLightBox(medias) {
 
       // On recreer chaque card Html stocker dans cardsDom
     const domLightBox = medias.map((media) => {
-        console.log(medias);
+        //console.log(medias);
         return typeof media.image !== "undefined" 
         ? `<img src="./assets/thumbnails/imagesMedias/${media.image}" alt="imagecloseup view" class="hide" data-media-lightbox="${media.id}"/>` 
         : `<video controls width="250" class="hide"><source src="./assets/thumbnails/videosMedias/${media.video}" type="video/mp4"></video>
@@ -18,9 +18,10 @@ function displayLightBox(medias) {
 
 function openLightBox(cardClicked) {
     // On affiche le carrousel
-    document.getElementById('carousel').classList.remove('hide');
 
-    // On masque toutes les images du carrousel
+    document.getElementById('carousel').classList.remove('hide');
+  
+    //On masque toutes les images autres  medias du carrousel
     document.querySelectorAll('[data-media-lightbox]').forEach((element) => {
         element.classList.add('hide')
     })
@@ -32,12 +33,12 @@ function openLightBox(cardClicked) {
     document.querySelector('[data-media-lightbox="'+ id +'"]').classList.remove('hide');
 }
 
-
 function closeLightBox() {
-    document.getElementById('carousel').classList.add('hide');
+    console.log('tititi');
+   document.getElementById('carousel').classList.add('hide');
 
-console.log('media');
-}
+    }
+
 
 function nextSlide() {
     // affiche la suivante uniquement

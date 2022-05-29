@@ -1,4 +1,6 @@
 /* eslint-disable no-undef */
+
+
 //trouve l ID  du photographer
 const request = new URLSearchParams(location.search);
 const photographerId = request.get("photographer");
