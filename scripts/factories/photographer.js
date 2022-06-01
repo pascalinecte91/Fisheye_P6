@@ -18,7 +18,7 @@ function headerFactory(photograph) {
         <button class="modal-btn modal-trigger" id="modal">Contactez moi</button>
       <div>
         <a href=${url}><img src=${image} alt="photo"></ a>
-    
+    </div>
     </article>`;
   }
   
@@ -42,7 +42,8 @@ function galleryFactory(data) {
         <figure>
           <img src=${imagesMedias} alt="pictures" tabindex="0" class="media" data-media="${id}">
           <figcaption>
-          <p class="infoMedia"> ${title}</p><p>${likes}<i class="fa fa-solid fa-heart"></i></p>
+          <p class="infoMedia"> ${title}</p>
+          <p class="numberLike" <span id="numberClic">${likes}<i class="fa fa-solid fa-heart"></i></span></p>
          </figcaption>
         </figure>
       </div>

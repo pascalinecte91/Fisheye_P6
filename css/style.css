@@ -1,4 +1,5 @@
 @import url("photographer.css");
+@import url("lightbox.css");
 
 
 /**    variables  ***/
@@ -48,6 +49,9 @@ h1 {
   display: none;
 }
 
+option[disabled] {
+  color: #c9c9c9;
+}
 /**************************    BREAKPOINTS   ********/
 
 @media only screen and (min-width : 1024px) and (max-width : 1289px) {

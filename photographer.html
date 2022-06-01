@@ -32,16 +32,19 @@
     <section class="sorter">
       <form class="sort-form" action="#" method="POST">
         <label for="sort" tabindex="1">Trier par</label>
-        <select name="sorter" id="sort-choice">
-          <option value="popularité">Popularité</option>
-          <option value="date">Date</option>
-          <option value="titre">Titre</option>
+        <select name="sorter" id="sort-choice">  
+          <option value="popularité" tabindex="0" aria-current="page">Popularité</option>
+          <option disabled="disabled">────────</option>
+          <option value="date" tabindex="0">Date</option>
+          <option disabled="disabled">────────</option>
+          <option value="titre" tabindex="0">Titre</option>
         </select>
       </form>
     </section>
 
     <!-- SECTION GALLERY -->
     <section class="gallery-section"></section>
+
 
   </main>
 
@@ -52,7 +55,7 @@
       <h2>Contactez-moi</h2>
       <div id="nameModal"></div>
       <button aria-label="close bodal" class="close-modal modal-trigger">
-        <img src="assets/icons/close.svg" alt="croix" />
+        <img src="assets/icons/arrowCloseModal.svg" alt="croix" />
       </button>
       <form>
         <label for="firstName">Prénom</label>
@@ -69,24 +72,23 @@
   </div>
 
     <!-- CAROUSEL  LIGHTBOX    -->
-   <div id="carousel" class="lightbox hide">
-    <div class="lightbox-wrapper"></div>
-    <button class="lightbox__close">&times;</button>
-    <button class="lightbox__left"><i class="fas fa-chevron-left"></i></button>
-    <button class="lightbox__right"><i class="fas fa-chevron-right"></i></button>
-    <p class="lightbox__title"></p>
-    <div class="lightbox__content">  </div>
-     
-  
+  <div id="carousel" class="lightbox hide">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">Fermer</button>
+    <button class="lightbox__next next" aria-label="next">Suivant</button>
+    <button class="lightbox__prev previous"aria-label="previous">Précédent</button>
+   
+    <div class="lightbox__content"></div>
+
   </div>
 
- 
+
 
 
   <!--    SCRIPT    -->
   <script src="scripts/factories/photographer.js"></script>
   <script src="scripts/utils/sort.js"></script>
   <script src="scripts/utils/lightbox.js"></script>
+  <script src="scripts/utils/heart.js"></script>
   <script src="scripts/utils/event.js"></script>
   <script src="scripts/pages/photographer.js"></script>
 </body>

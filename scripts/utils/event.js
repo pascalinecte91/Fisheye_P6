@@ -3,6 +3,7 @@
 function dispatchEvent(medias) {
     eventMediaSort(medias);
     eventLightBox();
+ 
    
     
     function eventMediaSort(medias) {
@@ -28,20 +29,17 @@ function dispatchEvent(medias) {
 
             // Si je clique sur une media uniquement
             if (target.classList.contains('media')) {
-                // On affiche le carrousel
+                // On affiche le carousel
                 openLightBox(target);
+                
             }
-            if (target.classList.contains('hide')){
-                closeLightBox(target);
-            }
-
-            // Si je clique sur un like
-            if (target.classList.contains('fa-heart')) {
-                console.log('like')
-                // todo incrementer ou decrementer les likes
-            }
+      
         });
+
+        document.getElementById('lightboxClose').addEventListener("click", closeLightBox)
+    
     }
+
 
     // evenement de la modal de contact
     const mdContainer = document.querySelector(".md-container");
@@ -54,5 +52,10 @@ function dispatchEvent(medias) {
       mdContainer.classList.toggle("active")   
     
 }
+
+
+    
+
+         
 
 }
