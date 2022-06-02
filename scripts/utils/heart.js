@@ -1,15 +1,21 @@
 /* eslint-disable no-unused-vars */
-
-let numberClic = 0;
+var isChecked = false;
 
 function countClics() {
-    console.log(numberClic);
-    return function() {
-        return numberClic++;
+    let currentCount = parseInt(document.getElementById('clicHeart').innerHTML);// renvoi un entier
+   
+    if (isChecked) {
+        //console.log(isChecked);
+        currentCount--;
+        isChecked = false;
+    } else {
+        //console.log(isChecked);
+        currentCount++;
+        isChecked = true;
     }
-
-
+    //console.log(typeof isChecked);
+    document.getElementById('clicHeart').innerHTML = currentCount;
 }
 
+let CountEnd = [];
 
-    

@@ -35,7 +35,6 @@ function galleryFactory(data) {
 
   const linkURL = "photographer.html";
   const url = `${linkURL}?imagesMedias=${id}`;
-
   return ` 
     <article>  
       <div class ="gallery-section">
@@ -43,7 +42,7 @@ function galleryFactory(data) {
           <img src=${imagesMedias} alt="pictures" tabindex="0" class="media" data-media="${id}">
           <figcaption>
           <p class="infoMedia"> ${title}</p>
-          <p class="numberLike" <span id="numberClic">${likes}<i class="fa fa-solid fa-heart"></i></span></p>
+          <span class="numberLike" id="clicHeart">${likes}</span><i class="fa fa-solid fa-heart"></i>
          </figcaption>
         </figure>
       </div>

@@ -9,40 +9,31 @@ fetch("./data/photographers.json")
   .then(function (response) {
     return response.json();
   })
-  //renvoi les photographes et les medias
-  .then(function (response) {
+
+  .then(function (response) { //alors renvoi des medias et des photographes
     const { photographers, media } = response;
-    successPage(photographers, media, photographerId);
+    successPage(photographers, media, photographerId); //page ok photographers, medias, identifiant
     return;
   })
   .catch(function (response) {
-    console.dir(response);
+    //console.dir(response);
     return;
 });
 
 function successPage(photographers, media, photographerId) {
-  // On récupere les infos du photographe selectionné
-  const photographer = photographers.find((photographer) => {
-    return photographer.id == photographerId;
+  
+  const photographer = photographers.find((photographer) => { // in cherche info photographer
+    return photographer.id == photographerId; // retourne  l'identifiant photographer
   });
 
-  // On isole les medias qui concerne uniquement le photographe selectionné
-  let medias = media.filter((media) => {
+  let medias = media.filter((media) => { // on filtre les medias du photographer concerné
     return media.photographerId == photographerId;
   });
 
-  // On affiche le header de la page
-  displayDataHeader(photographer);
-
-  /* Trie des cards */
-  sortMediasByType(medias)
-
-  /* Ajout du carrousel */
-  displayLightBox(medias);
-
-  /* Création des cards dans la page */
-  displayMedias(medias);
-  
-  /* déclanchement des evenements sur la page (ex: click sur un trie) */
-  dispatchEvent(medias);
+  displayDataHeader(photographer); //affichage du header du photographe
+  sortMediasByType(medias) //trie des medias par type
+  displayLightBox(medias); //affiche le carousel
+  displayMedias(medias); //affiches les medias
+  //console.log(medias);
+  dispatchEvent(medias);//declenchement des evenements
 }

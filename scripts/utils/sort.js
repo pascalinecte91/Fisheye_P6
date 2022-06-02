@@ -1,19 +1,19 @@
 /* eslint-disable no-unused-vars */
 function sortMediasByType(medias, type) {
-    if (type === "titre") {
+    if (type === "titre") { // si.... triera  par titres
         sortByTitle(medias);
     }
     else if (type === "date") {
-        sortByDate(medias)
+        sortByDate(medias) // sinon   triera par date
     }
     else {
-        sortByLike(medias);
+        sortByLike(medias); // sinon ce sera par  pop
     }
 
    function sortByTitle(medias) {
         return medias.sort(function (a, b) {
-            if (a.title < b.title) { return -1; }
-            if (a.title > b.title) { return 1; }
+            if (a.title < b.title) { return -1; } // triera par ordre alphabetique +1 ou -1 selon lettre
+            if (a.title > b.title) { return 1; } 
             return 0; 
         });
     }

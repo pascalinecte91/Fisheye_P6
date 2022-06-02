@@ -3,59 +3,56 @@
 function dispatchEvent(medias) {
     eventMediaSort(medias);
     eventLightBox();
- 
-   
-    
+    eventHeart(medias);
+
+
     function eventMediaSort(medias) {
-        // Au click du trie, on refait un trie et on ecrase la section par les données triées
-        document.getElementById("sort-choice").addEventListener("change", function(event) {
-           
+        // 
+        document.getElementById("sort-choice").addEventListener("change", function (event) {//on chang les données triees
             let type = document.querySelector("#sort-choice").value;
-        
-            // On trie les medias par la valeur selectionnée
-            sortMediasByType(medias, type)
-        
-            // On rafraichit les medias
-            displayMedias(medias);
-        
-            // On rafraichit le carrousel
-            displayLightBox(medias);
+            sortMediasByType(medias, type)//on trie par type
+            displayMedias(medias); //on relance les medias
+            displayLightBox(medias); // on lance les medias pour la lightbox
         });
     }
+
+
+//tarrgent = utilsé pour implementer
 
     function eventLightBox() {
-        document.querySelector('.gallery-section').addEventListener("click", function(event) {
+        document.querySelector('.gallery-section').addEventListener("click", function (event) {
             const target = event.target;
-
-            // Si je clique sur une media uniquement
-            if (target.classList.contains('media')) {
-                // On affiche le carousel
-                openLightBox(target);
-                
+            if (target.classList.contains('media')) {// si contient media
+                openLightBox(target);// ouverture de la lightbox
             }
-      
         });
-
         document.getElementById('lightboxClose').addEventListener("click", closeLightBox)
-    
     }
+   
 
 
     // evenement de la modal de contact
     const mdContainer = document.querySelector(".md-container");
     const modalTriggers = document.querySelectorAll(".modal-trigger");
-   
-    
-     modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal))
-    
-    function toggleModal(){
-      mdContainer.classList.toggle("active")   
-    
+    modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal))
+
+    function toggleModal() {
+        mdContainer.classList.toggle("active")
+    }
+
+
+
+    //au clic sur le coeur
+    function eventHeart() {
+        document.querySelector('.fa-heart').addEventListener("click",
+            countClics)
+    }
 }
 
-
+//     function eventHeart(medias) {
+//         const nbrLike = document.querySelectorAll (".gallery-section");
+//         console.log(nbrLike);
+//         nbrLike.forEach(nbrLike => nbrLike.addEventListener("click", countClics));
+        
     
-
-         
-
-}
+// }
