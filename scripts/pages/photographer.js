@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 
-
 //trouve l ID  du photographer
 const request = new URLSearchParams(location.search);
 const photographerId = request.get("photographer");
@@ -22,7 +21,7 @@ fetch("./data/photographers.json")
 
 function successPage(photographers, media, photographerId) {
   
-  const photographer = photographers.find((photographer) => { // in cherche info photographer
+  const photographer = photographers.find((photographer) => { // on cherche info photographer
     return photographer.id == photographerId; // retourne  l'identifiant photographer
   });
 
@@ -36,4 +35,5 @@ function successPage(photographers, media, photographerId) {
   displayMedias(medias); //affiches les medias
   //console.log(medias);
   dispatchEvent(medias);//declenchement des evenements
+  displayBanner(medias);
 }

@@ -1,21 +1,12 @@
 /* eslint-disable no-unused-vars */
-var isChecked = false;
-
-function countClics() {
-    let currentCount = parseInt(document.getElementById('clicHeart').innerHTML);// renvoi un entier
-   
-    if (isChecked) {
-        //console.log(isChecked);
-        currentCount--;
-        isChecked = false;
+function clickLike(target) {
+    let numberLike = parseInt(target.innerText); // montre le nombre de like
+    if (target.classList.contains('liked')) { // si liké
+        target.innerText = --numberLike;//  je retire 1 heart
+        target.classList.remove('liked');
     } else {
-        //console.log(isChecked);
-        currentCount++;
-        isChecked = true;
+        target.innerText = ++numberLike;  // sinon  ajout  like
+        target.classList.add('liked');
     }
-    //console.log(typeof isChecked);
-    document.getElementById('clicHeart').innerHTML = currentCount;
 }
-
-let CountEnd = [];
 

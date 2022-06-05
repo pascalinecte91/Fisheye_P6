@@ -32,7 +32,8 @@
     <section class="sorter">
       <form class="sort-form" action="#" method="POST">
         <label for="sort" tabindex="1">Trier par</label>
-        <select name="sorter" id="sort-choice">  
+        <select name="sorter" id="sort-choice">
+          <option disabled="disabled"></option>
           <option value="popularité" tabindex="0" aria-current="page">Popularité</option>
           <option disabled="disabled">────────</option>
           <option value="date" tabindex="0">Date</option>
@@ -48,40 +49,41 @@
 
   </main>
 
-  <!-- SECTION FORMULAIRE MODAL -->
+  <!--  FORMULAIRE MODAL -->
   <div class="md-container">
     <div class="overlay modal-trigger"></div>
     <div class="modal" role="dialog">
       <h2>Contactez-moi</h2>
-      <div id="nameModal"></div>
+      <div id="nameModal" aria-label="formulaire de contact"></div>
       <button aria-label="close bodal" class="close-modal modal-trigger">
-        <img src="assets/icons/arrowCloseModal.svg" alt="croix" />
+        <img src="assets/icons/arrowCloseModal.svg" alt="fermer la modal du formulaire" />
       </button>
       <form>
         <label for="firstName">Prénom</label>
-        <input type="text" class="text-control" id="firstName" name="first" />
+        <input type="text" class="text-control" aria-label="Ecrire son prénom" id="firstName" name="first" />
         <label for="lastName">Nom</label>
-        <input type="text" class="text-control" id="lastName" name="last" />
+        <input type="text" class="text-control" aria-label="Ecrire son nom de famille" id="lastName" name="last" />
         <label for="email">Email</label>
-        <input type="email" class="text-control" id="email" pattern=".+@globex\.com" size="30" required />
+        <input type="email" class="text-control" aria-label="Ecrire votre email" id="email" pattern=".+@globex\.com"
+          size="30" required />
         <label for="text">Message</label>
-        <textarea id="message" name="message"></textarea>
+        <textarea id="message" aria-label="votre message" name="message"></textarea>
       </form>
-      <button type="submit" class="contact_button">Envoyer</button>
+      <button type="submit" aria-label="cliquer pour envoyer les informations du formulaire"
+        class="contact_button">Envoyer</button>
     </div>
   </div>
-
-    <!-- CAROUSEL  LIGHTBOX    -->
+ <!--BANNIERE-->
+ <section id="banner"></section>
+  <!-- CAROUSEL  LIGHTBOX    -->
   <div id="carousel" class="lightbox hide">
     <button class="lightbox__close" id="lightboxClose" aria-label="Close">Fermer</button>
-    <button class="lightbox__next next" aria-label="next">Suivant</button>
-    <button class="lightbox__prev previous"aria-label="previous">Précédent</button>
-   
+    <button class="lightbox__next " aria-label="next">Suivant</button>
+    <button class="lightbox__prev " aria-label="previous">Précédent</button>
+
     <div class="lightbox__content"></div>
-
+    <div class="lightbox__title"></div>
   </div>
-
-
 
 
   <!--    SCRIPT    -->

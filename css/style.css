@@ -8,6 +8,9 @@
   /* logo buttons scrawll */
   --cico: red;
   /* city country  */
+  --bann: #DB8876;
+  /* banniere */
+
 
 }
 
@@ -52,6 +55,8 @@ h1 {
 option[disabled] {
   color: #c9c9c9;
 }
+
+
 /**************************    BREAKPOINTS   ********/
 
 @media only screen and (min-width : 1024px) and (max-width : 1289px) {
@@ -112,6 +117,12 @@ option[disabled] {
   .photographer-section {
     margin: 1px 35px;
   }
+
+  .gallery-section {
+    display: flex;
+    margin: 0px 5px 0px 5px;
+  }
+  
 }
 
 /****************  SMARTPHONE  ****************/

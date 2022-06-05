@@ -10,12 +10,14 @@ function headerFactory(photograph) {
     const url = `${linkURL}?photographer=${id}`;
     return ` 
     <article>
-      <div class="profil">
+      <a class="profil">
         <h1>${name}</h1>
         <p class="where">${city}</p>
         <p class="tagline">${tagline}</p>
-      </div> 
+      </a> 
+      <div class="centerButton">
         <button class="modal-btn modal-trigger" id="modal">Contactez moi</button>
+      </div>
       <div>
         <a href=${url}><img src=${image} alt="photo"></ a>
     </div>
@@ -30,23 +32,35 @@ function headerFactory(photograph) {
 function galleryFactory(data) {
   const { id, image, title, video, likes, date } = data;
   const imagesMedias = typeof image !== "undefined" 
+  // const videosMedias = typeof video !== "undefined"
     ? `assets/thumbnails/imagesMedias/${image}`
-    : `https://picsum.photos/200/300`; // a remplacer par le chemin de l'image associé a la vidéo
-
+    : `assets/thumbnails/videosMedias/${video}`; 
   const linkURL = "photographer.html";
   const url = `${linkURL}?imagesMedias=${id}`;
   return ` 
     <article>  
       <div class ="gallery-section">
+      <a href="#" class= "media" id="${id}" aria-label="ouvrir modal media">
         <figure>
           <img src=${imagesMedias} alt="pictures" tabindex="0" class="media" data-media="${id}">
+          </a>
           <figcaption>
-          <p class="infoMedia"> ${title}</p>
-          <span class="numberLike" id="clicHeart">${likes}</span><i class="fa fa-solid fa-heart"></i>
+          <p class="infoMedia">${title}</p>
+          <span class="numberLike" id="photoId-${id}">${likes}</span>
          </figcaption>
         </figure>
       </div>
     </article>`;
+    
+}
+
+function banniere(data){
+  const { price, id } = data; 
+  return `
+  <section id="banniere">
+  <span class="totalLikes">${likes}</span>
+  <p class="price">${price}€/jour</p> 
+  </section>`;
 }
 
 /****************************************************************************/
@@ -67,3 +81,9 @@ function displayMedias(medias) {
   // On ecrase la section des cards par la nouvelle
   document.querySelector(".gallery-section").innerHTML = cardsDom;
 }
+
+function displayBanner(){
+  return banniere();
+}
+document.querySelector('totalLikes').innerHTML= banniere;
+
