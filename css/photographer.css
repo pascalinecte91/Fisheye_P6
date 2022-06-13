@@ -4,73 +4,90 @@
   width: 90%;
   display: flex;
   flex-wrap: wrap;
-  flex-grow: 2;
   justify-content: space-around;
-  gap: 95px;
-  margin: 100px 100px;
+  gap: 4.375rem;
+  margin-top: 6.25rem;
+  text-align: center;
 }
 
 
 .photographer-section article {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  line-height: 30px;
+  display: block;
+  width: 25%;
+  margin-left: 5%;
 }
 
-.photographer-section article h1 {
+.photographer-section article a {
+  text-decoration: none;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+
+.photographer-section article a h2 {
   color: #D3573C;
-  font-size: 36px;
-  margin-right: inherit;
+  font-size: 2.25rem;
+  margin-bottom: 0;
   font-weight: 400;
+  transition-duration: 200ms;
+  text-align: center;
+}
+
+.photographer-section article a:hover h2 {
+  color: var(--cico);
+  font-size: 2rem;
+  font-weight: 400;
+  transition-duration: 200ms;
+  text-align: center;
+
+}
+
+.photographer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+}
+
+.photographer-content h3 {
+  text-align: center;
 }
 
 .photographer-section article img {
-  height: 220px;
-  width: 220px;
+  height: 13.75rem;
+  width: 13.75rem;
+  transform: scale(1);
+  transition-duration: 300ms;
   border-radius: 50%;
   object-fit: cover;
+  box-shadow: 0px 5px 10px 1px rgba(201, 197, 197, 0.50);
+  align-self: center;
 }
 
-.photographer-section article .tagline {
-  font-size: 10px;
-  font-weight: 400;
-}
-
-.photographer-section article .price {
+.photographer-content {
   font-size: 9px;
   color: #757575;
   font-weight: 400;
+  text-align: center;
 }
 
-.where {
-  color: #901C1C;
-  font-size: 13px;
-  margin-top: -20px;
-  font-weight: 400;
-}
 
-.photographer-section a {
-  text-decoration: none;
-}
-
-figcaption {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  color: var(--lobusc);
-}
-
-/**************     SECTION HEADER    *****/
+/**************     SECTION HEADER  one photograph    *****/
 
 .photograph-header {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   background-color: #FAFAFA;
-  height: 300px;
-  margin: 0 100px;
+  width: 95%;
+  height: 18.75rem;
+  margin: 0rem 1.875rem;
+
 }
 
 .photograph-header a {
@@ -78,14 +95,24 @@ figcaption {
   cursor: pointer;
 }
 
-.photograph-header figure {
-  display: flex;
-  flex-direction: column;
+.photograph-header h1 {
+  color: #d3573c;
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 0px;
+}
+
+.content-photograph {
+  display: block;
+  color: var(--lobusc);
+  font-size: 2rem;
+  font-weight: 400;
 }
 
 .photograph-header img {
-  height: 200px;
-  width: 200px;
+  height: 12.5rem;
+  /* 200px  */
+  width: 12.5rem;
   border-radius: 50%;
   background: #C4C4C4;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
@@ -98,17 +125,17 @@ figcaption {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
   width: 90%;
   margin: auto;
 }
 
 .photograph-header div p {
   font-weight: 400;
-  font-size: 24px;
+  font-size: 40px;
   line-height: 0px;
-  color: var(--cico);
+  color: var(--lobusc);
   margin-top: 7%;
 }
 
@@ -119,11 +146,9 @@ figcaption {
 }
 
 .photograph-header p.tagline {
-  font-size: 18px;
   color: black;
-  font-weight: 400;
-  width: 348px;
-  height: 23px;
+  padding-top: 1.25rem;
+  font-size: 1.25rem;
 }
 
 .photograph-header .modal-btn {
@@ -133,7 +158,7 @@ figcaption {
 .modal-btn:hover {
   color: #312e2e;
   background: #d3573c;
-} 
+}
 
 
 
@@ -141,43 +166,51 @@ figcaption {
 .gallery-section {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
+  gap: 10px;
+  justify-content: space-evenly;
+
 }
 
-.gallery-section {
-  margin: 0px 45px 0px 45px;
+.gallery-section article {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0%;
 }
+
+figure {
+  margin: 0px;
+  width: 95%
+}
+
+figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--lobusc);
+
+}
+
 
 /***  reprise maquette */
 .gallery-section img {
-  height: 300px;
-  width: 350px;
+  height: 18.75rem;
+  width: 21.875rem;
   object-fit: cover;
   border-radius: 5px;
-  object-position: center top;
   transform: translateY(0px) scale(1);
   transition: all 0.25s ease;
   box-shadow: 0 3px 3px rgb(0 0 0 / 10%);
 }
 
-.gallery-section p {
-  font-size: 24px;
-  font-weight: 400;
-  margin-bottom: 30px;
-  margin-top: 5px;
-  font-style: normal;
-}
-
-.gallery-section .infoMedia {
+.gallery-section .infoMedia h3 {
   display: flex;
-  flex-wrap: nowrap;
   justify-content: space-between;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 400;
   color: var(--lobusc);
   white-space: nowrap;
-  width: 250px;
+  width: 15.625rem;
+  /* 250 px*/
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -186,15 +219,31 @@ figcaption {
   padding-top: 15px;
   cursor: pointer;
   margin-left: 5px;
+  padding-left: 2%;
 }
 
+.gallery-section img:hover {
+  box-shadow: 0 3px 3px rgb(0 0 0 / 10%);
+  transform: translateY(0px) scale(1);
+  transition: all 0.25s ease;
+}
+
+
+.numberLike::after {
+  padding-left: 10px;
+  font-size: 1.375rem;
+}
 
 #clicHeart {
   padding-top: 8px;
-  font-size: 24px;
+  font-size: 1.5remx;
   margin-right: -15%;
 }
 
+.totalLikes::after {
+  padding-left: 10px;
+  font-size: 1.375rem;
+}
 
 /*************** SORTER   FILTER  
 ******************************************/
@@ -205,8 +254,8 @@ figcaption {
 
 #sort-choice {
   border-radius: 5px;
-  margin-bottom: 35px;
-  margin-left: -40px;
+  margin-bottom: 2.1875rem;
+  margin-left: -2.5rem;
   border: none;
 }
 
@@ -214,19 +263,20 @@ figcaption {
 .sort-form {
   display: flex;
   flex-direction: row;
-  width: 89%;
+  max-width: 89%;
   margin: 0 100px;
   padding-top: 4%;
-  
+
 }
 
 .sort-form label {
   font-weight: 700;
-  font-size: 18px;
-  width: 100px;
+  font-size: 1.125rem;
+  max-width: 6.25rem;
   height: 23px;
   padding-left: 5px;
-  font-size: 18px;
+  font-size: 1.125rem;
+  /*  18px  */
   margin-right: 5%;
 }
 
@@ -234,19 +284,15 @@ figcaption {
   background-color: var(--lobusc);
   color: white;
   padding: 2px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
   font-weight: 500;
   line-height: 23.44px;
   font-size: 1.3rem;
   cursor: pointer;
-  width: 170px;
+  max-width: 10.625rem;
 }
 
-/* .sort-choice:hover{
-  border: black solid 1px;
-  box-shadow: var(--box-shadow) 1px 1px 8px 0px;
-} */
 /************************  MODAL FORMULAIRE    
 ***************************************************/
 
@@ -261,13 +307,14 @@ figcaption {
 .modal-btn {
   padding: 10px 14px;
   font-size: 18px;
-  margin: 100px auto;
+  margin: 6.25rem auto;
+  /*  100px */
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 150px;
+  max-width: 9.375rem;
+  /*  150px */
   cursor: pointer;
-  max-width: 170px;
   height: 69px;
   background-color: var(--lobusc);
   color: white;
@@ -288,28 +335,19 @@ figcaption {
   visibility: visible;
 }
 
-.overlay {
-  opacity: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #f5eeeed3;
-  /*background fond modal*/
-  transition: opacity 0.4s 0.2s ease-out;
-}
 
-.md-container.active .overlay {
+
+ .md-container.active {
   opacity: 1;
   transition: opacity 0.3s ease-out;
 }
 
 .modal {
   opacity: 0;
-  width: 95%;
-  max-width: 669px;
-  height: 90%;
-  padding: 0px 35px 30px 35px;
-  background-color:var(--bann);
+  max-width: 42rem;
+  height: 50rem;
+  padding: 0rem 2.187rem 1.875rem 2.187rem;
+  background-color: var(--bann);
   border-radius: 5px;
   position: absolute;
   top: 50%;
@@ -324,16 +362,16 @@ figcaption {
   opacity: 1;
   transform: translate(-50%, -50%);
   transition: opacity 0.4s 0.2s ease-out,
-  transform 0.4s 0.2s ease-out;
+    transform 0.4s 0.2s ease-out;
 }
 
 /******* croix de fermeture de la modal formulaire   ********/
 .close-modal {
   padding: 8px 10px;
   border: none;
-  font-size: 3rem;
+  font-size: 2.625rem;
   position: absolute;
-  top: 40px;
+  top: 2.5rem;
   right: 25px;
   cursor: pointer;
   background-color: var(--bann);
@@ -344,22 +382,31 @@ figcaption {
   display: flex;
   margin-bottom: 5px;
   font-weight: 400;
-  /*font-size: 36px;*/
   border-radius: 5px;
+  font-size: 1.2rem;
 }
 
-.modal h2 {
-  /*font-size: 64px;*/
+.modal h1 {
+  font-size: 3rem;
   font-weight: 400;
-  margin-top: 20px;
+  margin-top: 3rem;
   margin-bottom: 0px;
+  color: black;
 }
 
-/****** entre input ******/
+/*  interieur de l input & textarea */
+.text-control {
+  font-size: 1.8rem;
+}
+
+#message {
+  font-size: 1.8rem;
+}
+
+/*   entre input    */
 .modal input {
-  line-height: 1.4;
-  width: 669px;
-  /*height: 68px;*/
+  width: 100%;
+  height: 2.2rem;
   border-radius: 5px;
   border: none;
 }
@@ -370,8 +417,8 @@ figcaption {
 }
 
 .modal textarea {
-  width: 669px;
-  height: 170px;
+ width: 100%;
+  height: 6rem;
   border-radius: 5px;
 }
 
@@ -381,63 +428,69 @@ figcaption {
 }
 
 #nameModal {
-  font-size: 64px;
+  font-size: 4rem;
+  /* 64px*/
   font-weight: 400;
   margin-bottom: 10px;
-  margin-top: 20px;
+  margin-top: 1.25rem;
+  /*  20px  */
 }
 
 .modal.h2 {
-  font-size: 64px;
+  font-size: 4rem;
   font-weight: 400;
-  margin-top: 20px;
+  margin-top: 1.25rem;
   margin-bottom: 0px;
 }
 
 .contact_button {
   background-color: var(--lobusc);
-  width: 170px;
-  height: 69px;
+  width: 10.625rem;
+  height: 4.31rem;
   border: none;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 1.125rem;
+  /* 18px*/
   color: white;
   font-weight: 700;
   align-items: center;
-  margin-top: 23px;
+  margin-top: 1rem;
+  /* 23px*/
 }
 
 /*-------   LIKES   ------- */
 
-.numberLike::after{
-  font-family: "Font Awesome 5 Free"; 
+.numberLike::after {
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f004";
-  font-size: 24px;
+  font-size: 1.25rem;
   cursor: pointer;
 }
 
 .numberLike {
-  font-size: 24px;
+  font-size: 1.25rem;
+  /*   24px  */
 }
 
 figcaption span {
   align-content: center;
 }
 
-#banner {
+.bannerLikes {
   display: flex;
   align-items: center;
   background-color: var(--bann);
-  width: 320px;
-  height: 70px;
+  width: 23.35rem;
+  height: 4.5rem;
   position: fixed;
   z-index: 1;
   border-radius: 5px;
   bottom: 0;
- right: 10%;
+  right: 0%;
 }
 
-#banner i {
-  font-size: 22px;
+.bannerLikes i {
+  font-size: 1.375rem;
+  /*  22px */
 }

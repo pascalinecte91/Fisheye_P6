@@ -14,10 +14,10 @@ function photographerFactory(data) {
       const url = `${linkURL}?photographer=${id}`;
       article.innerHTML = `
           <a href=${url}><img src=${image} alt="photo">
-            <h1 class="photographer-detail">${name}</h1>
+            <h2>${name}</h2>
           </a>
-          <div>
-            <p class="where">${country}/${city} </p>
+          <div class="photographer-content>
+            <h3>${country}/${city} </h3>
             <p class="tagline">${tagline}</p>
             <p class="price">${price}€/jour</p>
           </div>`;

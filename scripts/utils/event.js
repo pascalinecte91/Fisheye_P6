@@ -40,8 +40,8 @@ function dispatchEvent(medias) {
     // evenement de la modal de contact
     function eventModalForm() {
         const mdContainer = document.querySelector(".md-container");
-        const modalTriggers = document.querySelectorAll(".modal-trigger");
-        modalTriggers.forEach(trigger => trigger.addEventListener("click", function () {
+        const closed = document.querySelectorAll(".closed");
+       closed.forEach(trigger => trigger.addEventListener("click", function () {
             mdContainer.classList.toggle("active")
         }))
     }

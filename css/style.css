@@ -19,6 +19,10 @@ body {
   margin: 0;
 }
 
+main {
+  padding-bottom: 5%;
+}
+
 /* entete */
 
 header {
@@ -26,19 +30,23 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 90px;
+  height: 5.625rem
+    /* 90px*/
+  ;
 }
 
 h1 {
   color: var(--lobusc);
-  margin-right: 100px;
+  margin-right: 6.25rem;
+  /*100px */
   font-weight: 400;
   margin-top: 3px;
 }
 
 .logo {
-  width: 155px;
-  margin-left: 100px;
+  width: 9.6875rem;
+  height: 3.125rem;
+  margin-left: 6.25rem;
   padding-bottom: 5px;
   border-bottom: 3px solid white;
 }
@@ -59,10 +67,12 @@ option[disabled] {
 
 /**************************    BREAKPOINTS   ********/
 
+
 @media only screen and (min-width : 1024px) and (max-width : 1289px) {
   .photographer-section {
-    margin: 100px 60px;
+    margin: 6.25rem 3.75rem;
   }
+
 }
 
 /***********************   TABLETS LANDSCAPE   *********/
@@ -72,35 +82,53 @@ option[disabled] {
   .photographer-section {
     width: 90%;
     justify-content: space-around;
-    margin: 0px 45px;
-    gap: 1px;
+    margin: 2%;
+    gap: 2%;
   }
 
+  .modal h1 {
+    font-size: 3rem;
+  }
+
+  .close-modal {
+    font-size: 2rem;
+    top: 0.5rem;
+  }
+
+  .modal input {
+
+    height: 2rem;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .modal-btn {
+    margin-right: 13%;
+  }
 
   /*********************  TABLETS PORTRAIT   *************/
 
   @media only screen and (min-width : 480.99px) and (max-width : 768px) {}
 
   main {
-    padding-left: 40px;
+    padding-left: 2.5rem;
+    /* 40px*/
   }
 
-  header {
-    flex-direction: column;
-    align-content: center;
-    margin-top: 20px;
-
-  }
 
   h1 {
     align-content: center;
-    margin-right: -55px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-bottom: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .close-modal {
+    font-size: 2rem;
+    top: 2.5rem;
   }
 
   .photographer-section article img {
-    margin-top: 50px;
+    margin-top: 3.125rem;
   }
 
   .photographer-section article .tagline {
@@ -114,46 +142,52 @@ option[disabled] {
     font-weight: 400;
   }
 
-  .photographer-section {
-    margin: 1px 35px;
-  }
-
-  .gallery-section {
-    display: flex;
-    margin: 0px 5px 0px 5px;
-  }
-  
 }
+  /****************  SMARTPHONE  ****************/
 
-/****************  SMARTPHONE  ****************/
+  @media only screen and (min-width : 320px) and (max-width : 480px) {
+    .photograph-header article {
+      flex-direction: column;
+    }
 
-@media only screen and (min-width : 320px) and (max-width : 480px) {
-  .photograph-header article {
-    flex-direction: column;
+    .photograph-header {
+      margin: 0;
+    }
+
+    .photographer-section {
+      flex-direction: column;
+      align-content: center;
+      width: 100%;
+      gap: 0;
+    }
+
+    h1 {
+      margin-left: 23%;
+    }
+
+    .logo {
+      margin-left: 70%;
+    }
+
+    header {
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .lightbox__close,
+    .lightbox__next,
+    .lightbox__prev {
+      width: 1.2rem;
+    }
+
+    .lightbox button {
+      right: 12%;
+    }
+
+    #nameModal {
+      font-size: 2rem;
+    }
+ 
   }
 
-  .photograph-header {
-    margin: 0;
-  }
-
-  header {
-    flex-direction: column;
-    align-content: center;
-    margin-top: 20px;
-    margin-left: 25px;
-  }
-
-  .photographer-section {
-    margin: 50px 20px;
-  }
-
-  h1 {
-    margin: 15px;
-  }
-
-  .logo {
-    margin-left: 15px;
-  }
-}
-
-/********************************************
+  /********************************************

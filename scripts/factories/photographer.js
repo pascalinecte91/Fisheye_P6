@@ -12,12 +12,12 @@ function headerFactory(photograph) {
     <article>
       <a class="profil">
         <h1>${name}</h1>
-        <p class="where">${city}</p>
-        <p class="tagline">${tagline}</p>
+        <div class="content-photograph">
+        <p class="where" aria-label="Pays du photographe" alt="Pays du photographe" tabindex="0">${city}</p>
+        <p class="tagline" aria-label="phrase du photographe" alt="phrase du photographe" tabindex="0">${tagline}</p>
+        </div>
       </a> 
-      <div class="centerButton">
-        <button class="modal-btn modal-trigger" id="modal">Contactez moi</button>
-      </div>
+        <button class="modal-btn closed" id="modal">Contactez moi</button>
       <div>
         <a href=${url}><img src=${image} alt="photo"></ a>
     </div>
@@ -35,8 +35,7 @@ function galleryFactory(data) {
   // const videosMedias = typeof video !== "undefined"
     ? `assets/thumbnails/imagesMedias/${image}`
     : `assets/thumbnails/videosMedias/${video}`; 
-  const linkURL = "photographer.html";
-  const url = `${linkURL}?imagesMedias=${id}`;
+
   return ` 
     <article>  
       <div class ="gallery-section">
@@ -45,8 +44,8 @@ function galleryFactory(data) {
           <img src=${imagesMedias} alt="pictures" tabindex="0" class="media" data-media="${id}">
           </a>
           <figcaption>
-          <p class="infoMedia">${title}</p>
-          <span class="numberLike" id="photoId-${id}">${likes}</span>
+          <h3 class="infoMedia">${title}</h3>
+          <span class="numberLike">${likes}</span>
          </figcaption>
         </figure>
       </div>
@@ -54,13 +53,15 @@ function galleryFactory(data) {
     
 }
 
-function banniere(data){
-  const { price, id } = data; 
-  return `
-  <section id="banniere">
-  <span class="totalLikes">${likes}</span>
-  <p class="price">${price}€/jour</p> 
-  </section>`;
+function bannerFactory(data){
+  const { price, id, likes } = data; 
+  return ` 
+  <article>
+  <div class="bannerLikes">
+  <span class="numberLike">${likes}/${price}€/jour</span>
+  </div>
+  </article>`;
+ 
 }
 
 /****************************************************************************/
@@ -76,14 +77,16 @@ function displayMedias(medias) {
   // On recreer chaque card Html stocker dans cardsDom
   const cardsDom = medias.map((media) => {
     return galleryFactory(media);
+   
   });
-
   // On ecrase la section des cards par la nouvelle
   document.querySelector(".gallery-section").innerHTML = cardsDom;
 }
 
-function displayBanner(){
-  return banniere();
+/************************************************************************** */
+function displayBanner(medias) {
+  const infoMedias = bannerFactory(medias);
+  console.log(infoMedias);
+  document.querySelector(".bannerLikes").innerHTML = infoMedias;
+  document.querySelector('span').innerHTML = medias.likes
 }
-document.querySelector('totalLikes').innerHTML= banniere;
-

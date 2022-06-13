@@ -33,7 +33,8 @@ function successPage(photographers, media, photographerId) {
   sortMediasByType(medias) //trie des medias par type
   displayLightBox(medias); //affiche le carousel
   displayMedias(medias); //affiches les medias
-  //console.log(medias);
+ // console.log(medias);
   dispatchEvent(medias);//declenchement des evenements
-  displayBanner(medias);
+  showTotalLikes();
+ 
 }

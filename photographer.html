@@ -51,11 +51,10 @@
 
   <!--  FORMULAIRE MODAL -->
   <div class="md-container">
-    <div class="overlay modal-trigger"></div>
     <div class="modal" role="dialog">
-      <h2>Contactez-moi</h2>
+      <h1>Contactez-moi</h1>
       <div id="nameModal" aria-label="formulaire de contact"></div>
-      <button aria-label="close bodal" class="close-modal modal-trigger">
+      <button aria-label="fermer la fenêtre" class="close-modal closed">
         <img src="assets/icons/arrowCloseModal.svg" alt="fermer la modal du formulaire" />
       </button>
       <form>
@@ -73,17 +72,19 @@
         class="contact_button">Envoyer</button>
     </div>
   </div>
- <!--BANNIERE-->
- <section id="banner"></section>
-  <!-- CAROUSEL  LIGHTBOX    -->
-  <div id="carousel" class="lightbox hide">
-    <button class="lightbox__close" id="lightboxClose" aria-label="Close">Fermer</button>
-    <button class="lightbox__next " aria-label="next">Suivant</button>
-    <button class="lightbox__prev " aria-label="previous">Précédent</button>
+  <!--BANNIERE-->
+  <section class="bannerLikes"></section>
 
-    <div class="lightbox__content"></div>
-    <div class="lightbox__title"></div>
-  </div>
+  <!-- CAROUSEL  LIGHTBOX    -->
+  <section id="carousel" class="lightbox hide">
+    <button class="lightbox__close" id="lightboxClose" tabindex="0" aria-label="fermer le carousel">Fermer</button>
+    <button class="lightbox__next "tabindex="0" aria-label="vers image suivante">Suivant</button>
+    <button class="lightbox__prev " tabindex="0" aria-label="vers image précédente">Précédent</button>
+   
+    <div class="lightbox__content" tabindex="0"></div>
+    <div class="lightbox__title" tabindex="0"></div>
+  
+  </section>
 
 
   <!--    SCRIPT    -->
