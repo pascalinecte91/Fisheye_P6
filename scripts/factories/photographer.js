@@ -87,6 +87,6 @@ function displayMedias(medias) {
 function displayBanner(medias) {
   const infoMedias = bannerFactory(medias);
   console.log(infoMedias);
-  document.querySelector(".bannerLikes").innerHTML = infoMedias;
-  document.querySelector('span').innerHTML = medias.likes
+ 
+  document.querySelector('bannerLikes').innerHTML = medias.likes
 }
