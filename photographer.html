@@ -51,7 +51,7 @@
 
   <!--  FORMULAIRE MODAL -->
   <div class="md-container">
-    <div class="modal" role="dialog">
+    <div class="modal" aria-label ="window" role="dialog">
       <h1>Contactez-moi</h1>
       <div id="nameModal" aria-label="formulaire de contact"></div>
       <button aria-label="fermer la fenêtre" class="close-modal closed">
@@ -66,17 +66,17 @@
         <input type="email" class="text-control" aria-label="Ecrire votre email" id="email" pattern=".+@globex\.com"
           size="30" required />
         <label for="text">Message</label>
-        <textarea id="message" aria-label="votre message" name="message"></textarea>
+        <textarea id="message" aria-label="votre message" id="text" name="message"></textarea>
       </form>
       <button type="submit" aria-label="cliquer pour envoyer les informations du formulaire"
         class="contact_button">Envoyer</button>
     </div>
   </div>
   <!--BANNIERE-->
-  <section class="bannerLikes"></section>
+  <section class="bannerLikes-section"></section>
 
   <!-- CAROUSEL  LIGHTBOX    -->
-  <section id="carousel" class="lightbox hide">
+  <section id="carousel" class="lightbox hide " aria-label ="window">
     <button class="lightbox__close" id="lightboxClose" tabindex="0" aria-label="fermer le carousel">Fermer</button>
     <button class="lightbox__next "tabindex="0" aria-label="vers image suivante">Suivant</button>
     <button class="lightbox__prev " tabindex="0" aria-label="vers image précédente">Précédent</button>

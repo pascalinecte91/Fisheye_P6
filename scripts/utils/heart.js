@@ -18,8 +18,12 @@ function showTotalLikes() {
     let totalLikes = 0;
     allLikes.forEach(e => {
         totalLikes += parseInt(e.innerHTML); // me renvoi un entier de tous les span
-        
+
     })
-     console.log(totalLikes); // renvoi  le total de tous  les heart du photographe
+
+    const likesBanner = document.querySelector(".bannerLikes-section");
+    likesBanner.innerHTML = totalLikes
+
+
 
 }

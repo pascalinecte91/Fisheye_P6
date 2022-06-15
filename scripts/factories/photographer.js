@@ -32,7 +32,6 @@ function headerFactory(photograph) {
 function galleryFactory(data) {
   const { id, image, title, video, likes, date } = data;
   const imagesMedias = typeof image !== "undefined" 
-  // const videosMedias = typeof video !== "undefined"
     ? `assets/thumbnails/imagesMedias/${image}`
     : `assets/thumbnails/videosMedias/${video}`; 
 
@@ -42,6 +41,7 @@ function galleryFactory(data) {
       <a href="#" class= "media" id="${id}" aria-label="ouvrir modal media">
         <figure>
           <img src=${imagesMedias} alt="pictures" tabindex="0" class="media" data-media="${id}">
+        
           </a>
           <figcaption>
           <h3 class="infoMedia">${title}</h3>
@@ -57,13 +57,12 @@ function bannerFactory(data){
   const { price, id, likes } = data; 
   return ` 
   <article>
-  <div class="bannerLikes">
-  <span class="numberLike">${likes}/${price}€/jour</span>
+  <div class="bannerLikes-section">
+  <span class="numberLike">${likes} class="price"/${price}€/jour</span>
   </div>
   </article>`;
- 
 }
-
+  
 /****************************************************************************/
 
 function displayDataHeader(photographer) {
@@ -81,12 +80,9 @@ function displayMedias(medias) {
   });
   // On ecrase la section des cards par la nouvelle
   document.querySelector(".gallery-section").innerHTML = cardsDom;
+
 }
 
 /************************************************************************** */
-function displayBanner(medias) {
-  const infoMedias = bannerFactory(medias);
-  console.log(infoMedias);
- 
-  document.querySelector('bannerLikes').innerHTML = medias.likes
-}
+
+

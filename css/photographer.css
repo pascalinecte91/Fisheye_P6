@@ -187,6 +187,7 @@ figcaption {
   justify-content: space-between;
   align-items: center;
   color: var(--lobusc);
+  font-size: 1.1rem;
 
 }
 
@@ -200,6 +201,7 @@ figcaption {
   transform: translateY(0px) scale(1);
   transition: all 0.25s ease;
   box-shadow: 0 3px 3px rgb(0 0 0 / 10%);
+  object-position: 70% 55%;
 }
 
 .gallery-section .infoMedia h3 {
@@ -215,12 +217,6 @@ figcaption {
   text-overflow: ellipsis;
 }
 
-.gallery-section .fa-heart {
-  padding-top: 15px;
-  cursor: pointer;
-  margin-left: 5px;
-  padding-left: 2%;
-}
 
 .gallery-section img:hover {
   box-shadow: 0 3px 3px rgb(0 0 0 / 10%);
@@ -239,6 +235,8 @@ figcaption {
   font-size: 1.5remx;
   margin-right: -15%;
 }
+
+
 
 .totalLikes::after {
   padding-left: 10px;
@@ -468,16 +466,15 @@ figcaption {
   cursor: pointer;
 }
 
-.numberLike {
-  font-size: 1.25rem;
-  /*   24px  */
-}
+
 
 figcaption span {
   align-content: center;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
-.bannerLikes {
+.bannerLikes-section {
   display: flex;
   align-items: center;
   background-color: var(--bann);
@@ -488,9 +485,10 @@ figcaption span {
   border-radius: 5px;
   bottom: 0;
   right: 0%;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding-left: 15px;
 }
 
-.bannerLikes i {
-  font-size: 1.375rem;
-  /*  22px */
-}
+
+
