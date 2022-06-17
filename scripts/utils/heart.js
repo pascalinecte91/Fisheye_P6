@@ -13,14 +13,13 @@ function clickLike(target) {
 }
 
 function showTotalLikes() {
-    let allLikes = document.querySelectorAll('.numberLike'); //recupere tous les likes 
-    // console.log(allLikes);
+    let allLikes = document.querySelectorAll('.numberLike'); //recupere tous les likes de la page 
+     //console.log(allLikes);
     let totalLikes = 0;
     allLikes.forEach(e => {
-        totalLikes += parseInt(e.innerHTML); // me renvoi un entier de tous les span
-
+        totalLikes += parseInt(e.innerHTML); // me renvoi un entier de tous les span (additionne)
+    // console.log(totalLikes);
     })
-
     const likesBanner = document.querySelector(".bannerLikes-section");
     likesBanner.innerHTML = totalLikes
 

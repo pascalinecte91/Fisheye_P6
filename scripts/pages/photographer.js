@@ -35,6 +35,6 @@ function successPage(photographers, media, photographerId) {
   displayMedias(medias); //affiches les medias
  // console.log(medias);
   dispatchEvent(medias);//declenchement des evenements
-  showTotalLikes();
- 
+  
+
 }

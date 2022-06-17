@@ -53,22 +53,22 @@
   <div class="md-container">
     <div class="modal" aria-label ="window" role="dialog">
       <h1>Contactez-moi</h1>
-      <div id="nameModal" aria-label="formulaire de contact"></div>
+      <div id="nameModal" aria-labelledby="Contact me"></div>
       <button aria-label="fermer la fenêtre" class="close-modal closed">
         <img src="assets/icons/arrowCloseModal.svg" alt="fermer la modal du formulaire" />
       </button>
       <form>
         <label for="firstName">Prénom</label>
-        <input type="text" class="text-control" aria-label="Ecrire son prénom" id="firstName" name="first" />
+        <input type="text" class="text-control" aria-labelledby="firstName" id="firstName" name="first" />
         <label for="lastName">Nom</label>
-        <input type="text" class="text-control" aria-label="Ecrire son nom de famille" id="lastName" name="last" />
+        <input type="text" class="text-control" aria-labelledby="lastName" id="lastName" name="last" />
         <label for="email">Email</label>
-        <input type="email" class="text-control" aria-label="Ecrire votre email" id="email" pattern=".+@globex\.com"
+        <input type="email" class="text-control" aria-labelledby="email" id="email" pattern=".+@globex\.com"
           size="30" required />
         <label for="text">Message</label>
-        <textarea id="message" aria-label="votre message" id="text" name="message"></textarea>
+        <textarea id="message" aria-labelledby="your message" id="text" name="message"></textarea>
       </form>
-      <button type="submit" aria-label="cliquer pour envoyer les informations du formulaire"
+      <button type="submit" aria-label="send"
         class="contact_button">Envoyer</button>
     </div>
   </div>

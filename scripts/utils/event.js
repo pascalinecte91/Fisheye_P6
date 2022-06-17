@@ -45,7 +45,6 @@ function dispatchEvent(medias) {
             }
             else if (e.key == "ArrowLeft") { // code fleche de droite previous
                 previousSlide();
-
             }
             if (e.key == "Escape") { // code X  pour fermer
                 closeLightBox();
@@ -70,8 +69,10 @@ function dispatchEvent(medias) {
         }))
     }
  
+    // evenement pour la modale formulaire
     function keyboardModal() {
-            if (e.key == "Enter") { 
+       // cobsole.log(e.key);
+            if (e.key == "Enter") { // touche clavier "enter"  ouvre et ferme la modale
               if(DOM.closeModal.classList('closed')) return e =>
             validate(e)
         }

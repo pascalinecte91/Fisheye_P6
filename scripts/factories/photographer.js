@@ -2,7 +2,6 @@
 /*******          elements partie Header profil du photographe   ******/
 function headerFactory(photograph) {
   const { name, portrait, city, tagline, id } = photograph;
-
   const image = `assets/photographers/${portrait}`;
 
   function getHeaderCardDOM() {
@@ -38,7 +37,7 @@ function galleryFactory(data) {
   return ` 
     <article>  
       <div class ="gallery-section">
-      <a href="#" class= "media" id="${id}" aria-label="ouvrir modal media">
+      <a href="#" class= "media" id="${id}" aria-label="ouvrir la media">
         <figure>
           <img src=${imagesMedias} alt="pictures" tabindex="0" class="media" data-media="${id}">
         
@@ -58,7 +57,7 @@ function bannerFactory(data){
   return ` 
   <article>
   <div class="bannerLikes-section">
-  <span class="numberLike">${likes} class="price"/${price}€/jour</span>
+  <span class="allLike">${likes} class="price"/${price}€/jour</span>
   </div>
   </article>`;
 }
@@ -80,9 +79,12 @@ function displayMedias(medias) {
   });
   // On ecrase la section des cards par la nouvelle
   document.querySelector(".gallery-section").innerHTML = cardsDom;
-
 }
 
 /************************************************************************** */
+// function displayBanner(data) {
+//  const infoBanner = bannerFactory(data);
+//  console.log(bannerFactory);
+// }
 
-
+// document.querySelector(".bannerLikes-section").innerHTML = infoBanner;
