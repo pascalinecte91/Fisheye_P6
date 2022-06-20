@@ -31,9 +31,8 @@
 
     <section class="sorter">
       <form class="sort-form" action="#" method="POST">
-        <label for="sort" tabindex="1">Trier par</label>
+        <label for="sort" id="sort">Trier par</label>
         <select name="sorter" id="sort-choice">
-          <option disabled="disabled"></option>
           <option value="popularité" tabindex="0" aria-current="page">Popularité</option>
           <option disabled="disabled">────────</option>
           <option value="date" tabindex="0">Date</option>
@@ -46,16 +45,15 @@
     <!-- SECTION GALLERY -->
     <section class="gallery-section"></section>
 
-
   </main>
 
   <!--  FORMULAIRE MODAL -->
   <div class="md-container">
-    <div class="modal" aria-label ="window" role="dialog">
+    <div class="modal" aria-label="window" role="dialog">
       <h1>Contactez-moi</h1>
-      <div id="nameModal" aria-labelledby="Contact me"></div>
+      <div id="nameModal"></div>
       <button aria-label="fermer la fenêtre" class="close-modal closed">
-        <img src="assets/icons/arrowCloseModal.svg" alt="fermer la modal du formulaire" />
+        <img src="assets/icons/arrowCloseModal.svg" alt="Croix fermeture modal" />
       </button>
       <form>
         <label for="firstName">Prénom</label>
@@ -63,27 +61,30 @@
         <label for="lastName">Nom</label>
         <input type="text" class="text-control" aria-labelledby="lastName" id="lastName" name="last" />
         <label for="email">Email</label>
-        <input type="email" class="text-control" aria-labelledby="email" id="email" pattern=".+@globex\.com"
-          size="30" required />
-        <label for="text">Message</label>
-        <textarea id="message" aria-labelledby="your message" id="text" name="message"></textarea>
+        <input type="email" class="text-control" aria-labelledby="email" id="email" pattern=".+@globex\.com" size="30"
+          required />
+        <label for="message" tabindex="0">Message</label>
+        <textarea class="text-control" aria-labelledby="message" id="message" name="message"></textarea>
       </form>
-      <button type="submit" aria-label="send"
-        class="contact_button">Envoyer</button>
+      <button type="submit" aria-label="send" class="contact_button">Envoyer</button>
     </div>
   </div>
   <!--BANNIERE-->
-  <section class="bannerLikes-section"></section>
+  <section class="bannerLikes-section hide">
+    <span id="totalLike"></span>
+    <div>
+    <span id="photographerPrice"></span>
+    <span class="allLike">€ / jour</span></div>
+  </section>
 
   <!-- CAROUSEL  LIGHTBOX    -->
-  <section id="carousel" class="lightbox hide " aria-label ="window">
+  <section id="carousel" class="lightbox hide " aria-label="window">
     <button class="lightbox__close" id="lightboxClose" tabindex="0" aria-label="fermer le carousel">Fermer</button>
-    <button class="lightbox__next "tabindex="0" aria-label="vers image suivante">Suivant</button>
-    <button class="lightbox__prev " tabindex="0" aria-label="vers image précédente">Précédent</button>
-   
+    <button class="lightbox__next" tabindex="0" aria-label="vers image suivante">Suivant</button>
+    <button class="lightbox__prev" tabindex="0" aria-label="vers image précédente">Précédent</button>
     <div class="lightbox__content" tabindex="0"></div>
     <div class="lightbox__title" tabindex="0"></div>
-  
+
   </section>
 
 

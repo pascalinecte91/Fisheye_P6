@@ -2,21 +2,23 @@
 function displayLightBox(medias) {
     // On recreer chaque card Html stocker dans cardsDom
     const domLightBox = medias.map((media) => {
-        document.querySelector('.lightbox__title').innerHTML = media.title;
-        //console.log(media.title);
+        document.querySelector(".lightbox__title").innerHTML = media.title;
         return typeof media.image !== "undefined"
             ? `<img src="./assets/thumbnails/imagesMedias/${media.image}" alt="imagecloseup view" class="slide hide" data-media-lightbox="${media.id}"/>`
-            : `<video controls" class="slide hide"><source src="./assets/thumbnails/videosMedias/${media.video}" alt="videos" class=" type="video/mp4"></video>`;
+            : `<video controls" class="slide hide" data-media-lightbox="${media.id}"/><source src="./assets/thumbnails/videosMedias/${media.video}" alt="videos" class=" type="video/mp4"></video>`;
     })
-    document.querySelector(".lightbox__content").innerHTML = domLightBox.join("");//("") supprimer les , d'un array
+    document.querySelector(".lightbox__content").innerHTML = domLightBox.join('');//("") supp, d'un array
+
 }
 
 function openLightBox(cardClicked) {
-    //console.log('carousel');
-    document.getElementById('carousel').classList.remove('hide');  // OUVRE lightbox en supprimant le hide
+
+    document.getElementById('carousel').classList.remove('hide');  // OUVRE LB en supprimant le hide
     hideAllMedia();
-    let id = cardClicked.dataset['media'];    // On trouve la data-media qui identifie la media
-    document.querySelector('[data-media-lightbox="' + id + '"]').classList.remove('hide');// on l'affiche en suppr le hide
+    let id = cardClicked.dataset['media']; //trouve la data-media qui identifie la media
+    console.log(cardClicked);
+    console.log('[data-media-lightbox="' + id + '"]');
+    document.querySelector('[data-media-lightbox="' + id + '"]').classList.remove('hide');//affiche en suppr le hide
 }
 
 function hideAllMedia() {
@@ -26,12 +28,12 @@ function hideAllMedia() {
 }
 
 function closeLightBox() {
-    document.getElementById('carousel').classList.add('hide')// ajout sur la class un "hide" pour FERMER carousel
+    document.getElementById('carousel').classList.add('hide')//ajout sur la class un "hide" pour FERMER
 }
 
 function nextSlide() {
     let currentSlide = document.querySelector('.slide:not(.hide)') // slide affichée
-    currentSlide.classList.add('hide') // on la masque puisqu'on passe à la suivante
+    currentSlide.classList.add('hide') //  masque puisqu'on passe à la suivante
 
     // Si on n'est pas à la fin du carrousel
     if (currentSlide.nextSibling) {
@@ -51,12 +53,7 @@ function previousSlide() {
     if (currentSlide.previousSibling) {
         currentSlide.previousSibling.classList.remove('hide');
     } else {
-        let lastSlide = document.querySelector('.slide:last-child');// si on est à la fin , affiche la derniere
+        let lastSlide = document.querySelector('.slide:last-child');//si on est à la fin , affiche la derniere
         lastSlide.classList.remove('hide');
     }
 }
-
-
-
-
-

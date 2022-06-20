@@ -10,23 +10,23 @@ function sortMediasByType(medias, type) {
         sortByLike(medias); // sinon ce sera par  pop
     }
 
-   function sortByTitle(medias) {
+    function sortByTitle(medias) {
         return medias.sort(function (a, b) {
             if (a.title < b.title) { return -1; } // triera par ordre alphabetique +1 ou -1 selon lettre
-            if (a.title > b.title) { return 1; } 
-            return 0; 
+            if (a.title > b.title) { return 1; }
+            return 0;
         });
     }
-   
+
     /********************  filter by popularity  ***********/
     function sortByLike(medias) {
         return medias.sort(function (a, b) {
             if (a.likes < b.likes) { return -1; }
             if (a.likes > b.likes) { return 1; }
-            return 0; 
+            return 0;
         });
     }
-   
+
     /****************     filter by data   ***************/
     function sortByDate(medias) {
         return medias.sort(function (a, b) {
@@ -34,4 +34,3 @@ function sortMediasByType(medias, type) {
         });
     }
 }
-  

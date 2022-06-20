@@ -60,9 +60,6 @@ h1 {
   display: none;
 }
 
-option[disabled] {
-  color: #c9c9c9;
-}
 
 
 /**************************    BREAKPOINTS   ********/
@@ -87,7 +84,7 @@ option[disabled] {
   }
 
   .modal h1 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .close-modal {
@@ -135,48 +132,96 @@ option[disabled] {
     color: #757575;
     font-weight: 400;
   }
-
-}
-  /****************  SMARTPHONE  ****************/
-
-  @media only screen and (max-width : 480px) {
-    .photograph-header .article {
-      flex-direction: column;
-    }
-    .photographer-section {
-      flex-direction: column;
-      align-content: center;
-      width: 100%;
-      gap: 0;
-    }
-
-    h1 {
-      margin-left: 23%;
-    }
-
-    .logo {
-      margin-left: 70%;
-    }
-
-    header {
-      flex-wrap: wrap;
-      text-align: center;
-    }
-
-    .lightbox__close,
-    .lightbox__next,
-    .lightbox__prev {
-      width: 1.2rem;
-    }
-
-    .lightbox button {
-      right: 12%;
-    }
-
-    #nameModal {
-      font-size: 2rem;
-    }
- 
+  .photograph-header h1{
+    font-size: 40px;
+  }
+  .photograph-header div p {
+    line-height:25px ;
   }
 
-  /********************************************
+.bannerLikes-section {
+  width: 17rem;
+  height: 3.5rem;
+  font-size: 1.1rem;
+}
+}
+/****************  SMARTPHONE  ****************/
+
+@media only screen and (max-width : 480px) {
+  .photograph-header .article {
+    flex-direction: column;
+  }
+
+  .photographer-section {
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+    gap: 0;
+  }
+
+  h1 {
+    margin-left: 23%;
+  }
+
+  .logo {
+    margin-left: 90%;
+  }
+
+  header {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .lightbox__close,
+  .lightbox__next,
+  .lightbox__prev {
+    width: 1.2rem;
+  }
+
+  .lightbox button {
+    right: 12%;
+  }
+
+  #nameModal {
+    font-size: 2rem;
+  }
+  .modal {
+    left:55%;
+  width: 64%;
+  }
+  .modal h1{
+    font-size: 1.8rem;
+    text-align: left;
+    margin: inherit;
+  }
+}
+
+@media only screen and (max-width : 425px) {
+  .modal {
+    left:65%;
+}
+
+main{
+  padding-top: 10%;
+}
+
+.photograph-header article{
+  flex-direction: column;
+}
+
+
+.photograph-header .tagline{
+  display: none;
+  width:100%
+}
+.bannerLikes-section {
+  width:50%;
+  height:3%
+}
+
+.bannerLikes-section {
+  width: 13rem;
+  height: 3rem;
+  font-size: 0.8rem;
+}
+}

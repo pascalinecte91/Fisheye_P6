@@ -46,6 +46,7 @@ width: 80%;
    margin-left: auto;
   margin-right: auto; 
 }
+
 .lightbox__content .slide {
   width: 80%;
   margin-left: auto;
@@ -89,13 +90,11 @@ width: 80%;
   opacity: 1;
 }
 
-
-
 .lightbox button:hover {
   opacity: 0.4;
 }
 
 .lightbox__content
 .video-slide {
-width: 100%;
+width: 80%;
 }

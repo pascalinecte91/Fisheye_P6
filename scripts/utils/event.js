@@ -7,7 +7,6 @@ function dispatchEvent(medias) {
     eventModalForm();
     eventPagination();
     keyboardLightbox();
-    keyboardModal();
 
     // evenement pour  le tri section
     function eventMediaSort(medias) {
@@ -15,7 +14,8 @@ function dispatchEvent(medias) {
             let type = document.querySelector("#sort-choice").value;
             sortMediasByType(medias, type) //on trie par type
             displayMedias(medias); //on relance les medias
-            displayLightBox(medias); // on lance les medias pour la lightbox
+            displayLightBox(medias); //on lance les medias pour la lightbox
+            showTotalLikes()
         });
     }
 
@@ -43,7 +43,7 @@ function dispatchEvent(medias) {
             if (e.key == "ArrowRight") { // code fleche gauche next
                 nextSlide();
             }
-            else if (e.key == "ArrowLeft") { // code fleche de droite previous
+            else if (e.key == "ArrowLeft") { // code fleche de droite prev
                 previousSlide();
             }
             if (e.key == "Escape") { // code X  pour fermer
@@ -54,7 +54,7 @@ function dispatchEvent(medias) {
     function eventForHeart() {
         document.querySelector('.gallery-section').addEventListener("click", function (event) {
             const target = event.target;
-            if (target.classList.contains('numberLike')) { // si contient  numberLike
+            if (target.classList.contains('numberLike')) { //si contient  numberLike
                 clickLike(target);
             }
         });
@@ -68,18 +68,4 @@ function dispatchEvent(medias) {
             mdContainer.classList.toggle("active")
         }))
     }
- 
-    // evenement pour la modale formulaire
-    function keyboardModal() {
-       // cobsole.log(e.key);
-            if (e.key == "Enter") { // touche clavier "enter"  ouvre et ferme la modale
-              if(DOM.closeModal.classList('closed')) return e =>
-            validate(e)
-        }
-    }
-
-
-
 }
-
-

@@ -22,7 +22,7 @@ function headerFactory(photograph) {
     </div>
     </article>`;
   }
-  
+
   return { name, image, getHeaderCardDOM };
 }
 
@@ -30,17 +30,16 @@ function headerFactory(photograph) {
 
 function galleryFactory(data) {
   const { id, image, title, video, likes, date } = data;
-  const imagesMedias = typeof image !== "undefined" 
+  // console.log(data);
+  const imagesMedias = typeof image !== "undefined"
     ? `assets/thumbnails/imagesMedias/${image}`
-    : `assets/thumbnails/videosMedias/${video}`; 
-
+    : `assets/thumbnails/videosMedias/${video}`.replace('.mp4', '.jpg');
   return ` 
     <article>  
       <div class ="gallery-section">
       <a href="#" class= "media" id="${id}" aria-label="ouvrir la media">
         <figure>
           <img src=${imagesMedias} alt="pictures" tabindex="0" class="media" data-media="${id}">
-        
           </a>
           <figcaption>
           <h3 class="infoMedia">${title}</h3>
@@ -49,42 +48,29 @@ function galleryFactory(data) {
         </figure>
       </div>
     </article>`;
-    
 }
 
-function bannerFactory(data){
-  const { price, id, likes } = data; 
-  return ` 
-  <article>
-  <div class="bannerLikes-section">
-  <span class="allLike">${likes} class="price"/${price}€/jour</span>
-  </div>
-  </article>`;
-}
-  
 /****************************************************************************/
 
 function displayDataHeader(photographer) {
   const profilHeaderModel = headerFactory(photographer);
   document.querySelector(".photograph-header").innerHTML = profilHeaderModel.getHeaderCardDOM();
   document.getElementById("nameModal").innerHTML = photographer.name;
+  document.getElementById('photographerPrice').innerHTML = photographer.price;
 }
 
 /*********** Affichage  des medias de l ID *******************************/
 function displayMedias(medias) {
+  // console.log(medias);
+  let totalLike = 0;
   // On recreer chaque card Html stocker dans cardsDom
   const cardsDom = medias.map((media) => {
+    totalLike += media.likes
     return galleryFactory(media);
-   
+
   });
   // On ecrase la section des cards par la nouvelle
-  document.querySelector(".gallery-section").innerHTML = cardsDom;
+  document.querySelector(".gallery-section").innerHTML = cardsDom.join('');
+  document.querySelector('#totalLike').innerHTML = totalLike;
+  document.querySelector('.bannerLikes-section').classList.remove('hide');
 }
-
-/************************************************************************** */
-// function displayBanner(data) {
-//  const infoBanner = bannerFactory(data);
-//  console.log(bannerFactory);
-// }
-
-// document.querySelector(".bannerLikes-section").innerHTML = infoBanner;
