@@ -2,13 +2,12 @@
 function displayLightBox(medias) {
     // On recreer chaque card Html stocker dans cardsDom
     const domLightBox = medias.map((media) => {
-        document.querySelector(".lightbox__title").innerHTML = media.title;
         return typeof media.image !== "undefined"
             ? `<img src="./assets/thumbnails/imagesMedias/${media.image}" alt="imagecloseup view" class="slide hide" data-media-lightbox="${media.id}"/>`
-            : `<video controls" class="slide hide" data-media-lightbox="${media.id}"/><source src="./assets/thumbnails/videosMedias/${media.video}" alt="videos" class=" type="video/mp4"></video>`;
+            : ` <video controls  data-media-lightbox="${media.id}" class="slide hide" src="./assets/thumbnails/videosMedias/${media.video}"></video>`;
     })
     document.querySelector(".lightbox__content").innerHTML = domLightBox.join('');//("") supp, d'un array
-
+    
 }
 
 function openLightBox(cardClicked) {
@@ -16,9 +15,10 @@ function openLightBox(cardClicked) {
     document.getElementById('carousel').classList.remove('hide');  // OUVRE LB en supprimant le hide
     hideAllMedia();
     let id = cardClicked.dataset['media']; //trouve la data-media qui identifie la media
-    console.log(cardClicked);
-    console.log('[data-media-lightbox="' + id + '"]');
+    //console.log(cardClicked);
+    //console.log('[data-media-lightbox="' + id + '"]');
     document.querySelector('[data-media-lightbox="' + id + '"]').classList.remove('hide');//affiche en suppr le hide
+ 
 }
 
 function hideAllMedia() {

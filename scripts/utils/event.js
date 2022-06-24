@@ -7,6 +7,8 @@ function dispatchEvent(medias) {
     eventModalForm();
     eventPagination();
     keyboardLightbox();
+   
+
 
     // evenement pour  le tri section
     function eventMediaSort(medias) {
@@ -39,7 +41,7 @@ function dispatchEvent(medias) {
     // evenement pour accessibilité CLAVIER  gauche droit et fermeture
     function keyboardLightbox() {
         document.addEventListener("keydown", (e) => {
-            console.log(e.key);
+            // console.log(e.key);
             if (e.key == "ArrowRight") { // code fleche gauche next
                 nextSlide();
             }

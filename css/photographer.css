@@ -205,7 +205,7 @@ figcaption h3 {
   transform: translateY(0px) scale(1);
   transition: all 0.25s ease;
   box-shadow: 0 3px 3px rgb(0 0 0 / 10%);
-  object-position: 70% 55%;
+  object-position: 50% 17%;
 }
 
 
@@ -247,7 +247,6 @@ figcaption h3 {
   max-width: 89%;
   margin: 0rem 4.25rem;
   padding-top: 4%;
-
 }
 
 .sort-form label {
@@ -263,24 +262,16 @@ figcaption h3 {
 
 .sort-form select {
   background-color: var(--lobusc);
-  background: url(/assets/icons/vectorLightbox.svg)
-  no repeat right #ddd ;
   color: white;
   padding: 2px;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
   font-weight: 500;
-  line-height: 23px;
+  line-height: 20px;
   font-size: 1.3rem;
   cursor: pointer;
   max-width: 10.625rem;
 }
-
-.sort-form select::after{ 
-  content:"\203A";
-  font-size: 10px;
-  background: #FAFAFA;
- }
 
 option[disabled] {
   color: #c9c9c9;
@@ -335,9 +326,9 @@ option[disabled] {
 
 .modal {
   opacity: 0;
-  max-width: 42rem;
-  height: 40rem;
-  padding: 0rem 2.187rem 1.875rem 2.187rem;
+  max-width: 27rem;
+  height: 50rem;
+  padding: 0rem 2.2rem 1.8rem 2.2rem;
   background-color: var(--bann);
   border-radius: 5px;
   position: absolute;
@@ -360,7 +351,6 @@ option[disabled] {
 .close-modal {
   padding: 8px 10px;
   border: none;
-  font-size: 2.625rem;
   position: absolute;
   top: 2.5rem;
   right: 25px;

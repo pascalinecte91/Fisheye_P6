@@ -83,27 +83,8 @@ h1 {
     gap: 2%;
   }
 
-  .modal h1 {
-    font-size: 2rem;
-  }
 
-  .close-modal {
-    font-size: 2rem;
-    top: 0.5rem;
-  }
-
-  .modal input {
-
-    height: 2rem;
-    border-radius: 5px;
-    border: none;
-  }
-
-  .modal-btn {
-    margin-right: 13%;
-  }
-
-  /*********************  TABLETS PORTRAIT   *************/
+  /*********   TABLETS PORTRAIT   *************/
 
   @media only screen and (max-width : 768px) {}
 
@@ -117,6 +98,17 @@ h1 {
     font-size: 2rem;
     top: 2.5rem;
   }
+
+#nameModal {
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+.modal{
+  height:45rem;
+}
+.close-modal {
+  font-size: 1rem;
+}
 
   .photographer-section article img {
     margin-top: 3.125rem;
@@ -182,13 +174,15 @@ h1 {
     right: 12%;
   }
 
+
   #nameModal {
     font-size: 2rem;
-  }
-  .modal {
-    left:55%;
-  width: 64%;
-  }
+    margin-top: 1rem;
+}
+.modal{
+  height:35rem;
+  width: 17rem;
+}
   .modal h1{
     font-size: 1.8rem;
     text-align: left;
@@ -197,9 +191,6 @@ h1 {
 }
 
 @media only screen and (max-width : 425px) {
-  .modal {
-    left:65%;
-}
 
 main{
   padding-top: 10%;
@@ -209,11 +200,23 @@ main{
   flex-direction: column;
 }
 
-
+.photograph-header h1{
+  font-size: 22px;
+}
 .photograph-header .tagline{
   display: none;
   width:100%
 }
+
+.photograph-header a {
+  display: flex;
+  order: 5;
+}
+.photograph-header img {
+  height: 6rem;
+  width: 6rem;
+}
+
 .bannerLikes-section {
   width:50%;
   height:3%
@@ -223,5 +226,16 @@ main{
   width: 13rem;
   height: 3rem;
   font-size: 0.8rem;
+}
+
+#sort-choice {
+  margin-left: 4rem;
+  border: none;
+}
+
+.sort-form {
+  max-width: 89%;
+  margin: 0rem 1rem;
+  padding-top: 15%;
 }
 }
