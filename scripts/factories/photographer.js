@@ -37,8 +37,8 @@ function galleryFactory(data) {
   return ` 
     <article>  
       <div class ="gallery-section">
+      <figure>
       <a href="#" class= "media" id="${id}" aria-label="ouvrir la media">
-        <figure>
           <img src=${imagesMedias} alt="pictures" tabindex="0" class="media" data-media="${id}">
           </a>
           <figcaption>

@@ -65,78 +65,119 @@ h1 {
 /**************************    BREAKPOINTS   ********/
 
 
-@media only screen and (max-width : 1289px) {
-  .photographer-section {
-    margin: 6.25rem 3.75rem;
-  }
-
-}
-
 /***********************   TABLETS LANDSCAPE   *********/
 
-@media only screen and (max-width : 1024px) {
 
-  .photographer-section {
-    width: 90%;
-    justify-content: space-around;
-    margin: 2%;
-    gap: 2%;
-  }
+/*********   TABLETS PORTRAIT   *************/
 
+@media only screen and (max-width : 768px) {}
 
-  /*********   TABLETS PORTRAIT   *************/
+h1 {
+  align-content: center;
+  margin-bottom: 1.25rem;
+  margin-top: 1.25rem;
+}
 
-  @media only screen and (max-width : 768px) {}
+.logo {
+  margin-left: 2.5rem;
+  height: 2.5rem;
+  width: 8rem;
+}
 
-  h1 {
-    align-content: center;
-    margin-bottom: 1.25rem;
-    margin-top: 1.25rem;
-  }
+.close-modal {
+  font-size: 2rem;
+  top: 2.5rem;
+}
 
-  .close-modal {
-    font-size: 2rem;
-    top: 2.5rem;
-  }
+.close-modal img {
+  font-size: 2rem;
+}
 
 #nameModal {
-    font-size: 2rem;
-    margin-top: 1rem;
+  font-size: 2rem;
+  margin-top: 1rem;
 }
-.modal{
-  height:45rem;
+
+.modal {
+  height: 45rem;
 }
+
 .close-modal {
   font-size: 1rem;
 }
 
-  .photographer-section article img {
-    margin-top: 3.125rem;
+ .sort{
+    margin: 0 45px;
   }
+.modal-btn {
+  margin-right: 11%;
+}
 
-  .photographer-section article .tagline {
-    font-size: 10px;
-    font-weight: 400;
-  }
+.photographer-section article img {
+  margin-top: 3.125rem;
+}
 
-  .photographer-section article .price {
-    font-size: 9px;
-    color: #757575;
-    font-weight: 400;
-  }
-  .photograph-header h1{
-    font-size: 40px;
-  }
-  .photograph-header div p {
-    line-height:25px ;
-  }
+.photographer-section article .tagline {
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.photographer-section article .price {
+  font-size: 9px;
+  color: #757575;
+  font-weight: 400;
+}
+
+.photograph-header h1 {
+  font-size: 35px;
+}
+
+.photograph-header div p {
+  line-height: 25px;
+}
+
+#sort-choice {
+  margin-bottom: inherit;
+}
 
 .bannerLikes-section {
   width: 17rem;
   height: 3.5rem;
   font-size: 1.1rem;
 }
+
+.lightbox button {
+  right: 8%;
 }
+
+.lightbox__close {
+  height: 67%;
+}
+/********     modal   ******/
+
+
+
+label {
+    display: block;
+}
+
+.form-data.error input, 
+.form-group.error textarea {
+    border: 2px solid var(--lobusc);
+}
+
+.form-group.error label {
+    color: var(--lobusc);
+}
+.form-data.error::after {
+    content: 'Ce champs n\'est pas valide';
+    display: block;
+    color: var(--lobusc);
+    padding: 5px 0;
+    font-size: 1rem;
+}
+
+
 /****************  SMARTPHONE  ****************/
 
 @media only screen and (max-width : 480px) {
@@ -178,64 +219,106 @@ h1 {
   #nameModal {
     font-size: 2rem;
     margin-top: 1rem;
-}
-.modal{
-  height:35rem;
-  width: 17rem;
-}
-  .modal h1{
+  }
+
+  .modal {
+    height: 35rem;
+    width: 17rem;
+  }
+
+  .modal h1 {
     font-size: 1.8rem;
     text-align: left;
     margin: inherit;
   }
+
 }
 
 @media only screen and (max-width : 425px) {
 
-main{
-  padding-top: 10%;
-}
+  main {
+    padding-top: 10%;
+  }
 
-.photograph-header article{
-  flex-direction: column;
+.modal-btn{
+  display:none;
 }
+  .logo {
+    margin-left: inherit;
+  }
 
-.photograph-header h1{
-  font-size: 22px;
-}
-.photograph-header .tagline{
-  display: none;
-  width:100%
-}
+  header {
+    display: flex;
+    flex-direction: column;
+  }
 
-.photograph-header a {
-  display: flex;
-  order: 5;
-}
-.photograph-header img {
-  height: 6rem;
-  width: 6rem;
-}
+  header h1 {
+    margin-left: 34%;
+  }
 
-.bannerLikes-section {
-  width:50%;
-  height:3%
-}
+  .photograph-header article {
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-top: initial;
+    padding-bottom: inherit;
+    margin: inherit;
+  }
 
-.bannerLikes-section {
-  width: 13rem;
-  height: 3rem;
-  font-size: 0.8rem;
-}
+  .photograph-header h1 {
+    font-size: 22px;
+  }
 
-#sort-choice {
-  margin-left: 4rem;
-  border: none;
-}
+  .photograph-header .tagline {
+    display: none;
+    width: 100%
+  }
 
-.sort-form {
-  max-width: 89%;
-  margin: 0rem 1rem;
-  padding-top: 15%;
-}
+  .photograph-header a {
+    display: flex;
+    order: 5;
+  }
+
+  .photograph-header img {
+    height: 6rem;
+    width: 6rem;
+  }
+
+  .photographer-section {
+    gap: 25px;
+  }
+
+  .photographer-section article img {
+    margin-top: inherit
+  }
+
+  .photographer-section article img {
+    height: 9rem;
+    width: 9rem;
+  }
+
+  .bannerLikes-section {
+    width: 50%;
+    height: 3%
+  }
+
+  .bannerLikes-section {
+    width: 13rem;
+    height: 3rem;
+    font-size: 0.8rem;
+  }
+
+  #sort-choice {
+    margin-left: 4rem;
+    border: none;
+  }
+
+  .sort-form {
+    max-width: 89%;
+    margin: 0rem 1rem;
+    padding-top: 15%;
+  }
+
+  .lightbox__close {
+    height: 75%;
+  }
 }

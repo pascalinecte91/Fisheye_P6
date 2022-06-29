@@ -1,7 +1,7 @@
 /***********  SECTION PAGE  ACCUEIL     ***********/
 
 .photographer-section {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -227,55 +227,68 @@ figcaption h3 {
 }
 
 
-/*************** SORTER   FILTER  
-******************************************/
-.sorter {
+/*************** SECTION   FILTER  **************/
+ .sorter {
   position: relative;
 }
 
 #sort-choice {
   border-radius: 5px;
-  margin-bottom: 2.1875rem;
-  margin-left: -2.5rem;
+  margin-bottom: 2.2rem;
+  margin-left: 2.5rem;
   border: none;
-}
+} 
 
 /* trier par + liste deroulante */
-.sort-form {
+ .sort {
   display: flex;
   flex-direction: row;
   max-width: 89%;
-  margin: 0rem 4.25rem;
-  padding-top: 4%;
+  margin: 0 100px;
+  padding-top: 3%;
+
 }
 
-.sort-form label {
-  font-weight: 700;
-  font-size: 1.125rem;
-  max-width: 6.25rem;
-  height: 23px;
-  padding-left: 5px;
-  font-size: 1.125rem;
-  /*  18px  */
-  margin-right: 7%;
-}
 
-.sort-form select {
+  select {
   background-color: var(--lobusc);
   color: white;
   padding: 2px;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
   font-weight: 500;
-  line-height: 20px;
+  line-height: 23.44px;
   font-size: 1.3rem;
-  cursor: pointer;
+  cursor: pointer; 
+ 
   max-width: 10.625rem;
-}
+ 
+} 
+
 
 option[disabled] {
   color: #c9c9c9;
+}  
+
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("/assets/icons/chevron-down.svg") var(--lobusc) no-repeat 90%; 
+    border:none;
+    color: white;
+    border-radius: 5px;
+    height: 69px;
+    width: 170px;
+    padding: 1%;
+    cursor: pointer;
 }
+
+select:hover {
+    background: url("/assets/icons/chevron-up.svg") var(--lobusc) no-repeat 90%; 
+}
+
 
 /************************  MODAL FORMULAIRE    
 ***************************************************/
@@ -361,16 +374,15 @@ option[disabled] {
 
 .modal label {
   display: flex;
-  margin-bottom: 5px;
   font-weight: 400;
   border-radius: 5px;
   font-size: 1.2rem;
 }
 
 .modal h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 400;
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-bottom: 0px;
   color: black;
 }
@@ -387,9 +399,10 @@ option[disabled] {
 /*   entre input    */
 .modal input {
   width: 100%;
-  height: 2.2rem;
+  height: 2.1rem;
   border-radius: 5px;
   border: none;
+  margin-bottom: 5px;
 }
 
 .modal input:focus {
@@ -427,7 +440,7 @@ option[disabled] {
 .contact_button {
   background-color: var(--lobusc);
   width: 10.625rem;
-  height: 4.31rem;
+  height: 4rem;
   border: none;
   border-radius: 5px;
   font-size: 1.125rem;
@@ -435,7 +448,7 @@ option[disabled] {
   color: white;
   font-weight: 700;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 4rem;
   /* 23px*/
 }
 

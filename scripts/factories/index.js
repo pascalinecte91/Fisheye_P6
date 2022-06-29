@@ -13,7 +13,7 @@ function photographerFactory(data) {
       const linkURL = "photographer.html";
       const url = `${linkURL}?photographer=${id}`;
       article.innerHTML = `
-          <a href=${url}><img src=${image} alt="photo">
+          <a href=${url}><img src=${image} alt="image du photographe">
             <h2>${name}</h2>
           </a>
           <div class="photographer-content>

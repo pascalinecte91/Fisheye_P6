@@ -12,7 +12,8 @@ function sortMediasByType(medias, type) {
 
     function sortByTitle(medias) {
         return medias.sort(function (a, b) {
-            if (a.title < b.title) { return -1; } // triera par ordre alphabetique +1 ou -1 selon lettre
+             // triera par ordre alphabetique +1 ou -1 selon lettre
+            if (a.title < b.title) { return -1; }
             if (a.title > b.title) { return 1; }
             return 0;
         });

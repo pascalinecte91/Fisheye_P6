@@ -2,23 +2,40 @@
 function displayLightBox(medias) {
     // On recreer chaque card Html stocker dans cardsDom
     const domLightBox = medias.map((media) => {
+        //console.log(media.title);
+        //console.log(media.id);
+
         return typeof media.image !== "undefined"
-            ? `<img src="./assets/thumbnails/imagesMedias/${media.image}" alt="imagecloseup view" class="slide hide" data-media-lightbox="${media.id}"/>`
-            : ` <video controls  data-media-lightbox="${media.id}" class="slide hide" src="./assets/thumbnails/videosMedias/${media.video}"></video>`;
+            ? `
+        <div class="slide hide" data-media-lightbox="${media.id}"/>
+        <img src="./assets/thumbnails/imagesMedias/${media.image}" alt="imagecloseup view" data-title="${media.title}">
+        <div class="lightbox__title">${media.title}</div>
+        </div>
+        `
+            : `
+        <div class="slide hide" data-media-lightbox="${media.id}">
+        <video controls  src="./assets/thumbnails/videosMedias/${media.video}"></video>
+        <div class="lightbox__title">${media.title}</div>
+        </div>`;
+
     })
-    document.querySelector(".lightbox__content").innerHTML = domLightBox.join('');//("") supp, d'un array
-    
+    //("") supp, d'un array
+    document.querySelector(".lightbox__content").innerHTML = domLightBox.join('');
+
 }
 
 function openLightBox(cardClicked) {
-
-    document.getElementById('carousel').classList.remove('hide');  // OUVRE LB en supprimant le hide
+    // OUVRE LB en supprimant le hide
+    document.getElementById('carousel').classList.remove('hide');
     hideAllMedia();
-    let id = cardClicked.dataset['media']; //trouve la data-media qui identifie la media
+    //trouve la data-media qui identifie la media
+    let id = cardClicked.dataset['media'];
     //console.log(cardClicked);
     //console.log('[data-media-lightbox="' + id + '"]');
-    document.querySelector('[data-media-lightbox="' + id + '"]').classList.remove('hide');//affiche en suppr le hide
- 
+
+    //affiche en suppr le hide
+    document.querySelector('[data-media-lightbox="' + id + '"]').classList.remove('hide');
+
 }
 
 function hideAllMedia() {
@@ -28,16 +45,18 @@ function hideAllMedia() {
 }
 
 function closeLightBox() {
-    document.getElementById('carousel').classList.add('hide')//ajout sur la class un "hide" pour FERMER
+    //ajout sur la class un "hide" pour FERMER
+    document.getElementById('carousel').classList.add('hide')
 }
 
 function nextSlide() {
+    console.log('t1');
     let currentSlide = document.querySelector('.slide:not(.hide)') // slide affichée
     currentSlide.classList.add('hide') //  masque puisqu'on passe à la suivante
 
     // Si on n'est pas à la fin du carrousel
-    if (currentSlide.nextSibling) {
-        currentSlide.nextSibling.classList.remove('hide');
+    if (currentSlide.nextElementSibling) {
+        currentSlide.nextElementSibling.classList.remove('hide');
     } else {
         // Si on est a la fin du carrousel on va afficher la 1ere slide
         let firstSlide = document.querySelector('.slide:first-child');
@@ -46,14 +65,17 @@ function nextSlide() {
 }
 
 function previousSlide() {
-    let currentSlide = document.querySelector('.slide:not(.hide)') // slide affiché
+    // slide affiché
+    console.log('previousSlide');
+    let currentSlide = document.querySelector('.slide:not(.hide)')
     currentSlide.classList.add('hide')
-    //console.dir(currentSlide);
+    console.dir(currentSlide);
     // si on n'est pas au debut du carousel
-    if (currentSlide.previousSibling) {
-        currentSlide.previousSibling.classList.remove('hide');
+    if (currentSlide.previousElementSibling) {
+        currentSlide.previousElementSibling.classList.remove('hide');
     } else {
-        let lastSlide = document.querySelector('.slide:last-child');//si on est à la fin , affiche la derniere
+        //si on est à la fin , affiche la derniere
+        let lastSlide = document.querySelector('.slide:last-child');
         lastSlide.classList.remove('hide');
     }
 }

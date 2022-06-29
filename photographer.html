@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="detail photographe." />
+  <meta name="description" content="Présentation du photographe." />
   <title>Profil photographe</title>
 
   <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -18,32 +18,31 @@
 <!--           HEADER              -->
 
 <body>
-  <header class="banner">
+  <header class="banner" role="banner" aria-label =" Bannière du site des photographes" aria-hidden="false">
     <a href="../index.html">
       <img src="assets/images/logo.png" alt="Fisheye Home page" class="logo" /></a>
   </header>
   <main id="main">
     <!-- SECTION HEADER PHOTOGRAPHE -->
 
-    <section class="photograph-header"></section>
+    <section class="photograph-header" aria-label="Information  du photographe" aria hidden="false"></section>
 
     <!-- SECTION FILTRES   /  SORT -->
+ 
+      <section class="sort" aria-haspopup="menu deroulant pour effectuer un tri selon des critères" aria hidden="false">
+      <h3>Trier par</h3>
+      <select name="sorter" id="sort-choice">
+        <option value="popularite">Popularité</option>
+        <option disabled="disabled">────────</option>
+        <option value="date">Date</option>
+        <option disabled="disabled">────────</option>
+        <option value="titre">Titre</option>
+      </select>
+    </section>  
 
-    <section class="sorter">
-      <form class="sort-form" action="#" method="POST">
-        <label for="sort">Trier par</label><i class="gg-chevron-up"></i>
-        <select name="sorter" id="sort-choice">
-          <option value="popularité" tabindex="0" aria-current="page">Popularité</option>
-          <option disabled="disabled">────────</option>
-          <option value="date" tabindex="0">Date</option>
-          <option disabled="disabled">────────</option>
-          <option value="titre" tabindex="0">Titre</option>
-        </select>
-      </form>
-    </section>
 
     <!-- SECTION GALLERY -->
-    <section class="gallery-section"></section>
+    <section class="gallery-section" aria-label="photographer-gallery-heading"></section>
 
   </main>
 
@@ -52,39 +51,48 @@
     <div class="modal" aria-label="window" role="dialog">
       <h1>Contactez-moi</h1>
       <div id="nameModal"></div>
-      <button aria-label="fermer la fenêtre" class="close-modal closed">
+      <button class="close-modal closed" aria-label="fermer la fenêtre">
         <img src="assets/icons/arrowCloseModal.svg" alt="Croix fermeture modal" />
       </button>
-      <form>
-        <label for="firstName">Prénom</label>
-        <input type="text" class="text-control" aria-labelledby="firstName" id="firstName" name="first" />
-        <label for="lastName">Nom</label>
-        <input type="text" class="text-control" aria-labelledby="lastName" id="lastName" name="last" />
-        <label for="email">Email</label>
-        <input type="email" class="text-control" aria-labelledby="email" id="email" pattern=".+@globex\.com" size="30"
-          required />
-        <label for="message" tabindex="0">Message</label>
-        <textarea class="text-control" aria-labelledby="message" id="message" name="message"></textarea>
+
+
+      <form action="/"  methode="post"  id="form">
+        <div class="form-data">
+          <label for="firstName">Prénom</label>
+          <input id="firstName" type="text" name="first" aria-labelledby="firstName" pattern="^\D*$" required>
+        </div>
+        <div class="form-data">
+          <label for="lastName">Nom</label>
+          <input  id="lastName" type="text" name="last" aria-labelledby="lastName"  pattern="^\D*$" pattern="^\D*$" required>  
+        </div>
+        <div class="form-data">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email"  aria-labelledby="email" required />
+        </div>
+        <div class="form-data">
+          <label for="message" tabindex="0">Message</label>
+          <textarea  id="message" name="message" aria-labelledby="message" required ></textarea>
+ 
+        </div>
+        <button type="submit" name="message" aria-label="send" id="send" class="contact_button">Envoyer</button>
       </form>
-      <button type="submit" aria-label="send" class="contact_button">Envoyer</button>
     </div>
   </div>
   <!--BANNIERE-->
-  <section class="bannerLikes-section hide">
-    <span id="totalLike"></span>
+  <section class="bannerLikes-section hide" aria_label=" banniere  de comptage de like" aria-hidden="true">
+    <span id="totalLike" aria-labelledby="total des likes"></span>
     <div>
-    <span id="photographerPrice"></span>
-    <span class="allLike">€ / jour</span></div>
+      <span id="photographerPrice"  aria-labelledby=" prix "></span>
+      <span class="allLike"  aria-labelledby=" nombre global des likes ">€ / jour</span>
+    </div>
   </section>
 
   <!-- CAROUSEL  LIGHTBOX    -->
-  <section id="carousel" class="lightbox hide " aria-label="window">
+  <section id="carousel" class="lightbox hide "aria-label="image closeup view" aria-hidden="true">
     <button class="lightbox__close" id="lightboxClose" tabindex="0" aria-label="fermer le carousel">Fermer</button>
     <button class="lightbox__next" tabindex="0" aria-label="vers image suivante">Suivant</button>
     <button class="lightbox__prev" tabindex="0" aria-label="vers image précédente">Précédent</button>
     <div class="lightbox__content" tabindex="0"></div>
-    <div class="lightbox__title" tabindex="0"></div>
-
   </section>
 
 
@@ -94,6 +102,7 @@
   <script src="scripts/utils/lightbox.js"></script>
   <script src="scripts/utils/heart.js"></script>
   <script src="scripts/utils/event.js"></script>
+  <script src="scripts/utils/validatedModal.js"></script>
   <script src="scripts/pages/photographer.js"></script>
 </body>
 

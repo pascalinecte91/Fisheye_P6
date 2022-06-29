@@ -15,7 +15,7 @@ fetch("./data/photographers.json")
     return;
   })
   .catch(function (response) {
-    console.dir(response);
+   // console.dir(response);
     return;
 });
 
@@ -34,5 +34,5 @@ function successPage(photographers, media, photographerId) {
   displayLightBox(medias); //affiche le carousel
   displayMedias(medias); //affiches les medias
  // console.log(medias);
-   dispatchEvent(medias);//declenchement des evenements
+  dispatchEvent(medias);//declenchement des evenements
 }
