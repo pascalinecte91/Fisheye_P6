@@ -1,0 +1,153 @@
+/****************  SMARTPHONE  ****************/
+
+@media only screen and (max-width : 480px) {
+  .photograph-header .article {
+    flex-direction: column;
+  }
+
+  .photographer-section {
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+    gap: 0;
+  }
+
+  h1 {
+    margin-left: 23%;
+  }
+
+.logo{
+    margin-top: 10px;
+}
+  header {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+ 
+ .lightbox__close{
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  .lightbox button {
+    right: 11%;
+  }
+
+  #nameModal {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+
+  .modal {
+    height: 35rem;
+    width: 17rem;
+  }
+
+  .modal h1 {
+    font-size: 1.8rem;
+    text-align: left;
+    margin: inherit;
+  }
+}
+
+/************   RESPONSIVE    *****/
+@media only screen and (max-width : 425px) {
+
+  .modal-btn {
+    display: none;
+  }
+
+  header {
+    display: flex;
+  }
+
+  .photograph-header article {
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-top: initial;
+    padding-bottom: inherit;
+    margin: inherit;
+  }
+
+  .photograph-header {
+    height: 12rem;
+  }
+
+  .photograph-header h1 {
+    font-size: 22px;
+    padding: 10px;
+  }
+
+  .photograph-header .tagline {
+    display: none;
+    width: 100%
+  }
+
+.photograph-header div p{
+    font-size: 27px;
+}
+  .photograph-header a {
+    display: flex;
+    order: 5;
+  }
+
+  .photograph-header img {
+    height: 6rem;
+    width: 6rem;
+  }
+
+  .photographer-section article {
+   width:100%
+  }
+
+  .photographer-section article img {
+    margin-top: inherit
+  }
+
+  .photographer-section article img {
+    height: 9rem;
+    width: 9rem;
+  }
+
+  .bannerLikes-section {
+    width: 13rem;
+    height: 3rem;
+    font-size: 0.8rem;
+  }
+
+  #sort-choice {
+    border: none;
+    font-size: 0.9rem;
+  }
+
+  .sort-form {
+    max-width: 89%;
+    margin: 0rem 1rem;
+    padding-top: 15%;
+  }
+
+  select {
+    padding: 3%;
+  }
+
+  /******   lightbox open */
+  .lightbox__content img,
+  .lightbox__content video {
+    width: 90%;
+    height: 50%;
+  }
+
+  .lightbox__next,
+  .lightbox__prev {
+    width: 1rem;
+    height: 1rem;
+    top: 30%;
+  }
+
+  .gallery-section img {
+    object-position: 30% 47%;
+  }
+  .lightbox__close{
+    height: 15px;
+    width: 15px;
+  }
+}

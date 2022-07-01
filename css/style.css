@@ -1,5 +1,7 @@
 @import url("photographer.css");
 @import url("lightbox.css");
+@import url("responsive-tablet.css");
+@import url("responsive-smartphone.css");
 
 
 /**    variables  ***/
@@ -10,8 +12,6 @@
   /* city country  */
   --bann: #DB8876;
   /* banniere */
-
-
 }
 
 body {
@@ -60,265 +60,28 @@ h1 {
   display: none;
 }
 
+/**************************    BREAKPOINTS  LARGE   ********/
 
-
-/**************************    BREAKPOINTS   ********/
-
-
-/***********************   TABLETS LANDSCAPE   *********/
-
-
-/*********   TABLETS PORTRAIT   *************/
-
-@media only screen and (max-width : 768px) {}
-
-h1 {
-  align-content: center;
-  margin-bottom: 1.25rem;
-  margin-top: 1.25rem;
-}
-
-.logo {
-  margin-left: 2.5rem;
-  height: 2.5rem;
-  width: 8rem;
-}
-
-.close-modal {
-  font-size: 2rem;
-  top: 2.5rem;
-}
-
-.close-modal img {
-  font-size: 2rem;
-}
-
-#nameModal {
-  font-size: 2rem;
-  margin-top: 1rem;
-}
-
-.modal {
-  height: 45rem;
-}
-
-.close-modal {
-  font-size: 1rem;
-}
-
- .sort{
-    margin: 0 45px;
-  }
-.modal-btn {
-  margin-right: 11%;
-}
-
-.photographer-section article img {
-  margin-top: 3.125rem;
-}
-
-.photographer-section article .tagline {
-  font-size: 10px;
-  font-weight: 400;
-}
-
-.photographer-section article .price {
-  font-size: 9px;
-  color: #757575;
-  font-weight: 400;
-}
-
-.photograph-header h1 {
-  font-size: 35px;
-}
-
-.photograph-header div p {
-  line-height: 25px;
-}
-
-#sort-choice {
-  margin-bottom: inherit;
-}
-
-.bannerLikes-section {
-  width: 17rem;
-  height: 3.5rem;
-  font-size: 1.1rem;
-}
-
-.lightbox button {
-  right: 8%;
-}
-
-.lightbox__close {
-  height: 67%;
-}
-/********     modal   ******/
-
-
-
-label {
-    display: block;
-}
-
-.form-data.error input, 
-.form-group.error textarea {
-    border: 2px solid var(--lobusc);
-}
-
-.form-group.error label {
-    color: var(--lobusc);
-}
-.form-data.error::after {
-    content: 'Ce champs n\'est pas valide';
-    display: block;
-    color: var(--lobusc);
-    padding: 5px 0;
-    font-size: 1rem;
-}
-
-
-/****************  SMARTPHONE  ****************/
-
-@media only screen and (max-width : 480px) {
-  .photograph-header .article {
-    flex-direction: column;
-  }
-
-  .photographer-section {
-    flex-direction: column;
-    align-content: center;
-    width: 100%;
-    gap: 0;
-  }
-
-  h1 {
-    margin-left: 23%;
-  }
-
-  .logo {
-    margin-left: 90%;
-  }
-
-  header {
-    flex-wrap: wrap;
-    text-align: center;
-  }
-
-  .lightbox__close,
-  .lightbox__next,
-  .lightbox__prev {
-    width: 1.2rem;
-  }
-
+@media only screen and (min-width : 1440px) {
   .lightbox button {
-    right: 12%;
+    right: 8%;
   }
-
-
-  #nameModal {
-    font-size: 2rem;
-    margin-top: 1rem;
-  }
-
-  .modal {
-    height: 35rem;
-    width: 17rem;
-  }
-
-  .modal h1 {
-    font-size: 1.8rem;
-    text-align: left;
-    margin: inherit;
-  }
-
-}
-
-@media only screen and (max-width : 425px) {
-
-  main {
-    padding-top: 10%;
-  }
-
-.modal-btn{
-  display:none;
-}
-  .logo {
-    margin-left: inherit;
-  }
-
-  header {
-    display: flex;
-    flex-direction: column;
-  }
-
-  header h1 {
-    margin-left: 34%;
-  }
-
-  .photograph-header article {
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding-top: initial;
-    padding-bottom: inherit;
-    margin: inherit;
-  }
-
-  .photograph-header h1 {
-    font-size: 22px;
-  }
-
-  .photograph-header .tagline {
-    display: none;
-    width: 100%
-  }
-
-  .photograph-header a {
-    display: flex;
-    order: 5;
-  }
-
-  .photograph-header img {
-    height: 6rem;
-    width: 6rem;
-  }
-
-  .photographer-section {
-    gap: 25px;
-  }
-
-  .photographer-section article img {
-    margin-top: inherit
-  }
-
-  .photographer-section article img {
-    height: 9rem;
-    width: 9rem;
-  }
-
-  .bannerLikes-section {
-    width: 50%;
-    height: 3%
-  }
-
-  .bannerLikes-section {
-    width: 13rem;
-    height: 3rem;
-    font-size: 0.8rem;
-  }
-
-  #sort-choice {
-    margin-left: 4rem;
-    border: none;
-  }
-
-  .sort-form {
-    max-width: 89%;
-    margin: 0rem 1rem;
-    padding-top: 15%;
-  }
-
-  .lightbox__close {
-    height: 75%;
+    .sort{
+    margin: 0px 73px;
   }
 }
+
+/***********************   DESKTOP   *********/
+@media only screen and (min-width : 1024px) {
+  .lightbox button {
+    right: 8%;
+  }
+  .modal-btn {
+    margin-right: 8rem;
+  }
+  .sort{
+    margin: 0px 55px;
+  }
+}
+
+

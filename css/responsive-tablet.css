@@ -1,0 +1,87 @@
+/*********   TABLETS PORTRAIT   *************/
+
+@media only screen and (max-width : 768px) {
+
+  h1 {
+    align-content: center;
+    margin-bottom: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .logo {
+    margin-left: 2.5rem;
+    height: 2.5rem;
+    width: 8rem;
+  }
+
+  .close-modal {
+    font-size: 2rem;
+    top: 2.5rem;
+  }
+
+  .close-modal img {
+    font-size: 2rem;
+  }
+
+  #nameModal {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+
+  .modal {
+    height: 45rem;
+  }
+
+  .close-modal {
+    font-size: 1rem;
+  }
+
+  .sort {
+    margin: 0 45px;
+  }
+
+  .modal-btn {
+    margin-right: 11%;
+  }
+
+  .photographer-section article img {
+    margin-top: 3.125rem;
+  }
+
+ .photographer-section article{
+    margin-left: 2%;
+    gap: 0px;
+ }
+  .photographer-section article .tagline {
+    font-size: 10px;
+    font-weight: 400;
+  }
+
+  .photographer-section article .price {
+    font-size: 9px;
+    color: #757575;
+    font-weight: 400;
+  }
+
+  .photograph-header h1 {
+    font-size: 35px;
+  }
+
+  .photograph-header div p {
+    line-height: 25px;
+  }
+
+  #sort-choice {
+    margin-bottom: inherit;
+  }
+
+  .bannerLikes-section {
+    width: 17rem;
+    height: 3.5rem;
+    font-size: 1.1rem;
+  }
+.lightbox__close {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+}

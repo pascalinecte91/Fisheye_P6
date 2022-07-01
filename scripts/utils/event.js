@@ -8,11 +8,14 @@ function dispatchEvent(medias) {
     eventPagination();
     keyboardLightbox();
 
-    // evenement pour  le tri section
+   // evenement pour  le tri section
     function eventMediaSort(medias) {
-        document.getElementById("sort-choice").addEventListener("change", function (event) { //on chang les données triees
+       const active =  document.getElementById("sort-choice").classList.toggle("actived");
+       
+        // document.getElementById("sort-choice").addEventListener("change", function (event) {
+        document.getElementById("sort-choice").addEventListener("click", function (event) {
+        document.getElementById("sort-choice").classList.toggle("actived");
             let type = document.querySelector("#sort-choice").value;
-            
             sortMediasByType(medias, type) //on trie par type
             displayMedias(medias); //on relance les medias
             displayLightBox(medias); //on lance les medias pour la lightbox
@@ -20,11 +23,12 @@ function dispatchEvent(medias) {
         });
     }
 
+
     //  evenement  pour cibler : ouverture lightbox 
     function eventForLightbox() {
         document.querySelector('.gallery-section').addEventListener("click", function (event) {
             const target = event.target;
-             //console.log(target);
+            //console.log(target);
             if (target.classList.contains('media')) { // si contient media
                 openLightBox(target); // ouverture de la lightbox
             }
@@ -67,4 +71,6 @@ function dispatchEvent(medias) {
             mdContainer.classList.toggle("active")
         }))
     }
+
 }
+
