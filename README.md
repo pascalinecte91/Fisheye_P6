@@ -4,6 +4,10 @@
 
 git clone <https://github.com/pascalinecte91/Fisheye_P6.git>
 
+## See project  
+
+<https://pascalinecte91.github.io/Fisheye_P6/>
+
 ## Start Project
 
 Nothing to install here, just open the file `index.html`.

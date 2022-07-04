@@ -39,11 +39,12 @@ function galleryFactory(data) {
       <div class ="gallery-section">
       <figure>
       <a href="#" class= "media" id="${id}" aria-label="ouvrir la media">
-          <img src=${imagesMedias} alt="pictures" tabindex="0" class="media" data-media="${id}">
-          </a>
+          <img src=${imagesMedias} alt="pictures" tabindex="0" class="media" data-media="${id}"> </a>
+         
           <figcaption>
           <h3 class="infoMedia">${title}</h3>
-          <span class="numberLike">${likes}</span>
+          <span class="numberLike" id="heart">${likes}</span>
+          
          </figcaption>
         </figure>
       </div>

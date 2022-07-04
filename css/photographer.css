@@ -161,13 +161,14 @@
 }
 
 
-/**********************  SECTION  GALLERY MEDIAS  **********/
+/***********  SECTION  GALLERY MEDIAS  **********/
 .gallery-section {
   display: flex;
   flex-wrap: wrap;
   padding-top: 3%;
-  justify-content: space-around;
-  margin: 10px;
+  justify-content: space-between;
+  margin: auto;
+  width:90%;
 }
 
 .gallery-section article {
@@ -192,7 +193,8 @@ figure {
   box-shadow: 0 3px 3px rgb(0 0 0 / 10%);
   object-position: 50% 17%;
 }
-.gallery-section img:hover {
+
+.gallery-section:hover {
   box-shadow: 0 3px 3px rgb(0 0 0 / 10%);
   transform: translateY(0px) scale(1);
   transition: all 0.25s ease;
@@ -209,20 +211,25 @@ figcaption h3 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 14rem;
+  width: 12rem;
 }
+
+/*-------   LIKES   ------- */
 
 .numberLike::after {
-  padding-left: 10px;
-  font-size: 1.375rem;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f004";
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding-left: 5px;
 }
 
-#clicHeart {
-  padding-top: 8px;
-  font-size: 1.5rem;
-  margin-right: -15%;
+figcaption span {
+  align-content: center;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
-
 
 /*************** SECTION   FILTER  **************/
 .sorter {
@@ -240,7 +247,7 @@ figcaption h3 {
   display: flex;
   flex-direction: row;
   max-width: 67%;
-  margin: 0 100px;
+  margin: 0 3.5rem;
   padding-top: 3%;
 }
 
@@ -257,17 +264,18 @@ select {
   cursor: pointer;
   border-radius: 5px;
 }
+
 /* change le natif*/
 option[disabled] {
   color: #c9c9c9;
 }
 
-  .actived {
+.actived {
   background: url("../assets/icons/chevron-up.svg") var(--lobusc) no-repeat 90%;
- }  
+}
 
 
-/******  MODAL FORMULAIRE  ******************/
+/****** SECTION  MODAL FORMULAIRE  ******************/
 
 *::before,
 ::after {
@@ -295,6 +303,7 @@ option[disabled] {
   border: none;
 }
 
+/* voit la modal */
 .md-container {
   visibility: hidden;
   position: fixed;
@@ -316,7 +325,6 @@ option[disabled] {
 .modal {
   opacity: 0;
   max-width: 27rem;
-  height: 45rem;
   padding: 0rem 2.2rem 1.8rem 2.2rem;
   background-color: var(--bann);
   border-radius: 5px;
@@ -334,11 +342,14 @@ option[disabled] {
   padding: 8px 10px;
   border: none;
   position: absolute;
+   background: url("../assets/icons/arrowCloseModal.svg") center / 100% 100% no-repeat;
   top: 2.5rem;
   right: 25px;
   cursor: pointer;
   background-color: var(--bann);
   color: #fff;
+  width:1.8rem;
+  height:1.8rem;
 }
 
 .modal label {
@@ -363,7 +374,8 @@ option[disabled] {
 }
 
 /*   entre input    */
-.modal input, textarea {
+.modal input,
+textarea {
   width: 100%;
   height: 2.1rem;
   border-radius: 5px;
@@ -377,10 +389,10 @@ option[disabled] {
 }
 
 
- .modal textarea:focus {
+.modal textarea:focus {
   outline-style: solid;
   border: 1px solid rgb(231, 100, 177);
-} 
+}
 
 #nameModal {
   font-size: 3rem;
@@ -414,6 +426,7 @@ option[disabled] {
 
 /********     modal  message erreur   ******/
 
+
 label {
   display: block;
 }
@@ -428,29 +441,12 @@ label {
 }
 
 .form-data.error::after {
-  content: 'Ce champs n\'est pas valide';
+  content: 'Merci de remplir le formulaire correctement';
   display: block;
   color: var(--lobusc);
   padding: 5px 0;
   font-size: 1rem;
 }
-
-/*-------   LIKES   ------- */
-
-.numberLike::after {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f004";
-  font-size: 1.25rem;
-  cursor: pointer;
-}
-
-figcaption span {
-  align-content: center;
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
 
 /***************   ENCART  *************/
 

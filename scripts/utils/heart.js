@@ -6,11 +6,14 @@ function clickLike(target) {
     if (target.classList.contains('liked')) { // si liké
         target.innerText = --numberLike;// je retire 1 heart
         target.classList.remove('liked');
+        target.style.color = "#901c1c";
+       
     } else {
         target.innerText = ++numberLike;  //sinon  ajout  like
         target.classList.add('liked');
+        target.style.color = "red";
     }
-    showTotalLikes();
+    showTotalLikes(); 
 }
 
 function showTotalLikes() {

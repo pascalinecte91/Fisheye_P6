@@ -8,13 +8,10 @@ function dispatchEvent(medias) {
     eventPagination();
     keyboardLightbox();
 
-   // evenement pour  le tri section
+    // evenement pour  le tri section
     function eventMediaSort(medias) {
-       const active =  document.getElementById("sort-choice").classList.toggle("actived");
-       
-        // document.getElementById("sort-choice").addEventListener("change", function (event) {
         document.getElementById("sort-choice").addEventListener("click", function (event) {
-        document.getElementById("sort-choice").classList.toggle("actived");
+            document.getElementById("sort-choice").classList.toggle("actived");
             let type = document.querySelector("#sort-choice").value;
             sortMediasByType(medias, type) //on trie par type
             displayMedias(medias); //on relance les medias
@@ -71,6 +68,15 @@ function dispatchEvent(medias) {
             mdContainer.classList.toggle("active")
         }))
     }
-
+    // // //reset du formulaire
+    const formSubscribe = document.getElementById('formSubscribe');
+    function resetFormSubscribe() {
+        // reinitialise le formulaire lorsqu il est correctement rempli
+        formSubscribe.reset();
+    }
+    formSubscribe.addEventListener('submit', (e) => {
+        e.preventDefault();
+        resetFormSubscribe();
+    })
 }
 

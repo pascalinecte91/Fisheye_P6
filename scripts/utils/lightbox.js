@@ -50,7 +50,6 @@ function closeLightBox() {
 }
 
 function nextSlide() {
-    console.log('t1');
     let currentSlide = document.querySelector('.slide:not(.hide)') // slide affichée
     currentSlide.classList.add('hide') //  masque puisqu'on passe à la suivante
 

@@ -1,36 +1,39 @@
 /* eslint-disable no-unused-vars */
 const inputs = document.querySelectorAll("input")
-const textarea = document.querySelectorAll("textarea")
-const formSubscribe = document.getElementById('formSubscribe');
+const textareas = document.querySelectorAll("textarea")
+
 
 const validatedModal = (input) => {
+    
     input.addEventListener('invalid', (e) => {
-        console.log(input);
+        // l evenement INVALID ajoute la class error si pas rempli
         e.preventDefault()
         if (!e.target.validity.valid) {
              //  ajoute le message d erreur sur le ou les input non remplis
             e.target.parentElement.classList.add('error')
         }
     })
+   
     input.addEventListener('input', (e) => {
-        // console.log(input);  
         if (e.target.validity.valid) {
-             // retire message d erreur à chaque champ remplis
+             // L evenement INPUT supprime  la class error ( si bien rempli)
             e.target.parentElement.classList.remove('error')
         }
     })
 }
+
+//  si la validation n'est pas ok , les messages d erreurs
 Array.from(inputs).forEach(validatedModal);
-//console.log(inputs); 
-Array.from(textarea).forEach(validatedModal);
+Array.from(textareas).forEach(validatedModal);
+// Affichage des elements remplis du formulaire de contact dans la console
+const form = document.querySelector('form');
 
-
-//reset du formulaire
-function resetFormSubscribe() {
-  // reinitialise le formulaire lorsqu il est correctement rempli
-    formSubscribe.reset();
-}
-formSubscribe.addEventListener('submit', (e) => {
-    e.preventDefault();
-     resetFormSubscribe();
-} )
+// e est ciblé sur le formulaire directement
+form.addEventListener('submit', (e) => {
+    e.preventDefault() // permet envoi du  form au serveur
+    // recupere avec e.target les valeurs
+    console.log('Nom:', e.target.lastName.value) 
+    console.log('Prénom:', e.target.firstName.value)
+    console.log('Email:', e.target.email.value)
+    console.log('Message:', e.target.message.value)
+});

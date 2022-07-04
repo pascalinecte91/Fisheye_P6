@@ -33,7 +33,7 @@
 
     <section class="sort" aria-haspopup="menu deroulant pour effectuer un tri selon des critères" aria hidden="false">
       <h3>Trier par</h3>
-      <select name="sorter" id="sort-choice">
+      <select name="sorter" aria-haspopup="tri de selection" id="sort-choice">
         <option value="popularite">Popularité</option>
         <option disabled="disabled">────────</option>
         <option value="date">Date</option>
@@ -53,30 +53,27 @@
     <div class="modal" aria-label="window" role="dialog">
       <h1>Contactez-moi</h1>
       <div id="nameModal"></div>
-      <button class="close-modal closed" aria-label="fermer la fenêtre">
-        <img src="assets/icons/arrowCloseModal.svg" alt="Croix fermeture modal" />
-      </button>
+      <button class="close-modal closed" aria-label="fermer la fenêtre"></button>
 
 
       <form action="/" methode="post" id="formSubscribe">
         <div class="form-data">
-          <label for="firstName">Prénom</label>
+          <label for="firstName *">Prénom</label>
           <input id="firstName" type="text" name="first" aria-labelledby="firstName" pattern="^\D*$" required>
         </div>
         <div class="form-data">
-          <label for="lastName">Nom</label>
+          <label for="lastName *">Nom</label>
           <input id="lastName" type="text" name="last" aria-labelledby="lastName" pattern="^\D*$" pattern="^\D*$"
             required>
         </div>
         <div class="form-data">
-          <label for="email">Email</label>
+          <label for="email *">Email</label>
           <input id="email" type="email" name="email" aria-labelledby="email" required />
         </div>
         <div class="form-data">
-          <label for="message" tabindex="0">Message</label>
-          <textarea id="message" name="message" aria-labelledby="message" required></textarea>
-
-        </div>
+          <label for="message *" tabindex="0">Message</label>
+          <textarea id="message" name="message" aria-labelledby="message" required></textarea>    
+        </div> 
         <button type="submit" name="message" aria-label="send" id="send" class="contact_button">Envoyer</button>
       </form>
     </div>
