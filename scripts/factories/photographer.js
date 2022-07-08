@@ -71,7 +71,7 @@ function displayMedias(medias) {
 
   });
   // On ecrase la section des cards par la nouvelle
-  document.querySelector(".gallery-section").innerHTML = cardsDom.join('');
+  document.querySelector(".gallery-wrapper").innerHTML = cardsDom.join('');
   document.querySelector('#totalLike').innerHTML = totalLike;
   document.querySelector('.bannerLikes-section').classList.remove('hide');
 }

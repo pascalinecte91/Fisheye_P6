@@ -27,13 +27,13 @@
   <main id="main">
     <!-- SECTION HEADER PHOTOGRAPHE -->
 
-    <section class="photograph-header" aria-label="Information  du photographe" aria hidden="false"></section>
+    <section class="photograph-header" aria-label="Information  du photographe"></section>
 
     <!-- SECTION FILTRES   /  SORT -->
 
-    <section class="sort" aria-haspopup="menu deroulant pour effectuer un tri selon des critères" aria hidden="false">
+    <section class="sort">
       <h3>Trier par</h3>
-      <select name="sorter" aria-haspopup="tri de selection" id="sort-choice">
+      <select name="sorter" id="sort-choice">
         <option value="popularite">Popularité</option>
         <option disabled="disabled">────────</option>
         <option value="date">Date</option>
@@ -44,7 +44,7 @@
 
 
     <!-- SECTION GALLERY -->
-    <section class="gallery-section" aria-label="photographer-gallery-heading"></section>
+    <section class="gallery-wrapper" aria-label="photographer-gallery-heading"></section>
 
   </main>
 
@@ -55,40 +55,38 @@
       <div id="nameModal"></div>
       <button class="close-modal closed" aria-label="fermer la fenêtre"></button>
 
-
-      <form action="/" methode="post" id="formSubscribe">
+      <form action="/" method="POST" id="formSubscribe">
         <div class="form-data">
-          <label for="firstName *">Prénom</label>
+          <label for="firstName">Prénom *</label>
           <input id="firstName" type="text" name="first" aria-labelledby="firstName" pattern="^\D*$" required>
         </div>
         <div class="form-data">
-          <label for="lastName *">Nom</label>
-          <input id="lastName" type="text" name="last" aria-labelledby="lastName" pattern="^\D*$" pattern="^\D*$"
-            required>
+          <label for="lastName">Nom *</label>
+          <input id="lastName" type="text" name="last" aria-labelledby="lastName" pattern="^\D*$" required>
         </div>
         <div class="form-data">
-          <label for="email *">Email</label>
+          <label for="email">Email *</label>
           <input id="email" type="email" name="email" aria-labelledby="email" required />
         </div>
         <div class="form-data">
-          <label for="message *" tabindex="0">Message</label>
+          <label for="message" tabindex="0">Message *</label>
           <textarea id="message" name="message" aria-labelledby="message" required></textarea>    
         </div> 
-        <button type="submit" name="message" aria-label="send" id="send" class="contact_button">Envoyer</button>
+        <button type="submit" name="submit" aria-label="send" id="send" class="contact_button">Envoyer</button>
       </form>
     </div>
   </div>
   <!--BANNIERE-->
-  <section class="bannerLikes-section hide" aria_label=" banniere  de comptage de like" aria-hidden="true">
+  <section class="bannerLikes-section hide" aria-label="banniere de comptage de like">
     <span id="totalLike" aria-label="total des likes"></span>
     <div>
-      <span id="photographerPrice" aria-label=" prix "></span>
-      <span class="allLike" aria-label=" nombre global des likes ">€ / jour</span>
+      <span id="photographerPrice" aria-label="prix"></span>
+      <span class="allLike" aria-label="nombre global des likes">€ / jour</span>
     </div>
   </section>
 
   <!-- CAROUSEL  LIGHTBOX    -->
-  <section id="carousel" class="lightbox hide " aria-label="image closeup view" aria-hidden="true">
+  <section id="carousel" class="lightbox hide " aria-label="image closeup view">
     <button class="lightbox__close" id="lightboxClose" tabindex="0" aria-label="fermer le carousel">Fermer</button>
     <button class="lightbox__next" tabindex="0" aria-label="vers image suivante">Suivant</button>
     <button class="lightbox__prev" tabindex="0" aria-label="vers image précédente">Précédent</button>

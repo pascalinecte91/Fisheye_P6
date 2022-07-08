@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/pascalinecte91/Fisheye_P6#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
     "eslint": "^8.16.0"
   }
 }

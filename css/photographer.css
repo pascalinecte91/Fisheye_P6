@@ -162,24 +162,28 @@
 
 
 /***********  SECTION  GALLERY MEDIAS  **********/
-.gallery-section {
+.gallery-wrapper {
   display: flex;
   flex-wrap: wrap;
   padding-top: 3%;
   justify-content: space-between;
-  margin: auto;
+  margin:auto;
   width:90%;
 }
 
 .gallery-section article {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2%;
 }
 
 figure {
   margin: 0px;
-  width: 100%
+}
+
+.gallery-section span {
+  align-content: center;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 /***  reprise maquette */
@@ -192,12 +196,6 @@ figure {
   transition: all 0.25s ease;
   box-shadow: 0 3px 3px rgb(0 0 0 / 10%);
   object-position: 50% 17%;
-}
-
-.gallery-section:hover {
-  box-shadow: 0 3px 3px rgb(0 0 0 / 10%);
-  transform: translateY(0px) scale(1);
-  transition: all 0.25s ease;
 }
 
 figcaption {
@@ -224,13 +222,9 @@ figcaption h3 {
   cursor: pointer;
   padding-left: 5px;
 }
-
-figcaption span {
-  align-content: center;
-  font-size: 1.2rem;
-  font-weight: 500;
+.liked.numberLike::after {
+  color:rgb(236, 32, 32);
 }
-
 /*************** SECTION   FILTER  **************/
 .sorter {
   position: relative;
@@ -425,15 +419,13 @@ textarea {
 }
 
 /********     modal  message erreur   ******/
-
-
 label {
   display: block;
 }
 
 .form-data.error input,
 .form-group.error textarea {
-  border: 2px solid var(--lobusc);
+  border: 2px solid transparent;
 }
 
 .form-group.error label {
@@ -441,14 +433,14 @@ label {
 }
 
 .form-data.error::after {
-  content: 'Merci de remplir le formulaire correctement';
+  content: 'Merci de remplir le formulaire.';
   display: block;
   color: var(--lobusc);
   padding: 5px 0;
   font-size: 1rem;
 }
 
-/***************   ENCART  *************/
+/***********   ENCART BAS de PAGE  ********/
 
 .bannerLikes-section {
   display: flex;

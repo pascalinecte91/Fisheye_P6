@@ -23,7 +23,7 @@ function dispatchEvent(medias) {
 
     //  evenement  pour cibler : ouverture lightbox 
     function eventForLightbox() {
-        document.querySelector('.gallery-section').addEventListener("click", function (event) {
+        document.querySelector('.gallery-wrapper').addEventListener("click", function (event) {
             const target = event.target;
             //console.log(target);
             if (target.classList.contains('media')) { // si contient media
@@ -53,7 +53,7 @@ function dispatchEvent(medias) {
         })
     }
     function eventForHeart() {
-        document.querySelector('.gallery-section').addEventListener("click", function (event) {
+        document.querySelector('.gallery-wrapper').addEventListener("click", function (event) {
             const target = event.target;
             if (target.classList.contains('numberLike')) { //si contient  numberLike
                 clickLike(target);

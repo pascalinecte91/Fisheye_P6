@@ -15,7 +15,7 @@ fetch("./data/photographers.json")
     return;
   })
   .catch(function (response) {
-   // console.dir(response);
+     console.dir(response);
     return;
 });
 
