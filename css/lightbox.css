@@ -32,6 +32,7 @@ object-fit: cover;
 border-radius: 5px;
 justify-content: center;
 margin-left:14%;
+object-position: 50% 37%;
 }
 
 .lightbox {
@@ -44,9 +45,9 @@ margin-left:14%;
 
 
 .lightbox__content .slide {
-  width: 80%;
-  margin-left: 8%;
-  margin-right: 10%; 
+  width: 65%;
+  margin-left: 18%;
+  margin-right: 18%; 
 }
 
 .lightbox__next,

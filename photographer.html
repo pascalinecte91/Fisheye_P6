@@ -21,21 +21,21 @@
 
 <body>
   <header class="banner" role="banner" aria-label=" Bannière du site des photographes" aria-hidden="false">
-    <a href="../index.html">
-      <img src="assets/images/logo.png" alt="Fisheye Home page" class="logo" /></a>
+    <a href="../index.html" aria-hidden="false">
+      <img src="assets/images/logo.png" alt="Fisheye Home page" aria-hidden="true" class="logo" /></a>
   </header>
   <main id="main">
     <!-- SECTION HEADER PHOTOGRAPHE -->
 
-    <section class="photograph-header" aria-label="Information  du photographe"></section>
+    <section class="photograph-header" aria-hidden="false" aria-label="Information  du photographe"></section>
 
     <!-- SECTION FILTRES   /  SORT -->
 
     <section class="sort">
-      <h3>Trier par</h3>
-      <select name="sorter" id="sort-choice">
+      <label for="oneChoice" tabindex="0">Trier par</label>
+      <select name="sorter" aria-hidden="true" id="sort-choice">
         <option value="popularite">Popularité</option>
-        <option disabled="disabled">────────</option>
+        <option disabled="disabled" >────────</option>
         <option value="date">Date</option>
         <option disabled="disabled">────────</option>
         <option value="titre">Titre</option>
@@ -44,7 +44,7 @@
 
 
     <!-- SECTION GALLERY -->
-    <section class="gallery-wrapper" aria-label="photographer-gallery-heading"></section>
+    <section class="gallery-wrapper" aria-label="photographer-gallery-heading" aria-hidden="false"></section>
 
   </main>
 
@@ -57,28 +57,28 @@
 
       <form action="/" method="POST" id="formSubscribe">
         <div class="form-data">
-          <label for="firstName">Prénom *</label>
-          <input id="firstName" type="text" name="first" aria-labelledby="firstName" pattern="^\D*$" required>
+          <label for="firstName" tabindex="0">Prénom</label>
+          <input id="firstName" type="text" name="first" aria-labelledby="firstName" aria-hidden="true" pattern="^\D*$" required>
         </div>
         <div class="form-data">
-          <label for="lastName">Nom *</label>
-          <input id="lastName" type="text" name="last" aria-labelledby="lastName" pattern="^\D*$" required>
+          <label for="lastName" tabindex="0">Nom</label>
+          <input id="lastName" type="text" name="last" aria-labelledby="lastName" aria-hidden="true" pattern="^\D*$" required>
         </div>
         <div class="form-data">
-          <label for="email">Email *</label>
-          <input id="email" type="email" name="email" aria-labelledby="email" required />
+          <label for="email" tabindex="0">Email</label>
+          <input id="email" type="email" name="email" aria-labelledby="email" aria-hidden="true" required />
         </div>
         <div class="form-data">
-          <label for="message" tabindex="0">Message *</label>
-          <textarea id="message" name="message" aria-labelledby="message" required></textarea>    
+          <label for="message" tabindex="0">Message</label>
+          <textarea id="message" name="message" aria-labelledby="message" aria-hidden="true" required></textarea>    
         </div> 
-        <button type="submit" name="submit" aria-label="send" id="send" class="contact_button">Envoyer</button>
+        <button type="submit" tabindex="0" name="submit" aria-label="envoyer" id="send" class="contact_button">Envoyer</button>
       </form>
     </div>
   </div>
   <!--BANNIERE-->
-  <section class="bannerLikes-section hide" aria-label="banniere de comptage de like">
-    <span id="totalLike" aria-label="total des likes"></span>
+  <section class="bannerLikes-section hide" aria-label="encart compteur like">
+    <span id="totalLike" aria-label="total des likes" aria-hidden="false"></span>
     <div>
       <span id="photographerPrice" aria-label="prix"></span>
       <span class="allLike" aria-label="nombre global des likes">€ / jour</span>
@@ -90,7 +90,7 @@
     <button class="lightbox__close" id="lightboxClose" tabindex="0" aria-label="fermer le carousel">Fermer</button>
     <button class="lightbox__next" tabindex="0" aria-label="vers image suivante">Suivant</button>
     <button class="lightbox__prev" tabindex="0" aria-label="vers image précédente">Précédent</button>
-    <div class="lightbox__content" tabindex="0"></div>
+    <div class="lightbox__content" aria-hidden="true"></div>
   </section>
 
 

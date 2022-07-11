@@ -22,15 +22,12 @@
   justify-self: center;
   justify-content: center;
   flex-direction: column;
-
 }
-
 
 .photographer-section article a h2 {
   color: #D3573C;
   font-size: 2.25rem;
   margin-bottom: 0;
-  font-weight: 400;
   transition-duration: 200ms;
   text-align: center;
 }
@@ -50,10 +47,15 @@
   align-items: center;
   text-align: center;
   margin: 0;
+  font-size: 9px;
+  color: #757575;
+  font-weight: 400;
 }
 
 .photographer-content h3 {
   text-align: center;
+  color: var(--lobusc);
+  margin-bottom:0px;
 }
 
 .photographer-section article img {
@@ -65,16 +67,19 @@
   object-fit: cover;
   box-shadow: 0px 5px 10px 1px rgba(201, 197, 197, 0.50);
   align-self: center;
-
+  margin-top: 4rem;
 }
 
-.photographer-content {
-  font-size: 9px;
-  color: #757575;
+.photographer-section .tagline {
+  font-size: 10px;
   font-weight: 400;
-  text-align: center;
+  color: #000000;
+  margin:0;
 }
 
+.photographer-section .price{
+  margin-top: 0px;
+}
 
 /**************   SECTION PAGE DU PHOTOGRAPHE    *****/
 /*   HEADER */
@@ -119,6 +124,11 @@
   margin-top: -17%;
   margin-right: 4%;
   object-fit: cover;
+}
+
+.photograph-header img:hover{
+  box-shadow: 0px 5px 20px 1px rgba(134, 117, 117, 0.61);
+  transition-duration: 300ms;
 }
 
 .photograph-header article {
@@ -167,8 +177,8 @@
   flex-wrap: wrap;
   padding-top: 3%;
   justify-content: space-between;
-  margin:auto;
-  width:90%;
+  margin: auto;
+  width: 90%;
 }
 
 .gallery-section article {
@@ -195,7 +205,12 @@ figure {
   transform: translateY(0px) scale(1);
   transition: all 0.25s ease;
   box-shadow: 0 3px 3px rgb(0 0 0 / 10%);
-  object-position: 50% 17%;
+  object-position: 50% 27%;
+}
+
+.gallery-section img:hover {
+  box-shadow: 0px 3px 10px 1px rgba(134, 117, 117, 0.61);
+  transition-duration: 300ms;
 }
 
 figcaption {
@@ -222,9 +237,11 @@ figcaption h3 {
   cursor: pointer;
   padding-left: 5px;
 }
+
 .liked.numberLike::after {
-  color:rgb(236, 32, 32);
+  color: rgb(236, 32, 32);
 }
+
 /*************** SECTION   FILTER  **************/
 .sorter {
   position: relative;
@@ -235,7 +252,12 @@ figcaption h3 {
   margin-left: 2.5rem;
   border: none;
 }
-
+.sort label{
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin: 1rem;
+}
 /* trier par + liste deroulante */
 .sort {
   display: flex;
@@ -336,14 +358,14 @@ option[disabled] {
   padding: 8px 10px;
   border: none;
   position: absolute;
-   background: url("../assets/icons/arrowCloseModal.svg") center / 100% 100% no-repeat;
+  background: url("../assets/icons/arrowCloseModal.svg") center / 100% 100% no-repeat;
   top: 2.5rem;
   right: 25px;
   cursor: pointer;
   background-color: var(--bann);
   color: #fff;
-  width:1.8rem;
-  height:1.8rem;
+  width: 1.8rem;
+  height: 1.8rem;
 }
 
 .modal label {

@@ -7,6 +7,7 @@ function dispatchEvent(medias) {
     eventModalForm();
     eventPagination();
     keyboardLightbox();
+  
 
     // evenement pour  le tri section
     function eventMediaSort(medias) {
@@ -23,14 +24,14 @@ function dispatchEvent(medias) {
 
     //  evenement  pour cibler : ouverture lightbox 
     function eventForLightbox() {
-        document.querySelector('.gallery-wrapper').addEventListener("click", function (event) {
+        document.querySelector(".gallery-wrapper").addEventListener("click", function (event) {
             const target = event.target;
             //console.log(target);
-            if (target.classList.contains('media')) { // si contient media
+            if (target.classList.contains("media")) { // si contient media
                 openLightBox(target); // ouverture de la lightbox
             }
         });
-        document.getElementById('lightboxClose').addEventListener("click", closeLightBox);
+        document.getElementById("lightboxClose").addEventListener("click", closeLightBox);
     }
 
     function eventPagination() { //  cible les fleches 
@@ -40,11 +41,12 @@ function dispatchEvent(medias) {
     // evenement pour accessibilité CLAVIER  gauche droit et fermeture
     function keyboardLightbox() {
         document.addEventListener("keydown", (e) => {
-            // console.log(e.key);
+             console.log(e.key == "ArrowRight");
             if (e.key == "ArrowRight") { // code fleche gauche next
                 nextSlide();
             }
             else if (e.key == "ArrowLeft") { // code fleche de droite prev
+                 console.log(e.key == "ArrowLeft");
                 previousSlide();
             }
             if (e.key == "Escape") { // code X  pour fermer
@@ -52,10 +54,11 @@ function dispatchEvent(medias) {
             }
         })
     }
+
     function eventForHeart() {
-        document.querySelector('.gallery-wrapper').addEventListener("click", function (event) {
+        document.querySelector(".gallery-wrapper").addEventListener("click", function (event) {
             const target = event.target;
-            if (target.classList.contains('numberLike')) { //si contient  numberLike
+            if (target.classList.contains("numberLike")) { //si contient  numberLike
                 clickLike(target);
             }
         });
@@ -69,12 +72,12 @@ function dispatchEvent(medias) {
         }))
     }
     // // //reset du formulaire
-    const formSubscribe = document.getElementById('formSubscribe');
+    const formSubscribe = document.getElementById("formSubscribe");
     function resetFormSubscribe() {
         // reinitialise le formulaire lorsqu il est correctement rempli
         formSubscribe.reset();
     }
-    formSubscribe.addEventListener('submit', (e) => {
+    formSubscribe.addEventListener("submit", (e) => {
         e.preventDefault();
         resetFormSubscribe();
     })
