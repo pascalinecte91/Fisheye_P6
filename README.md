@@ -11,3 +11,7 @@ git clone <https://github.com/pascalinecte91/Fisheye_P6.git>
 ## Start Project
 
 Nothing to install here, just open the file `index.html`.
+
+## esLint (launch esLint)
+
+./node_modules/.bin/eslint .

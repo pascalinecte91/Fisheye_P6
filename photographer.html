@@ -20,8 +20,8 @@
 <!--           HEADER              -->
 
 <body>
-  <header class="banner" role="banner" aria-label=" Bannière du site des photographes" aria-hidden="false">
-    <a href="../index.html" aria-hidden="false">
+  <header class="banner" aria-label=" Bannière du site des photographes" aria-hidden="false">
+    <a href="index.html" aria-hidden="false">
       <img src="assets/images/logo.png" alt="Fisheye Home page" aria-hidden="true" class="logo" /></a>
   </header>
   <main id="main">
@@ -31,16 +31,16 @@
 
     <!-- SECTION FILTRES   /  SORT -->
 
-    <section class="sort">
-      <label for="oneChoice" tabindex="0">Trier par</label>
+    <div role="search" class="sort">
+      <label for="sort-choice">Trier par</label>
       <select name="sorter" aria-hidden="true" id="sort-choice">
         <option value="popularite">Popularité</option>
-        <option disabled="disabled" >────────</option>
+        <option disabled="disabled">────────</option>
         <option value="date">Date</option>
         <option disabled="disabled">────────</option>
         <option value="titre">Titre</option>
       </select>
-    </section>
+    </div>
 
 
     <!-- SECTION GALLERY -->
@@ -53,48 +53,55 @@
     <div class="modal" aria-label="window" role="dialog">
       <h1>Contactez-moi</h1>
       <div id="nameModal"></div>
-      <button class="close-modal closed" aria-label="fermer la fenêtre"></button>
+
 
       <form action="/" method="POST" id="formSubscribe">
         <div class="form-data">
-          <label for="firstName" tabindex="0">Prénom</label>
-          <input id="firstName" type="text" name="first" aria-labelledby="firstName" aria-hidden="true" pattern="^\D*$" required>
+          <label for="firstName">Prénom</label>
+          <input id="firstName" tabindex="0" type="text" name="first" aria-labelledby="firstName" aria-hidden="true"
+            pattern="^\D*$" required>
         </div>
         <div class="form-data">
-          <label for="lastName" tabindex="0">Nom</label>
-          <input id="lastName" type="text" name="last" aria-labelledby="lastName" aria-hidden="true" pattern="^\D*$" required>
+          <label for="lastName">Nom</label>
+          <input id="lastName" tabindex="0" type="text" name="last" aria-labelledby="lastName" aria-hidden="true"
+            pattern="^\D*$" required>
+        </div>
+        <div class="form-data email">
+          <label for="email">Email</label>
+          <input id="email" tabindex="0" type="email" name="email" aria-labelledby="email" aria-hidden="true"
+            required />
         </div>
         <div class="form-data">
-          <label for="email" tabindex="0">Email</label>
-          <input id="email" type="email" name="email" aria-labelledby="email" aria-hidden="true" required />
+          <label for="message">Message</label>
+          <textarea id="message" tabindex="0" name="message" aria-labelledby="message" aria-hidden="true"
+            required></textarea>
         </div>
-        <div class="form-data">
-          <label for="message" tabindex="0">Message</label>
-          <textarea id="message" name="message" aria-labelledby="message" aria-hidden="true" required></textarea>    
-        </div> 
-        <button type="submit" tabindex="0" name="submit" aria-label="envoyer" id="send" class="contact_button">Envoyer</button>
+        <button type="submit" tabindex="0" name="submit" aria-label="envoyer" id="send"
+          class="contact_button">Envoyer</button>
       </form>
+      <button class="close-modal closed" tabindex="0" aria-label="fermer la fenêtre"></button>
     </div>
   </div>
   <!--BANNIERE-->
   <section class="bannerLikes-section hide" aria-label="encart compteur like">
-    <span id="totalLike" aria-label="total des likes" aria-hidden="false"></span>
+    <span role="marquee" id="totalLike" aria-label="total des likes" aria-hidden="false"></span>
     <div>
-      <span id="photographerPrice" aria-label="prix"></span>
-      <span class="allLike" aria-label="nombre global des likes">€ / jour</span>
+      <span role="document" id="photographerPrice" aria-label="prix"></span>
+      <span role="marquee" class="allLike" aria-label="nombre global des likes">€ / jour</span>
     </div>
   </section>
 
   <!-- CAROUSEL  LIGHTBOX    -->
-  <section id="carousel" class="lightbox hide " aria-label="image closeup view">
-    <button class="lightbox__close" id="lightboxClose" tabindex="0" aria-label="fermer le carousel">Fermer</button>
-    <button class="lightbox__next" tabindex="0" aria-label="vers image suivante">Suivant</button>
-    <button class="lightbox__prev" tabindex="0" aria-label="vers image précédente">Précédent</button>
+  <section id="carousel" class="lightbox hide" aria-label="image closeup view">
+    <button class="lightbox__close" id="lightboxClose" aria-label="fermer le carousel">Fermer</button>
+    <button class="lightbox__next" aria-label="vers image suivante">Suivant</button>
+    <button class="lightbox__prev" aria-label="vers image précédente">Précédent</button>
     <div class="lightbox__content" aria-hidden="true"></div>
   </section>
 
-
   <!--    SCRIPT    -->
+  <script src="scripts/builder/image.js"></script>
+  <script src="scripts/builder/video.js"></script>
   <script src="scripts/factories/photographer.js"></script>
   <script src="scripts/utils/sort.js"></script>
   <script src="scripts/utils/lightbox.js"></script>

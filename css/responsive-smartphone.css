@@ -50,9 +50,9 @@
   }
 
   .close-modal {
-    width:20px;
-    height: 20px;
-    top: 14px;
+    width: 1.25rem;
+    height: 1.25rem;
+    top: 0.88rem;
   }
 }
 
@@ -87,8 +87,8 @@
   }
 
   .photograph-header h1 {
-    font-size: 22px;
-    padding: 10px;
+    font-size: 1.37rem;
+    padding: 0.625rem;
   }
 
   .photograph-header .tagline {
@@ -97,8 +97,8 @@
   }
 
   .photograph-header div p {
-    font-size: 26px;
-    line-height: 36px;
+    font-size: 1.625rem;
+    line-height: 2.25rem;
   }
 
   .photograph-header a {
@@ -130,8 +130,8 @@
     font-size: 0.8rem;
   }
 
-  section .sort{
-    margin:0px;
+  .sort{
+    margin: 0px;
   }
 
   #sort-choice {
@@ -169,7 +169,7 @@
   }
 
   .lightbox__close {
-    height: 15px;
-    width: 15px;
+    height: 0.94rem;
+    width: 0.94px;
   }
 }

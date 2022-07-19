@@ -31,7 +31,7 @@ height: 90%;
 object-fit: cover;
 border-radius: 5px;
 justify-content: center;
-margin-left:14%;
+margin-left: 14%;
 object-position: 50% 37%;
 }
 
@@ -83,7 +83,6 @@ object-position: 50% 37%;
   cursor: pointer;
   position: fixed;
   text-indent: -10000px;
- 
   opacity: 1;
 }
 
@@ -91,14 +90,11 @@ object-position: 50% 37%;
   opacity: 0.4;
 }
 
-
 .lightbox__title {
 font-size: 1.5rem;
 color: var(--lobusc);
 margin-left: 14%;
-margin-top:10px;
-
+margin-top: 0.7rem;
 }
-
 /****************************/
 

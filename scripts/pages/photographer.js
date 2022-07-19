@@ -1,5 +1,4 @@
 /* eslint-disable no-undef */
-
 //trouve l ID  du photographer
 const request = new URLSearchParams(location.search);
 const photographerId = request.get("photographer");
@@ -15,12 +14,11 @@ fetch("./data/photographers.json")
     return;
   })
   .catch(function (response) {
-     console.dir(response);
+    console.dir(response);
     return;
-});
+  });
 
 function successPage(photographers, media, photographerId) {
-  
   const photographer = photographers.find((photographer) => { // on cherche info photographer
     return photographer.id == photographerId; // retourne  l'identifiant photographer
   });
@@ -28,11 +26,10 @@ function successPage(photographers, media, photographerId) {
   let medias = media.filter((media) => { // on filtre les medias du photographer concerné
     return media.photographerId == photographerId;
   });
-
   displayDataHeader(photographer); //affichage du header du photographe
-  sortMediasByType(medias) //trie des medias par type
+  sortMediasByType(medias); //trie des medias par type
   displayLightBox(medias); //affiche le carousel
   displayMedias(medias); //affiches les medias
- // console.log(medias);
+  // console.log(medias);
   dispatchEvent(medias);//declenchement des evenements
 }
