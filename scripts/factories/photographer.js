@@ -29,25 +29,19 @@ function headerFactory(photograph) {
 
 /****     elements DOM partie GALERIES    **********/
 
-function galleryFactory(data) {
-	const { id, image, title, video, likes, date } = data;
-	// console.log(data);
-	const imagesMedias = typeof image !== "undefined"
-		? `assets/thumbnails/imagesMedias/${image}`
-		: `assets/thumbnails/videosMedias/${video}`.replace(".mp4", ".jpg");
-	return ` 
-    <article>  
-      <div class ="gallery-section">
-      <figure>
-      <a href="#" class= "media" id="${id}" aria-label="ouvrir la media">
-          <img tabindex="0" src=${imagesMedias} alt="media" aria-hidden="false" class="media" data-media="${id}"> </a>
-          <figcaption>
-          <h3 tabindex="0" class="infoMedia" aria-hidden="false">${title}</h3>
-          <span class="numberLike" aria-hidden="false" id="heart">${likes} </span> 
-         </figcaption>
-        </figure>
-      </div>
-    </article>`;
+function galleryFactory(data, type) {
+	switch (type) {
+		case 'image':
+			mediaDom = buildImageCard(data);
+			break;
+		case 'video':
+			mediaDom = buildVideoCard(data); 
+			break;
+		default:
+			mediaDom = 'Le type de media est invalide';
+	}
+
+	return mediaDom;
 }
 
 /****************************************************************************/
@@ -66,9 +60,13 @@ function displayMedias(medias) {
 	// On recreer chaque card Html stocker dans cardsDom
 	const cardsDom = medias.map((media) => {
 		totalLike += media.likes;
-		return galleryFactory(media);
+		mediaType = typeof media.image !== "undefined"
+			? 'image'
+			: 'video';
 
+		return galleryFactory(media, mediaType);
 	});
+
 	// On ecrase la section des cards par la nouvelle
 	document.querySelector(".gallery-wrapper").innerHTML = cardsDom.join("");
 	document.querySelector("#totalLike").innerHTML = totalLike;
