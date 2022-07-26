@@ -3,7 +3,7 @@ async function getPhotographers() {
   return (
     fetch("./data/photographers.json")
       .then(function (response) {
-        // console.log(response);
+        console.log(response);
         return response.json();
       })
       .then((data) => { // recupere les donnees du fichier

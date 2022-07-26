@@ -9,13 +9,13 @@ function buildCardVideo(data) {
     <article>  
       <div class ="gallery-section">
       <figure>
-      <a href="#" tabindex="0" class= "media" id="${id}" aria-label="ouvrir la media">
-           <img src=${imagesMedias} alt="media" aria-hidden="false" class="media" data-media="${id}"> 
+      <a href="#" tabindex="0" class="media" id="${id}" aria-label="ouvrir la media">
+           <img src=${imagesMedias} aria-label="video${title}" alt="media" aria-hidden="false" class="media" data-media="${id}"> 
       </a>
           <figcaption>
             <h3 tabindex="0" class="infoMedia" aria-hidden="false">${title}
             </h3>   
-            <span tabindex="0" class="numberLike" aria-hidden="false" id="heart">${likes} </span> 
+            <span tabindex="0" class="numberLike" aria-hidden="false" id="heart" aria-label="${likes}like">${likes} </span> 
           </figcaption>
       </figure>
       </div>

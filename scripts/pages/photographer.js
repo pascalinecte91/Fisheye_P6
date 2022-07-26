@@ -7,7 +7,7 @@ fetch("./data/photographers.json")
   .then(function (response) {
     return response.json();
   })
-
+  // la methode renvoie  les donnees
   .then(function (response) { //alors renvoi des medias et des photographes
     const { photographers, media } = response;
     successPage(photographers, media, photographerId); //page ok photographers, medias, identifiant

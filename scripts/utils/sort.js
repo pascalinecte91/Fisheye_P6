@@ -28,8 +28,9 @@ function sortMediasByType(medias, type) {
   /***************    BY POLULARITY  *******************/
   function sortByLike(medias) {
     return medias.sort(function (a, b) {
-      if (a.likes < b.likes) { return -1; }
-      if (a.likes > b.likes) { return 1; }
+      // Du plus populaire au moins populaire
+      if (a.likes < b.likes) { return 1; }
+      if (a.likes > b.likes) { return -1; }
       return 0;
     });
   }
@@ -37,7 +38,8 @@ function sortMediasByType(medias, type) {
   /****************   BY  DATA   ***********************/
   function sortByDate(medias) {
     return medias.sort(function (a, b) {
-      return new Date(a.date) - new Date(b.date);
+      //du media le plus recent
+      return new Date(b.date) - new Date(a.date);
     });
   }
 }

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Présentation du photographe." />
-  <title>Profil photographe</title>
+  <title aria-hidden="true">Profil photographe</title>
 
   <link href="css/style.css" rel="stylesheet" type="text/css" />
   <link href="css/responsive-tablet.css" rel="stylesheet" type="text/css" />
@@ -20,25 +20,25 @@
 <!--           HEADER              -->
 
 <body>
-  <header class="banner" aria-label=" Bannière du site des photographes" aria-hidden="false">
-    <a href="index.html" aria-hidden="false">
-      <img src="assets/images/logo.png" alt="Fisheye Home page" aria-hidden="true" class="logo" /></a>
+  <header class="banner" aria-label=" Bannière du site des photographes" aria-hidden="true">
+    <a href="index.html" aria-hidden="true">
+      <img src="assets/images/logo.png" alt="Fisheye Home page" aria-hidden="false" class="logo" /></a>
   </header>
   <main id="main">
     <!-- SECTION HEADER PHOTOGRAPHE -->
 
-    <section class="photograph-header" aria-hidden="false" aria-label="Information  du photographe"></section>
+    <section class="photograph-header" aria-hidden="false" aria-label="Profil du photographe"></section>
 
     <!-- SECTION FILTRES   /  SORT -->
 
-    <div role="search" class="sort">
+    <div role="search" aria-hidden="false" class="sort">
       <label for="sort-choice">Trier par</label>
-      <select name="sorter" aria-hidden="true" id="sort-choice">
-        <option value="popularite">Popularité</option>
-        <option disabled="disabled">────────</option>
-        <option value="date">Date</option>
-        <option disabled="disabled">────────</option>
-        <option value="titre">Titre</option>
+      <select name="sorter" aria-expanded="false" id="sort-choice">
+        <option value="popularite" aria-expanded="false">Popularité</option>
+        <option disabled="disabled" aria-expanded="true">────────</option>
+        <option value="date" aria-expanded="true">Date</option>
+        <option disabled="disabled" aria-expanded="true">────────</option>
+        <option value="titre" aria-expanded="false">Titre</option>
       </select>
     </div>
 
@@ -79,24 +79,24 @@
         <button type="submit" tabindex="0" name="submit" aria-label="envoyer" id="send"
           class="contact_button">Envoyer</button>
       </form>
-      <button class="close-modal closed" tabindex="0" aria-label="fermer la fenêtre"></button>
+      <button class="close-modal closed" tabindex="0" aria-label="fermer le formulaire"></button>
     </div>
   </div>
   <!--BANNIERE-->
-  <section class="bannerLikes-section hide" aria-label="encart compteur like">
-    <span role="marquee" id="totalLike" aria-label="total des likes" aria-hidden="false"></span>
+  <section class="bannerLikes-section hide" aria-label="popularite et tarif">
+    <span role="marquee" id="totalLike" aria-label="total des likes du photographe" aria-hidden="false"></span>
     <div>
-      <span role="document" id="photographerPrice" aria-label="prix"></span>
-      <span role="marquee" class="allLike" aria-label="nombre global des likes">€ / jour</span>
+      <span role="presentation" id="photographerPrice" aria-label="prix"></span>
+      <span role="marquee" class="allLike" aria-hidden="false" aria-label="tarif journalier">€ / jour</span>
     </div>
   </section>
 
   <!-- CAROUSEL  LIGHTBOX    -->
   <section id="carousel" class="lightbox hide" aria-label="image closeup view">
     <button class="lightbox__close" id="lightboxClose" aria-label="fermer le carousel">Fermer</button>
-    <button class="lightbox__next" aria-label="vers image suivante">Suivant</button>
-    <button class="lightbox__prev" aria-label="vers image précédente">Précédent</button>
-    <div class="lightbox__content" aria-hidden="true"></div>
+    <button class="lightbox__next" aria-label="media suivante">Suivant</button>
+    <button class="lightbox__prev" aria-label="media précédente">Précédent</button>
+    <div class="lightbox__content" aria-hidden="false"></div>
   </section>
 
   <!--    SCRIPT    -->

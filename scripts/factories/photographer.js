@@ -10,20 +10,19 @@ function headerFactory(photograph) {
 
   function getHeaderCardDOM() {
     const linkURL = "photographer.html";
-    // eslint-disable-next-line linebreak-style
     const url = `${linkURL}?photographer=${id}`;
     return `
     <article>
       <a class="profil" tabindex ="0">
-        <h1 >${name}</h1>
+        <h1 aria-hidden="false" aria-label="nom${name}">${name}</h1>
         <div class="content-photograph">
-        <p class="where" aria-label="Pays du photographe" alt="Pays du photographe">${city}</p>
-        <p class="tagline" aria-label="phrase du photographe" alt="phrase du photographe" >${tagline}</p>
+        <p class="where" aria-label="photographe en provenance de ${city}" alt="Pays du photographe">${city}</p>
+        <p class="tagline" aria-label="tag${tagline}" alt="phrase du photographe">${tagline}</p>
         </div>
       </a> 
-        <button tabindex="0" class="modal-btn closed" id="modal">Contactez moi</button>
+        <button tabindex="0" class="modal-btn closed" id="modal" aria-label="formulaire de contact">Contactez moi</button>
       <div>
-        <a href=${url}><img tabindex="0" src=${image} alt="photo"></ a>
+        <a href=${url}><img tabindex="0" src=${image} alt="photo du profil"></ a>
     	</div>
     </article>`;
   }
@@ -36,13 +35,11 @@ function headerFactory(photograph) {
 // le factory va faire un choix, image ou video
 function galleryFactory(data, type) {
   let mediaDom = "";
-
-  //console.log(type);
-  //console.log(data);
+  //console.log(type);  //si 1 video ou 1 image
+  //console.log(data);   //  la card 
   switch (type) {
   case "image":
     mediaDom = buildCardImage(data);
-    //console.log(mediaDom);
     break;
   case "video":
     mediaDom = buildCardVideo(data);
@@ -57,17 +54,16 @@ function galleryFactory(data, type) {
 
 function displayDataHeader(photographer) {
   const profilHeaderModel = headerFactory(photographer);
-  document.querySelector(".photograph-header").innerHTML =
-    profilHeaderModel.getHeaderCardDOM();
+  document.querySelector(".photograph-header").innerHTML = profilHeaderModel.getHeaderCardDOM();
   document.getElementById("nameModal").innerHTML = photographer.name;
   document.getElementById("photographerPrice").innerHTML = photographer.price;
 }
-
 /***               DES MEDIAS de l ID                 ***/
 
 function displayMedias(medias) {
   let totalLike = 0;
   // On recreer chaque card Html stocker dans cardsDom
+  //le .map  va compiler  le return ( le resultat  selon combien de media ..)
   const cardsDom = medias.map((media) => {
     totalLike += media.likes;
     mediaType = typeof media.image !== "undefined" 

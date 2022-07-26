@@ -8,7 +8,6 @@ function dispatchEvent(medias) {
   eventModalForm();
   eventPagination();
   eventKeyboard();
-
   /***       EVENT  du  TRI         ***/ 
 
   function eventMediaSort(medias) {
@@ -53,11 +52,11 @@ function dispatchEvent(medias) {
     document.addEventListener("keydown", (e) => {
       if (e.key == "ArrowRight") {
         // Clavier à droite : Next
-        console.log("ArrowRight");
+        //console.log("ArrowRight");
         nextSlide();
       } else if (e.key == "ArrowLeft") {
         // Clavier à gauche : Prev
-        console.log("ArrowLeft");
+        //console.log("ArrowLeft");
         previousSlide();
       }
       if (e.key == "Escape") {
@@ -66,8 +65,10 @@ function dispatchEvent(medias) {
         closeLightBox();
       }
       if (e.key == "Enter") {
+        //console.log("Enter");
         if (e.target.nodeName.toLowerCase() == "span") clickLike(e.target);
       }
+      if (e.target.nodeName.toLowerCase() == "mdContainer")toggle(active);
     });
   }
 
@@ -81,7 +82,6 @@ function dispatchEvent(medias) {
       }
     });
   }
-
   /***     EVENT   Modal  Formulaire       ***/  
 
   function eventModalForm() {
@@ -96,13 +96,12 @@ function dispatchEvent(medias) {
   }
   // RESET  du formulaire
   const formSubscribe = document.getElementById("formSubscribe");
-
   function resetFormSubscribe() {
     // reinitialise le formulaire lorsqu il est correctement rempli
     formSubscribe.reset();
   }
   formSubscribe.addEventListener("submit", (e) => {
-    e.preventDefault();
-    resetFormSubscribe();
+    e.preventDefault(); // empechera la soumission du formulaire
+    resetFormSubscribe(); // effacera
   });
 }

@@ -7,8 +7,8 @@ function displayLightBox(medias) {
     return typeof media.image !== "undefined"
       ? `
         <div class="slide hide" data-media-lightbox="${media.id}"/>
-        <img src="./assets/thumbnails/imagesMedias/${media.image}" alt="imagecloseup view" data-title="${media.title}">
-        <div class="lightbox__title">${media.title}</div>
+        <img src="./assets/thumbnails/imagesMedias/${media.image}" aria-label="image${media.title}" alt="imagecloseup view" data-title="${media.title}">
+        <div class="lightbox__title" aria-hidden="true">${media.title}</div>
         </div>
         `
       : `
@@ -30,7 +30,6 @@ function displayLightBox(medias) {
 }
 
 function openLightBox(cardClicked) {
-  //console.log(cardClicked);
   // OUVRE LB en supprimant le hide
   document.getElementById("carousel").classList.remove("hide");
   hideAllMedia();
@@ -57,7 +56,7 @@ function nextSlide() {
   currentSlide.classList.add("hide"); //  masque puisqu'on passe à la suivante
 
   // Si on n'est pas à la fin du carrousel
-  // ElementSibling renvoie l element precedent
+  // ElementSibling renvoie l element suivant
   if (currentSlide.nextElementSibling) {
     currentSlide.nextElementSibling.classList.remove("hide");
   } else {
@@ -68,12 +67,10 @@ function nextSlide() {
 }
 
 function previousSlide() {
-  // slide affiché
-  //console.log("previousSlide");
   let currentSlide = document.querySelector(".slide:not(.hide)");
   // :not  va cibler tout ce qui n'est pas .hide
   currentSlide.classList.add("hide");
-  //console.dir(currentSlide);
+  //console.dir(currentSlide);  // toute la div.slide.hide en previous
   // si on n'est pas au debut du carousel,   
   if (currentSlide.previousElementSibling) {
     currentSlide.previousElementSibling.classList.remove("hide");

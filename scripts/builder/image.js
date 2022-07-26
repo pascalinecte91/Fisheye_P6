@@ -8,15 +8,15 @@ function buildCardImage(data){
     <article>  
       <div class ="gallery-section">
       <figure>
-      <a href="#" tabindex="0" class="media" id="${id}">
-          <img src="assets/thumbnails/imagesMedias/${image}" aria-label="ouvrir la media" alt="media" aria-hidden="false" class="media" data-media="${id}"> 
+      <a href="#" class="media" id="${id}">
+          <img src="assets/thumbnails/imagesMedias/${image}" aria-hidden="false" aria-label="image${title}" alt="media" class="media" data-media="${id}"> 
       </a>
           <figcaption>
-          <h3 aria-hidden="false">${title}</h3>
-          <span tabindex="0" class="numberLike" aria-hidden="false" id="heart">${likes} </span> 
+          <h3 tabindex="0" aria-hidden="false">${title}</h3>
+          <span tabindex="0" class="numberLike" aria-hidden="false"  id="heart" aria-label="${likes}like">${likes}</span> 
           </figcaption>
       </figure>
       </div>
-    </article>`;
+    </article>`; 
 }
 
