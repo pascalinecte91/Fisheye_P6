@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 //trouve l ID  du photographer
 const request = new URLSearchParams(location.search);
@@ -14,7 +15,6 @@ fetch("./data/photographers.json")
     return;
   })
   .catch(function (response) {
-    console.dir(response);
     return;
   });
 

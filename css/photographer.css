@@ -381,8 +381,6 @@ option[disabled] {
   color: black;
 }
 
-/*  interieur de l input & textarea */
-
 #message {
   font-size: 1.8rem;
 }
@@ -433,7 +431,7 @@ label {
 }
 
 .form-data.error::after {
-  content: 'Merci de remplir le formulaire.'; 
+  content: 'Merci de remplir le champ correctement.'; 
   display: block;
   color: var(--lobusc);
   padding: 5px;
